@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://d11hjn8yym27w"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4b7j8"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d6on6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4b7j8"]
+radius = 0.1772461
+height = 0.8808594
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_4b7j8"]
+radius = 0.16552734
+height = 0.88623047
+
+[node name="ChrisScene" type="Node3D" unique_id=1825276465]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1591919731]
+transform = Transform3D(7, 0, 0, 0, 0.008203317, 0.2999998, 0, -6.999995, 0.00035157078, 0, 0, 0)
+mesh = SubResource("BoxMesh_4b7j8")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=111380747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049, 0.678, 0.883)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=151367980]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.9935656, 0.823667, 0.339)
+spot_range = 7.220666
+spot_angle = 68.63668
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1470225925]
+transform = Transform3D(1, 0, 0, 0, -0.99999726, 0.0023438034, 0, -0.0023438034, -0.99999726, -0.049, 1.3016075, 0)
+mass = 0.483
+physics_material_override = SubResource("PhysicsMaterial_d6on6")
+freeze_mode = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=1338771464]
+transform = Transform3D(0.99996686, 0, 0, 0, 1, -4.656613e-10, 0, 4.656613e-10, 1, 0, -0.0019532442, 0)
+shape = SubResource("CapsuleShape3D_4b7j8")
+
+[node name="Player" type="MeshInstance3D" parent="RigidBody3D" unique_id=357726746]
+mesh = SubResource("CapsuleMesh_4b7j8")
