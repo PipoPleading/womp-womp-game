@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://r2mo2c7atf3b"]
+
+[ext_resource type="PackedScene" uid="uid://c5yvmt8ba4sed" path="res://dev folders/piper/high level test/objects/high_level_ui.tscn" id="1_ko3dp"]
+[ext_resource type="Script" uid="uid://bctkkrxcf5nnd" path="res://dev folders/piper/high level test/scripts/high_level_multiplayer_spawner.gd" id="2_fbsay"]
+[ext_resource type="PackedScene" uid="uid://cqlbho7qg7oun" path="res://dev folders/piper/high level test/objects/2d_player.tscn" id="3_fbsay"]
+
+[node name="HighLevelTest" type="Node2D" unique_id=137494721]
+
+[node name="HighLevelUI" parent="." unique_id=1160919217 instance=ExtResource("1_ko3dp")]
+
+[node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=274490900]
+_spawnable_scenes = PackedStringArray("uid://cqlbho7qg7oun")
+spawn_path = NodePath("..")
+script = ExtResource("2_fbsay")
+network_player = ExtResource("3_fbsay")

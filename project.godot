@@ -14,6 +14,10 @@ config/name="womp-womp-game"
 config/features=PackedStringArray("4.7", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+HighLevelNetworkHandler="*uid://bj0yq38bbem5x"
+
 [display]
 
 window/stretch/mode="canvas_items"
