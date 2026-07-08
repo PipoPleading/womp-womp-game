@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://el5aony15aoo"]
+
+[ext_resource type="Shader" uid="uid://bgoeergysfaib" path="res://refractive.gdshader" id="1_1e470"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7l7aj"]
+render_priority = 0
+shader = ExtResource("1_1e470")
+shader_parameter/refractive_index = 1.29999995231628
+shader_parameter/distortion_strength = 0.2
+shader_parameter/visibility = 0.2
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_elq4t"]
+material = SubResource("ShaderMaterial_7l7aj")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kkilq"]
+render_priority = 0
+shader = ExtResource("1_1e470")
+shader_parameter/refractive_index = 1.29999995231628
+shader_parameter/distortion_strength = 0.4
+shader_parameter/visibility = 0.5
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_w7yua"]
+material = SubResource("ShaderMaterial_kkilq")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_elq4t"]
+albedo_color = Color(0.68235296, 0.5372549, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ltk6h"]
+material = SubResource("StandardMaterial3D_elq4t")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7l7aj"]
+albedo_color = Color(1, 0.63529414, 0.3137255, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_elq4t"]
+material = SubResource("StandardMaterial3D_7l7aj")
+
+[node name="Node3D" type="Node3D" unique_id=1337486400]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1672883557]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8537388, -2.3783612)
+mesh = SubResource("CapsuleMesh_elq4t")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=437510871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8537388, -0.8032806)
+mesh = SubResource("CapsuleMesh_w7yua")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=61006778]
+transform = Transform3D(7.252202, 0, 0, 0, 1, 0, 0, 0, 7.252202, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ltk6h")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="." unique_id=1044207252]
+transform = Transform3D(7.252202, 0, 0, 0, 0.25881907, -7.0050893, 0, 0.9659258, 1.8770082, 0, 0, -3.7664933)
+mesh = SubResource("PlaneMesh_ltk6h")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1279212820]
+transform = Transform3D(-2.7984456e-07, 1.0000001, 0, -6.402097, -4.3711392e-08, 0, 0, 0, 6.433147, -6.9585934, 0, 0)
+mesh = SubResource("PlaneMesh_elq4t")
