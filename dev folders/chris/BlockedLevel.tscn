@@ -1,5 +1,9 @@
 [gd_scene format=3 uid="uid://bx8e3k0nlsdj4"]
 
+[ext_resource type="Material" uid="uid://rv3dkrka7yay" path="res://dev folders/chris/Materials/black.tres" id="1_ptil1"]
+[ext_resource type="Material" uid="uid://hogk5r5nkac5" path="res://dev folders/chris/Materials/Pantry.tres" id="2_hbfs6"]
+[ext_resource type="Material" uid="uid://cogvnr35amgxn" path="res://dev folders/chris/Materials/Bar.tres" id="3_r3bqp"]
+
 [node name="BlockedLevel" type="Node3D" unique_id=1673839228]
 
 [node name="Walls" type="Node3D" parent="." unique_id=1474532357]
@@ -22,6 +26,7 @@ size = Vector3(50, 50, 0.1)
 [node name="FrontOutsideWall" type="CSGBox3D" parent="Walls" unique_id=1329516948]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, -25)
 size = Vector3(50, 50, 0.1)
+material = ExtResource("1_ptil1")
 
 [node name="Ceiling" type="CSGBox3D" parent="Walls" unique_id=18779363]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
@@ -51,6 +56,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22.5)
 [node name="Door" type="CSGBox3D" parent="Pantry" unique_id=429342588]
 transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -4.222416, 17.249287, 8.609611)
 size = Vector3(1, 35, 18)
+material = ExtResource("2_hbfs6")
 
 [node name="Doorknob" type="CSGSphere3D" parent="Pantry/Door" unique_id=1682310138]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70417976, 0, 7.2821727)
@@ -61,11 +67,47 @@ radius = 1.1131189
 [node name="Shelf" type="CSGBox3D" parent="Pantry/Shelves" unique_id=483987517]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
 size = Vector3(20, 1, 5)
+material = ExtResource("2_hbfs6")
 
 [node name="Shelf2" type="CSGBox3D" parent="Pantry/Shelves" unique_id=1325112792]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
 size = Vector3(20, 1, 5)
+material = ExtResource("2_hbfs6")
 
 [node name="Shelf3" type="CSGBox3D" parent="Pantry/Shelves" unique_id=168866419]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 0)
 size = Vector3(20, 1, 5)
+material = ExtResource("2_hbfs6")
+
+[node name="Bar" type="Node3D" parent="." unique_id=626480172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.929483, 0, 0)
+
+[node name="BarBottom" type="CSGBox3D" parent="Bar" unique_id=1403645310]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.628004, 0.5, 2.5)
+size = Vector3(5, 1, 40)
+material = ExtResource("3_r3bqp")
+
+[node name="BarBack" type="CSGBox3D" parent="Bar" unique_id=776584308]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.313, 7.5, 2.512)
+size = Vector3(1, 15, 42)
+material = ExtResource("3_r3bqp")
+
+[node name="BarLeftWall" type="CSGBox3D" parent="Bar" unique_id=738834986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6984081, 7.5, 23)
+size = Vector3(5, 15, 1)
+material = ExtResource("3_r3bqp")
+
+[node name="BarRightWall" type="CSGBox3D" parent="Bar" unique_id=1840696721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6984081, 7.5, -17.973022)
+size = Vector3(5, 15, 1)
+material = ExtResource("3_r3bqp")
+
+[node name="BarTop" type="CSGBox3D" parent="Bar" unique_id=172732516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5001678, 15.449934, 2.5)
+size = Vector3(7, 1, 42)
+material = ExtResource("3_r3bqp")
+
+[node name="BarInnerWall" type="CSGBox3D" parent="Bar" unique_id=2044171176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.407961, 7.5, 3)
+size = Vector3(5, 15, 1)
+material = ExtResource("3_r3bqp")
