@@ -19,13 +19,18 @@ size = Vector3(0.1, 50, 50)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 25)
 size = Vector3(50, 50, 0.1)
 
-[node name="FrontWall" type="CSGBox3D" parent="Walls" unique_id=1329516948]
+[node name="FrontOutsideWall" type="CSGBox3D" parent="Walls" unique_id=1329516948]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, -25)
 size = Vector3(50, 50, 0.1)
 
 [node name="Ceiling" type="CSGBox3D" parent="Walls" unique_id=18779363]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
 size = Vector3(50, 0.1, 50)
+
+[node name="FrontInsideWall" type="CSGPolygon3D" parent="Walls" unique_id=1459583102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, -20)
+polygon = PackedVector2Array(-25, -25, -25, 25, 25, 25, 25, -25, 10, -25, 10, 0, -10, 0, -10, -25)
+depth = 5.0
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1114833177]
 transform = Transform3D(1, 0, 0, 0, 0.96139246, 0.27518106, 0, -0.27518106, 0.96139246, -0.15034676, 22.370773, 23.662611)
@@ -39,10 +44,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 49.830914, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3075867, 0)
 light_energy = 7.724
 omni_range = 100.0
-
-[node name="Pantry" type="Node3D" parent="." unique_id=1684963065]
-
-[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Pantry" unique_id=88965501]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0579589, -23.77326)
-
-[node name="CSGPolygon3D" type="CSGPolygon3D" parent="Pantry/CSGCombiner3D" unique_id=2073545557]
