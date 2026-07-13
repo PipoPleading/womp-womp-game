@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://dhh8s6n07t6id"]
+
+[ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="1_8dqjd"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_41hjh"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_2k451"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ygfeb"]
+size = Vector3(50, 1, 50)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xtnmv"]
+
+[sub_resource type="Sky" id="Sky_gq0y6"]
+sky_material = SubResource("ProceduralSkyMaterial_xtnmv")
+
+[sub_resource type="Environment" id="Environment_ygfeb"]
+background_mode = 2
+sky = SubResource("Sky_gq0y6")
+
+[sub_resource type="Resource" id="Resource_a2c2i"]
+script = ExtResource("3_2k451")
+
+[node name="Node3D" type="Node3D" unique_id=2036907785]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=464094868]
+size = Vector3(50, 1, 50)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CSGBox3D" unique_id=521747146]
+shape = SubResource("BoxShape3D_ygfeb")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1786676310]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1682432785]
+environment = SubResource("Environment_ygfeb")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=144649519]
+transform = Transform3D(0.54615563, -0.024089143, 0.8373373, 0, 0.99958646, 0.028756848, -0.83768374, -0.015705714, 0.5459298, 8.285451, 0.92587525, 6.021089)
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=495348099]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("1_8dqjd")
+
+[node name="PhantomCamera3D" type="Node3D" parent="." unique_id=1689357680]
+transform = Transform3D(0.54615563, -0.024089143, 0.8373373, 0, 0.99958646, 0.028756848, -0.83768374, -0.015705714, 0.5459298, 8.285451, 0.92587525, 6.021089)
+script = ExtResource("2_41hjh")
+tween_resource = SubResource("Resource_a2c2i")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
