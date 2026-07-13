@@ -29,7 +29,7 @@ size = Vector3(50, 0.1, 50)
 
 [node name="FrontInsideWall" type="CSGPolygon3D" parent="Walls" unique_id=1459583102]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, -20)
-polygon = PackedVector2Array(-25, -25, -25, 25, 25, 25, 25, -25, 10, -25, 10, 0, -10, 0, -10, -25)
+polygon = PackedVector2Array(-25, -25, -25, 25, 25, 25, 25, -25, 10, -25, 10, 10, -10, 10, -10, -25)
 depth = 5.0
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1114833177]
@@ -44,3 +44,28 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 49.830914, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3075867, 0)
 light_energy = 7.724
 omni_range = 100.0
+
+[node name="Pantry" type="Node3D" parent="." unique_id=690204041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22.5)
+
+[node name="Door" type="CSGBox3D" parent="Pantry" unique_id=429342588]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -4.222416, 17.249287, 8.609611)
+size = Vector3(1, 35, 18)
+
+[node name="Doorknob" type="CSGSphere3D" parent="Pantry/Door" unique_id=1682310138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.70417976, 0, 7.2821727)
+radius = 1.1131189
+
+[node name="Shelves" type="Node3D" parent="Pantry" unique_id=1178792468]
+
+[node name="Shelf" type="CSGBox3D" parent="Pantry/Shelves" unique_id=483987517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+size = Vector3(20, 1, 5)
+
+[node name="Shelf2" type="CSGBox3D" parent="Pantry/Shelves" unique_id=1325112792]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
+size = Vector3(20, 1, 5)
+
+[node name="Shelf3" type="CSGBox3D" parent="Pantry/Shelves" unique_id=168866419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 0)
+size = Vector3(20, 1, 5)
