@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://cqlbho7qg7oun"]
 
+[ext_resource type="Shader" uid="uid://bqlxs17dbl6bo" path="res://dev folders/piper/high level test/objects/2d_player.gdshader" id="1_16ult"]
 [ext_resource type="Texture2D" uid="uid://7xja0cpqlnob" path="res://icon.svg" id="1_xig42"]
 
 [sub_resource type="GDScript" id="GDScript_xig42"]
@@ -21,6 +22,9 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 "
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_02mn0"]
+shader = ExtResource("1_16ult")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ygfeb"]
 size = Vector2(128, 128)
 
@@ -33,6 +37,7 @@ properties/0/replication_mode = 1
 script = SubResource("GDScript_xig42")
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=604176612]
+material = SubResource("ShaderMaterial_02mn0")
 texture = ExtResource("1_xig42")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=461131664]
