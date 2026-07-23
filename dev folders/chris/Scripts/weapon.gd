@@ -4,13 +4,6 @@ class_name Weapon
 @export var weapon_data : WeaponData
 @export var pivot_point : Node3D
 var is_attacking : bool = false
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
 
 func attack() -> void:
 	if is_attacking:
