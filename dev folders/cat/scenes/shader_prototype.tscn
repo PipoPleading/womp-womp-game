@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://el5aony15aoo"]
 
 [ext_resource type="Shader" uid="uid://bgoeergysfaib" path="res://refractive.gdshader" id="1_1e470"]
+[ext_resource type="PackedScene" uid="uid://bbjoeasakfirl" path="res://dev folders/cat/models/character.tscn" id="2_kkilq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7l7aj"]
 render_priority = 0
 shader = ExtResource("1_1e470")
 shader_parameter/refractive_index = 1.29999995231628
 shader_parameter/distortion_strength = 0.2
-shader_parameter/visibility = 0.2
+shader_parameter/visibility = 0.025
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_elq4t"]
 material = SubResource("ShaderMaterial_7l7aj")
@@ -41,7 +42,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8537388, -2.3783612)
 mesh = SubResource("CapsuleMesh_elq4t")
 
 [node name="MeshInstance3D5" type="MeshInstance3D" parent="." unique_id=437510871]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8537388, -0.8032806)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7554862, 0.8537388, -0.8032806)
 mesh = SubResource("CapsuleMesh_w7yua")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=61006778]
@@ -55,3 +56,6 @@ mesh = SubResource("PlaneMesh_ltk6h")
 [node name="MeshInstance3D4" type="MeshInstance3D" parent="." unique_id=1279212820]
 transform = Transform3D(-2.7984456e-07, 1.0000001, 0, -6.402097, -4.3711392e-08, 0, 0, 0, 6.433147, -6.9585934, 0, 0)
 mesh = SubResource("PlaneMesh_elq4t")
+
+[node name="Egg2" parent="." unique_id=1019978430 instance=ExtResource("2_kkilq")]
+transform = Transform3D(-1, 0, -2.9802322e-08, 0, 1, 0, 2.9802322e-08, 0, -1, 2.7705898, 0.9685223, -0.29101908)
