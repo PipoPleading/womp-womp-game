@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://d11hjn8yym27w"]
+
+[ext_resource type="Script" uid="uid://c5f03i51e8jeu" path="res://dev folders/chris/Scripts/player.gd" id="1_tpd5x"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dg0xg"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_dg0xg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dcin2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_dg0xg"]
+
+[node name="ChrisScene" type="Node3D" unique_id=1825276465]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=111380747]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049, 1.678, 2.883)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="." unique_id=151367980]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.9935656, 3.5362659, 0.339)
+spot_range = 7.220666
+spot_angle = 68.63668
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=489780613]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0226674, 0)
+script = ExtResource("1_tpd5x")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=2039832459]
+shape = SubResource("CapsuleShape3D_dg0xg")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D" unique_id=1521948761]
+mesh = SubResource("CapsuleMesh_dg0xg")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1774511199]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=1581647349]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+shape = SubResource("BoxShape3D_dcin2")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=802925899]
+transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("BoxMesh_dg0xg")
