@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://el5aony15aoo"]
 
 [ext_resource type="Shader" uid="uid://bgoeergysfaib" path="res://refractive.gdshader" id="1_1e470"]
-[ext_resource type="PackedScene" uid="uid://bbjoeasakfirl" path="res://dev folders/cat/models/character.tscn" id="2_kkilq"]
+[ext_resource type="PackedScene" uid="uid://bbjoeasakfirl" path="res://dev folders/cat/models/character/character.tscn" id="2_kkilq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7l7aj"]
 render_priority = 0
