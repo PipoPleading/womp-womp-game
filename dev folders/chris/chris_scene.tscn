@@ -24,7 +24,7 @@ spot_angle = 68.63668
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=489780613]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0226674, 0)
 script = ExtResource("1_tpd5x")
-weapon_data = ExtResource("2_uvy4e")
+weapon = ExtResource("2_uvy4e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=2039832459]
 shape = SubResource("CapsuleShape3D_dg0xg")

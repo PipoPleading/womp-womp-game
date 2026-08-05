@@ -6,7 +6,7 @@ const JUMP_VELOCITY : float = 4.5
 
 # Weapon Settings
 var _weapon_instance : Node3D
-@export var weapon_data : WeaponData
+@export var weapon : WeaponData
 
 func handle_movement(delta: float) -> void:
 	if not is_on_floor():
@@ -32,11 +32,11 @@ func handle_movement(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	handle_movement(delta)
 	
-	if Input.is_action_just_pressed("ui_attack"):
+	if Input.is_action_just_pressed("attack"):
 		_weapon_instance.get_node("Weapon").attack()
 
 func equip_weapon() -> void:
-	_weapon_instance = load(weapon_data.weapon_location).instantiate()
+	_weapon_instance = load(weapon.weapon_location).instantiate()
 	add_child(_weapon_instance)
 	_weapon_instance.position = Vector3(1,0.5,0)
 	

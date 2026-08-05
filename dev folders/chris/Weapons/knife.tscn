@@ -1,14 +1,14 @@
 [gd_scene format=3 uid="uid://bkrg2r30c56ya"]
 
 [ext_resource type="Script" uid="uid://bc7l13ptkb1gl" path="res://dev folders/chris/Scripts/weapon.gd" id="1_ow3mk"]
-[ext_resource type="Resource" uid="uid://biwj3ssltadah" path="res://dev folders/chris/Resources/WeaponData/frying_pan.tres" id="2_q4jwq"]
+[ext_resource type="Resource" uid="uid://jnrg0ypeosts" path="res://dev folders/chris/Resources/WeaponData/knife.tres" id="2_ow3mk"]
 [ext_resource type="ArrayMesh" uid="uid://dc3rfaswqrhd" path="res://dev folders/chris/Meshes/Low_Poly_Knife/Low Poly Knife.obj" id="3_ow3mk"]
 
 [node name="FryingPan" type="Node3D" unique_id=100907125]
 
 [node name="Weapon" type="Node" parent="." unique_id=411780477 node_paths=PackedStringArray("pivot_point")]
 script = ExtResource("1_ow3mk")
-weapon_data = ExtResource("2_q4jwq")
+weapon_data = ExtResource("2_ow3mk")
 pivot_point = NodePath("../pivot_point")
 metadata/_custom_type_script = "uid://bc7l13ptkb1gl"
 
