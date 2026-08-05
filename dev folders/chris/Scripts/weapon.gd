@@ -6,6 +6,12 @@ class_name Weapon
 var is_attacking : bool = false
 
 func attack() -> void:
-	var tween = create_tween()
+	if is_attacking:
+		return
+	else:
+		is_attacking = true
 	
+	var tween = create_tween()
+	tween.finished.connect(func(): is_attacking = false)
+
 	weapon_data.attack(pivot_point, tween)
