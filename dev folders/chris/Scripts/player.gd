@@ -5,8 +5,8 @@ const SPEED : float = 5.0
 const JUMP_VELOCITY : float = 4.5
 
 # Weapon Settings
-const TEST_WEAPON = preload("res://dev folders/chris/Weapons/frying_pan.tscn")
 var _weapon_instance : Node3D
+@export var weapon_data : WeaponData
 
 func handle_movement(delta: float) -> void:
 	if not is_on_floor():
@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 		_weapon_instance.get_node("Weapon").attack()
 
 func equip_weapon() -> void:
-	_weapon_instance = TEST_WEAPON.instantiate()
+	_weapon_instance = load(weapon_data.weapon_location).instantiate()
 	add_child(_weapon_instance)
 	_weapon_instance.position = Vector3(1,0.5,0)
 	

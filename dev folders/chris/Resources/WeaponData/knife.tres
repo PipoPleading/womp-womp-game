@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="WeaponData" format=3 uid="uid://jnrg0ypeosts"]
+
+[ext_resource type="Script" uid="uid://ba57kg1whulwe" path="res://dev folders/chris/Resources/weapon_data.gd" id="1_d1qw4"]
+
+[resource]
+script = ExtResource("1_d1qw4")
+name = "Kitchen Knife"
+damage = 4
+weapon_location = "res://dev folders/chris/Weapons/knife.tscn"
+metadata/_custom_type_script = "uid://ba57kg1whulwe"
