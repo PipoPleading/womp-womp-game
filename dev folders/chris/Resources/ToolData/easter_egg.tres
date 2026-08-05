@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="EasterEgg" format=3 uid="uid://csv8xqkkhby8w"]
+
+[ext_resource type="Script" uid="uid://cjkmgugptycys" path="res://dev folders/chris/Resources/ToolData/Scripts/easter_egg.gd" id="1_8dpcq"]
+
+[resource]
+script = ExtResource("1_8dpcq")
+name = "Easter Egg"
+weapon_location = "res://dev folders/chris/Tools/easter_egg.tscn"
+initial_position = Vector3(0.75, 1, 0)
+metadata/_custom_type_script = "uid://cjkmgugptycys"
