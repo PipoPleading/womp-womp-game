@@ -7,4 +7,5 @@ script = ExtResource("1_0rrqc")
 name = "Frying Pan"
 damage = 10
 weapon_location = "res://dev folders/chris/Weapons/frying_pan.tscn"
+initial_position = Vector3(1, 0.5, 0)
 metadata/_custom_type_script = "uid://t5dcpsnpuvud"

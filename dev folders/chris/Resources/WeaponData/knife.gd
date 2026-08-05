@@ -17,6 +17,9 @@ func attack(pivot_point: Node3D, tween: Tween) -> void:
 	else:
 		is_attacking = true
 	
-	tween.tween_property(pivot_point, "rotation_degrees", Vector3(-90, 45, 0), 0.5).as_relative()
+	tween.tween_property(pivot_point, "rotation_degrees", Vector3(90, 0, 0), 0.2).as_relative()
+	tween.tween_property(pivot_point, "position", Vector3(0, 0, 0.3), 0.2).as_relative()
+	tween.tween_property(pivot_point, "position", Vector3(0, 0, -0.3), 0.2).as_relative()
+	tween.tween_property(pivot_point, "rotation_degrees", Vector3(-90, 0, 0), 0.2).as_relative()
 	
 	tween.finished.connect(func(): is_attacking = false)

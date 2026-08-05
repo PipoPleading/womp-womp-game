@@ -38,7 +38,7 @@ func _physics_process(delta: float) -> void:
 func equip_weapon() -> void:
 	_weapon_instance = load(weapon.weapon_location).instantiate()
 	add_child(_weapon_instance)
-	_weapon_instance.position = Vector3(1,0.5,0)
+	_weapon_instance.position = weapon.initial_position
 	
 
 func _ready() -> void:

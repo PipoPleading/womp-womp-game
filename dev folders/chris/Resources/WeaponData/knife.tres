@@ -7,4 +7,5 @@ script = ExtResource("1_d1qw4")
 name = "Kitchen Knife"
 damage = 4
 weapon_location = "res://dev folders/chris/Weapons/knife.tscn"
+initial_position = Vector3(0.5, 1, 0)
 metadata/_custom_type_script = "uid://ba57kg1whulwe"
