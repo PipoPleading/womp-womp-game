@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cqvhxjtqlb7tr"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ltk6h"]
+
+[node name="KitchenLevel" type="Node3D" unique_id=57881643]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1573875670]
+transform = Transform3D(6, 0, 0, 0, 0.992, 0, 0, 0, 6, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ltk6h")
