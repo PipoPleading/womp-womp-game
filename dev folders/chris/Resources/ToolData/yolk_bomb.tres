@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="YolkBomb" format=3 uid="uid://wut4gbhiuonr"]
+
+[ext_resource type="Script" uid="uid://dtrdkdie2eopd" path="res://dev folders/chris/Resources/ToolData/Scripts/yolk_bomb.gd" id="1_g20m6"]
+
+[resource]
+script = ExtResource("1_g20m6")
+name = "Yolk Bomb"
+damage = 1
+weapon_location = "res://dev folders/chris/Tools/yolk_bomb.tscn"
+initial_position = Vector3(0.75, 0.5, 0)
+metadata/_custom_type_script = "uid://dtrdkdie2eopd"
