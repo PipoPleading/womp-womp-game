@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bkrg2r30c56ya"]
+
+[ext_resource type="Script" uid="uid://bc7l13ptkb1gl" path="res://dev folders/chris/Scripts/weapon.gd" id="1_ow3mk"]
+[ext_resource type="Resource" uid="uid://jnrg0ypeosts" path="res://dev folders/chris/Resources/WeaponData/knife.tres" id="2_ow3mk"]
+[ext_resource type="ArrayMesh" uid="uid://dc3rfaswqrhd" path="res://dev folders/chris/Meshes/Low_Poly_Knife/Low Poly Knife.obj" id="3_ow3mk"]
+
+[node name="FryingPan" type="Node3D" unique_id=100907125]
+
+[node name="Weapon" type="Node" parent="." unique_id=411780477 node_paths=PackedStringArray("pivot_point")]
+script = ExtResource("1_ow3mk")
+weapon_data = ExtResource("2_ow3mk")
+pivot_point = NodePath("../pivot_point")
+metadata/_custom_type_script = "uid://bc7l13ptkb1gl"
+
+[node name="pivot_point" type="Node3D" parent="." unique_id=1169467799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012619972, -1.1632278, 0.2515541)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="pivot_point" unique_id=2049477541]
+transform = Transform3D(0.015, 2.264937e-09, -2.264937e-09, 2.264937e-09, -0.015, 0, -2.264937e-09, -3.4199598e-16, -0.015, -0.012619972, 1.1632278, -0.2515541)
+mesh = ExtResource("3_ow3mk")
