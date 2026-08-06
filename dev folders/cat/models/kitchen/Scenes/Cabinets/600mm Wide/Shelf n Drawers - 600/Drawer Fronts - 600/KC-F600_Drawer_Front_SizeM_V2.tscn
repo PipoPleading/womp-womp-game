@@ -1,0 +1,78 @@
+[gd_scene format=4 uid="uid://bwog4o2ljfknw"]
+
+[ext_resource type="Material" uid="uid://c6y4a04pybpvf" path="res://dev folders/cat/models/kitchen/Texture/kitchen_mat.tres" id="1_vm784"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pnv4w"]
+resource_name = "Main_Slot"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akgcu"]
+resource_name = "2nd_Slot"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_d5fis"]
+_surfaces = [{
+"aabb": AABB(-1.4901161e-09, -0.00020000011, -0.0047999998, 0.005999999, 0.00020000011, 0.0047999998),
+"format": 34359742465,
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAgAEAAAABQAEAAIAAgADAAUAAAAEAAUABgAFAAMABQAGAAAAAQAHAAMAAwAHAAYABwABAAgACAABAAAABgAHAAkACAAJAAcACgAAAAYAAAAKAAgACwAIAAoACAALAAwADAAJAAgACgANAAsACQAMAA4ABgAPAAoACQAPAAYADQAKAA8ADgAPAAkADwAOAA0A"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("oZvEOx+3UbkAAAAAzczMsB+3UbkAAAAAzczMsAAAAAAAAAAAzczMsAAAAABRSZ27oZvEOwAAAAAAAAAAoZvEOwAAAABRSZ27oZvEOx+3UblRSZ27zczMsB+3UblRSZ27jJtEOh+3Ubmlm0S6jJtEOh+3UbndtYS7LQisOx+3Ubmlm0S6jJtEOnYSA7mlm0S6jJtEOnYSA7ndtYS7LQisO3YSA7mlm0S6LQisO3YSA7ndtYS7LQisOx+3UbndtYS7")
+}, {
+"aabb": AABB(0.0007499985, -0.00012500011, -0.00405, 0.0045, 1e-05, 0.0033000002),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "2nd_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("jJtEOnYSA7ndtYS7jJtEOnYSA7mlm0S6LQisO3YSA7mlm0S6LQisO3YSA7ndtYS7")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_q05p6"]
+resource_name = "Cube_225"
+_surfaces = [{
+"aabb": AABB(-1.4901161e-09, -0.00020000011, -0.0047999998, 0.005999999, 0.00020000011, 0.0047999998),
+"attribute_data": PackedByteArray("FmzDPoDYoTwK1yM8kMJ1PhZswz6A2KE8SOH6PpDCdT4WbMM+gNihPEjh+j5wPUo+FmzDPoDYoTwK1yM8cD1KPhZswz6A2KE8XI8SP0jh+j4WbMM+gNihPKRwHT9I4fo+FmzDPoDYoTykcB0/ANcjPBZswz6A2KE8XI8SPwDXIzwWbMM+gNihPEjh+j4ghes9FmzDPoDYoTxI4fo+4HqUPRZswz6A2KE8CtcjPOB6lD0WbMM+gNihPArXIzwghes9FmzDPoDYoTxcjwI/SOH6PhZswz6A2KE8pHANP0jh+j4WbMM+gNihPKRwDT8A1yM8FmzDPoDYoTxcjwI/ANcjPBZswz6A2KE8CtcjPJDCNT4WbMM+gNihPEjh+j6QwjU+FmzDPoDYoTxI4fo+cD0KPhZswz6A2KE8CtcjPHA9Cj4WbMM+gNihPArXIzxcjwI/FmzDPoDYoTwK1yM8pHB9PxZswz6A2KE8SOH6PqRwfT8WbMM+gNihPEjh+j5cjwI/FmzDPoDYoTxcj0I/pHB9PxZswz6A2KE8pHBdP6RwfT8WbMM+gNihPKRwXT9cjwI/FmzDPoDYoTxcj0I/XI8CPxZswz6A2KE8CtcjPEjhuj4WbMM+gNihPEjh+j5I4bo+FmzDPoDYoTxI4fo+uB6FPhZswz6A2KE8CtcjPLgehT4WbMM+gNihPFyPYj9cjwI/FmzDPoDYoTxcj2I/pHB9PxZswz6A2KE8pHB9P6RwfT8WbMM+gNihPKRwfT9cjwI/FmzDPoDYoTxI4fo+SOH6PhZswz6A2KE8SOH6PrgexT4WbMM+gNihPArXIzy4HsU+FmzDPoDYoTwK1yM8SOH6PhZswz6A2KE8pHBtP0jh2j4WbMM+gNihPKRwbT+4HsU+FmzDPoDYoTxcjzI/uB7FPhZswz6A2KE8XI8yP0jh2j4WbMM+gNihPFyPIj9I4fo+FmzDPoDYoTykcC0/SOH6PhZswz6A2KE8pHAtPwDXIzwWbMM+gNihPFyPIj8A1yM8FmzDPoDYoTykcG0/SOH6PhZswz6A2KE8pHBtP7ge5T4WbMM+gNihPFyPMj+4HuU+FmzDPoDYoTxcjzI/SOH6Pg=="),
+"format": 34359742519,
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwAMAAxADIAMgAzADAA"),
+"material": SubResource("StandardMaterial3D_pnv4w"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 52,
+"vertex_data": PackedByteArray("oZvEOx+3UbkAAAAAzczMsB+3UbkAAAAAzczMsAAAAAAAAAAAoZvEOwAAAAAAAAAAzczMsAAAAABRSZ27zczMsB+3UblRSZ27oZvEOx+3UblRSZ27oZvEOwAAAABRSZ27oZvEOx+3UbkAAAAAoZvEOwAAAAAAAAAAoZvEOwAAAABRSZ27oZvEOx+3UblRSZ27LQisO3YSA7ndtYS7LQisOx+3UbndtYS7jJtEOh+3UbndtYS7jJtEOnYSA7ndtYS7zczMsB+3UbkAAAAAzczMsB+3UblRSZ27zczMsAAAAABRSZ27zczMsAAAAAAAAAAAoZvEOwAAAABRSZ27oZvEOwAAAAAAAAAAzczMsAAAAAAAAAAAzczMsAAAAABRSZ27oZvEOx+3UblRSZ27LQisOx+3UbndtYS7LQisOx+3Ubmlm0S6oZvEOx+3UbkAAAAAzczMsB+3UblRSZ27zczMsB+3UbkAAAAAjJtEOh+3Ubmlm0S6jJtEOh+3UbndtYS7oZvEOx+3UblRSZ27zczMsB+3UblRSZ27jJtEOh+3UbndtYS7LQisOx+3UbndtYS7oZvEOx+3UbkAAAAALQisOx+3Ubmlm0S6jJtEOh+3Ubmlm0S6zczMsB+3UbkAAAAALQisO3YSA7mlm0S6LQisOx+3Ubmlm0S6LQisOx+3UbndtYS7LQisO3YSA7ndtYS7jJtEOnYSA7mlm0S6jJtEOh+3Ubmlm0S6LQisOx+3Ubmlm0S6LQisO3YSA7mlm0S6jJtEOnYSA7ndtYS7jJtEOh+3UbndtYS7jJtEOh+3Ubmlm0S6jJtEOnYSA7mlm0S6/3//f////z//f/9/////P/9//3////8//3//f////z//////////v/////////+//////////7//////////v////3////+/////f////7////9/////v////3////+//3//f////z//f/9/////P/9//3////8//3//f////z8AAP9/////vwAA/3////+/AAD/f////78AAP9/////v/9///////+//3///////7//f///////v/9///////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///78AAP9/////vwAA/3////+/AAD/f////78AAP9/////v/////////+//////////7//////////v/////////+/////f////7////9/////v////3////+/////f////78=")
+}, {
+"aabb": AABB(0.0007499985, -0.00012500011, -0.00405, 0.0045, 1e-05, 0.0033000002),
+"attribute_data": PackedByteArray("QvDkPgBrXjxcjwI/pHB9P0Lw5D4Aa148pHA9P6RwfT9C8OQ+AGtePKRwPT9cjwI/QvDkPgBrXjxcjwI/XI8CPw=="),
+"format": 34359742519,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": SubResource("StandardMaterial3D_akgcu"),
+"name": "2nd_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("jJtEOnYSA7ndtYS7jJtEOnYSA7mlm0S6LQisO3YSA7mlm0S6LQisO3YSA7ndtYS7/38AAP///7//fwAA////v/9/AAD///+//38AAP///78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_d5fis")
+
+[node name="KC-F600_Drawer_Front_SizeM_V2" type="Node3D" unique_id=1677827039]
+
+[node name="KC-F600_Drawer_Front_SizeM_V2" type="MeshInstance3D" parent="." unique_id=148060158]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+material_override = ExtResource("1_vm784")
+mesh = SubResource("ArrayMesh_q05p6")

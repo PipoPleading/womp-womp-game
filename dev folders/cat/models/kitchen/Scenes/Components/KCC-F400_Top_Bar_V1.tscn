@@ -1,0 +1,49 @@
+[gd_scene format=4 uid="uid://l5uo7yw72vgj"]
+
+[ext_resource type="Material" uid="uid://c6y4a04pybpvf" path="res://dev folders/cat/models/kitchen/Texture/kitchen_mat.tres" id="1_cnce6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tuen7"]
+resource_name = "Main_Slot"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mnrau"]
+_surfaces = [{
+"aabb": AABB(0, -0.0092, 0, 0.004, 0.0092, 0.00029999952),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQAAAAMAAgAEAAAAAwAAAAQAAgABAAUAAwAFAAEABQAGAAIABAACAAYABQADAAcABAAHAAMABwAGAAUABgAHAAQA"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("bxKDOwAAAABBSZ05bxKDOwAAAAAAAAAAbxKDO5m7FrwAAAAAAAAAAAAAAABBSZ05bxKDO5m7FrxBSZ05AAAAAAAAAAAAAAAAAAAAAJm7FrwAAAAAAAAAAJm7FrxBSZ05")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jma7r"]
+resource_name = "Cube_063"
+_surfaces = [{
+"aabb": AABB(0, -0.0092, 0, 0.004, 0.0092, 0.00029999952),
+"attribute_data": PackedByteArray("dox1PkaB5T5jya8+yLkPP3aMdT5GgeU+SOH6Psi5Dz92jHU+RoHlPkjh+j4A1yM8dox1PkaB5T5jya8+ANcjPHaMdT5GgeU+pHB9PxJMND92jHU+RoHlPqRwfT+A2BQ/dox1PkaB5T5jya8+gNgUP3aMdT5GgeU+Y8mvPhJMND92jHU+RoHlPgc6LT+kcH0/dox1PkaB5T75xVI/pHB9P3aMdT5GgeU++cVSP8pqOT92jHU+RoHlPgc6LT/Kajk/dox1PkaB5T75xVI/yLkPP3aMdT5GgeU++cVSP3CM4D52jHU+RoHlPlyPAj9wjOA+dox1PkaB5T5cjwI/yLkPP3aMdT5GgeU+CtcjPJSGHD52jHU+RoHlPgrXIzwSTDQ/dox1PkaB5T7yi6U+Ekw0P3aMdT5GgeU+8oulPpSGHD52jHU+RoHlPk8bKD+kcH0/dox1PkaB5T5PGyg/ymo5P3aMdT5GgeU+CtcjPMpqOT92jHU+RoHlPgrXIzykcH0/"),
+"format": 34359742519,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": SubResource("StandardMaterial3D_tuen7"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("bxKDOwAAAABBSZ05bxKDOwAAAAAAAAAAbxKDO5m7FrwAAAAAbxKDO5m7FrxBSZ05AAAAAAAAAAAAAAAAAAAAAAAAAABBSZ05AAAAAJm7FrxBSZ05AAAAAJm7FrwAAAAAAAAAAAAAAABBSZ05AAAAAAAAAAAAAAAAbxKDOwAAAAAAAAAAbxKDOwAAAABBSZ05AAAAAJm7FrwAAAAAAAAAAJm7FrxBSZ05bxKDO5m7FrxBSZ05bxKDO5m7FrwAAAAAAAAAAAAAAAAAAAAAAAAAAJm7FrwAAAAAbxKDO5m7FrwAAAAAbxKDOwAAAAAAAAAAAAAAAAAAAABBSZ05bxKDOwAAAABBSZ05bxKDO5m7FrxBSZ05AAAAAJm7FrxBSZ05////f////7////9/////v////3////+/////f////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////v/9///////+//3///////7//f///////v/9///////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//////////v/////////+//////////7//////////v/9//3////8//3//f////z//f/9/////P/9//3////8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_mnrau")
+
+[node name="KCC-F400_Top_Bar_V1" type="Node3D" unique_id=680246537]
+
+[node name="KCC-F400_Top_Bar_V1" type="MeshInstance3D" parent="." unique_id=766411570]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+material_override = ExtResource("1_cnce6")
+mesh = SubResource("ArrayMesh_jma7r")

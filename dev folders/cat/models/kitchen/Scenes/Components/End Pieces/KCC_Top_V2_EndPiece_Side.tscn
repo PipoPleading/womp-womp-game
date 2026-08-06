@@ -1,0 +1,49 @@
+[gd_scene format=4 uid="uid://c10fsm627a4op"]
+
+[ext_resource type="Material" uid="uid://c6y4a04pybpvf" path="res://dev folders/cat/models/kitchen/Texture/kitchen_mat.tres" id="1_06y1o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p6v2c"]
+resource_name = "Main_Slot"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wpd5q"]
+_surfaces = [{
+"aabb": AABB(-8.9406965e-10, -0.0062, 0.00020000027, 0.0010000002, 0.0062, 9.999925e-05),
+"format": 34359742465,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAAAAMABQADAAIAAwAFAAQAAAAEAAYABgAEAAUABgABAAAAAgAHAAUABQAHAAYACAACAAEABwACAAgAAQAJAAgACAAKAAcABgAHAAoACgAIAAkAAQAGAAsACgALAAYACwAJAAEACQALAAoA"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("j8J1sM3MTC9BSZ05j8J1sKabxLtBSZ05j8J1sKabxLsqt1E5j8J1sM3MTC8qt1E5aBKDOs3MTC9BSZ05aBKDOgAAAAAqt1E5aBKDOqabxLtBSZ05aBKDOqabxLsqt1E5j8J1sF8py7sqt1E5j8J1sF8py7tBSZ05aBKDOl8py7sqt1E5aBKDOl8py7tBSZ05")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_03jcj"]
+resource_name = "Cube_094"
+_surfaces = [{
+"aabb": AABB(-8.9406965e-10, -0.0062, 0.00020000027, 0.0010000002, 0.0062, 9.999925e-05),
+"attribute_data": PackedByteArray("dox1PkaB5T4K1yM8PApXPneMdT5EgeU+CtcjPKRwfT93jHU+RIHlPjptID6kcH0/dox1PkaB5T46bSA+PApXPneMdT5EgeU+Y8mvPjwKVz52jHU+RoHlPmPJrz4Ursc+dox1PkaB5T5I4fo+FK7HPneMdT5EgeU+SOH6PjwKVz53jHU+RIHlPgrXIzxcj0I+dox1PkaB5T5PGyg/XI9CPnaMdT5GgeU+TxsoPwDXIzx3jHU+RIHlPgrXIzwA1yM8d4x1PkSB5T5jya8+9igcP3eMdT5EgeU+Y8mvPnE9Sj92jHU+RoHlPkjh+j5xPUo/dox1PkaB5T5I4fo+9igcP3aMdT5GgeU+XI8CPzwKVz52jHU+RoHlPlyPAj8Ursc+d4x1PkSB5T5PGyg/FK7HPneMdT5EgeU+TxsoPzwKVz52jHU+RoHlPlyPAj+G69E+dox1PkaB5T5cjwI/PgoXP3aMdT5GgeU+TxsoPz4KFz92jHU+RoHlPk8bKD+G69E+d4x1PkSB5T5jya8+huvRPneMdT5EgeU+Y8mvPj4KFz92jHU+RoHlPkjh+j4+Chc/dox1PkaB5T5I4fo+huvRPnaMdT5GgeU+XI8CP/YoHD92jHU+RoHlPlyPAj9xPUo/dox1PkaB5T5PGyg/cT1KP3aMdT5GgeU+TxsoP/YoHD92jHU+RoHlPhvoND6kcH0/dox1PkaB5T7yi6U+pHB9P3eMdT5EgeU+8oulPjwKVz53jHU+RIHlPhvoND48Clc+d4x1PkSB5T6kcH0/pHB9P3eMdT5EgeU+pHB9PylcTz92jHU+RoHlPmPJrz4pXE8/dox1PkaB5T5jya8+pHB9Pw=="),
+"format": 34359742519,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQA"),
+"material": SubResource("StandardMaterial3D_p6v2c"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 40,
+"vertex_data": PackedByteArray("j8J1sM3MTC9BSZ05j8J1sKabxLtBSZ05j8J1sKabxLsqt1E5j8J1sM3MTC8qt1E5j8J1sKabxLtBSZ05j8J1sF8py7tBSZ05j8J1sF8py7sqt1E5j8J1sKabxLsqt1E5aBKDOqabxLtBSZ05aBKDOs3MTC9BSZ05aBKDOgAAAAAqt1E5aBKDOqabxLsqt1E5aBKDOqabxLtBSZ05aBKDOqabxLsqt1E5aBKDOl8py7sqt1E5aBKDOl8py7tBSZ05aBKDOl8py7tBSZ05j8J1sF8py7tBSZ05j8J1sKabxLtBSZ05aBKDOqabxLtBSZ05aBKDOs3MTC9BSZ05j8J1sM3MTC9BSZ05j8J1sM3MTC8qt1E5aBKDOgAAAAAqt1E5aBKDOqabxLsqt1E5j8J1sKabxLsqt1E5j8J1sF8py7sqt1E5aBKDOl8py7sqt1E5aBKDOl8py7sqt1E5j8J1sF8py7sqt1E5j8J1sF8py7tBSZ05aBKDOl8py7tBSZ05aBKDOgAAAAAqt1E5j8J1sM3MTC8qt1E5j8J1sKabxLsqt1E5aBKDOqabxLsqt1E5aBKDOqabxLtBSZ05j8J1sKabxLtBSZ05j8J1sM3MTC9BSZ05aBKDOs3MTC9BSZ05AAD/f////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////v////3////+/////f////7////9/////v////3////+/////f////7////9/////v////3////+/////f////7//f/9/////P/9//3////8//3//f////z//f/9/////P/9//v////+//3/+/////7//f/7/////v/9//v////+//////////7//////////v/////////+//////////7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/////////+//////////7//////////v/////////+//3//f////z//f/9/////P/9//3////8//3//f////z8=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_wpd5q")
+
+[node name="KCC_Top_V2_EndPiece_Side" type="Node3D" unique_id=1713084172]
+
+[node name="KCC_Top_V2_EndPiece_Side" type="MeshInstance3D" parent="." unique_id=428101071]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+material_override = ExtResource("1_06y1o")
+mesh = SubResource("ArrayMesh_03jcj")

@@ -42,7 +42,7 @@ materials/extract_path=""
 _subresources={
 "materials": {
 "Main_Slot": {
-"use_external/enabled": true,
+"use_external/enabled": false,
 "use_external/fallback_path": "res://dev folders/cat/models/kitchen/Texture/testMat.tres",
 "use_external/path": "uid://v5gh8c8xw8xs"
 }

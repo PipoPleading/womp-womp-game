@@ -1,0 +1,49 @@
+[gd_scene format=4 uid="uid://c3565jbelagun"]
+
+[ext_resource type="Material" uid="uid://c6y4a04pybpvf" path="res://dev folders/cat/models/kitchen/Texture/kitchen_mat.tres" id="1_scfbx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jtqvl"]
+resource_name = "Main_Slot"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_s8vfm"]
+_surfaces = [{
+"aabb": AABB(0, -0.0092, 0, 0.008, 0.0092, 0.00029999952),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAQAAAAMAAgAEAAAAAwAAAAQAAgABAAUAAwAFAAEABQAGAAIABAACAAYABQADAAcABAAHAAMABwAGAAUABgAHAAQA"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("bxIDPAAAAABBSZ05bxIDPAAAAAAAAAAAbxIDPJm7FrwAAAAAAAAAAAAAAABBSZ05bxIDPJm7FrxBSZ05AAAAAAAAAAAAAAAAAAAAAJm7FrwAAAAAAAAAAJm7FrxBSZ05")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vqfxp"]
+resource_name = "Cube_304"
+_surfaces = [{
+"aabb": AABB(0, -0.0092, 0, 0.008, 0.0092, 0.00029999952),
+"attribute_data": PackedByteArray("dox1PkaB5T5cjyI/pHBdP3aMdT5GgeU+pHA9P6RwXT92jHU+RoHlPqRwPT+4HsU+dox1PkaB5T5cjyI/uB7FPnaMdT5GgeU+pHB9P0jhuj52jHU+RoHlPqRwfT+4HoU+dox1PkaB5T5cjwI/uB6FPnaMdT5GgeU+XI8CP0jhuj52jHU+RoHlPlyPAj+kcF0/dox1PkaB5T6kcB0/pHBdP3aMdT5GgeU+pHAdP7gexT52jHU+RoHlPlyPAj+4HsU+dox1PkaB5T6kcH0/pHB9P3aMdT5GgeU+pHB9P1yPYj92jHU+RoHlPlyPAj9cj2I/dox1PkaB5T5cjwI/pHB9P3aMdT5GgeU+CtcjPFyPAj92jHU+RoHlPgrXIzykcH0/dox1PkaB5T5I4fo+pHB9P3aMdT5GgeU+SOH6PlyPAj92jHU+RoHlPgrXIzwA1yM8dox1PkaB5T4K1yM8SOH6PnaMdT5GgeU+SOH6Pkjh+j52jHU+RoHlPkjh+j4A1yM8"),
+"format": 34359742519,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": SubResource("StandardMaterial3D_jtqvl"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("bxIDPAAAAABBSZ05bxIDPAAAAAAAAAAAbxIDPJm7FrwAAAAAbxIDPJm7FrxBSZ05AAAAAAAAAAAAAAAAAAAAAAAAAABBSZ05AAAAAJm7FrxBSZ05AAAAAJm7FrwAAAAAAAAAAAAAAABBSZ05AAAAAAAAAAAAAAAAbxIDPAAAAAAAAAAAbxIDPAAAAABBSZ05AAAAAJm7FrwAAAAAAAAAAJm7FrxBSZ05bxIDPJm7FrxBSZ05bxIDPJm7FrwAAAAAAAAAAAAAAAAAAAAAAAAAAJm7FrwAAAAAbxIDPJm7FrwAAAAAbxIDPAAAAAAAAAAAAAAAAAAAAABBSZ05bxIDPAAAAABBSZ05bxIDPJm7FrxBSZ05AAAAAJm7FrxBSZ05////f////7////9/////v////3////+/////f////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////v/9///////+//3///////7//f///////v/9///////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//////////v/////////+//////////7//////////v/9//3////8//3//f////z//f/9/////P/9//3////8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_s8vfm")
+
+[node name="KCC-F800_Top_Bar_V1" type="Node3D" unique_id=877046642]
+
+[node name="KCC-F800_Top_Bar_V1" type="MeshInstance3D" parent="." unique_id=892895387]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+material_override = ExtResource("1_scfbx")
+mesh = SubResource("ArrayMesh_vqfxp")

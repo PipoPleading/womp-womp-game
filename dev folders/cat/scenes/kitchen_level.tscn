@@ -5,5 +5,5 @@
 [node name="KitchenLevel" type="Node3D" unique_id=57881643]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1573875670]
-transform = Transform3D(6, 0, 0, 0, 0.992, 0, 0, 0, 6, 0, 0, 0)
+transform = Transform3D(6, 0, 0, 0, 0.992, 0, 0, 0, 6, -0.0012073964, -0.0016756654, 0.002098143)
 mesh = SubResource("PlaneMesh_ltk6h")

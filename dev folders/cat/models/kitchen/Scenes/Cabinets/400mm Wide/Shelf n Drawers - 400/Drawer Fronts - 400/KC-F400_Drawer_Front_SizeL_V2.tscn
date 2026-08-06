@@ -1,0 +1,78 @@
+[gd_scene format=4 uid="uid://cyy7lxxjskymv"]
+
+[ext_resource type="Material" uid="uid://c6y4a04pybpvf" path="res://dev folders/cat/models/kitchen/Texture/kitchen_mat.tres" id="1_xhvg3"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_guvyt"]
+resource_name = "Main_Slot"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_psm5t"]
+resource_name = "2nd_Slot"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_147fm"]
+_surfaces = [{
+"aabb": AABB(-1.4901161e-09, -0.00020000011, -0.006, 0.0039999993, 0.00020000011, 0.006),
+"format": 34359742465,
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAgAEAAAABQAEAAIAAgADAAUAAAAEAAUABgAFAAMABQAGAAAAAQAHAAMAAwAHAAYABwABAAgACAABAAAABgAHAAkACAAJAAcACgAAAAYAAAAKAAgACwAIAAoACAALAAwADAAJAAgACgANAAsACQAMAA4ABgAPAAoACQAPAAYADQAKAA8ADgAPAAkADwAOAA0A"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("ahKDOx+3UbkAAAAAzczMsB+3UbkAAAAAzczMsAAAAAAAAAAAzczMsAAAAACmm8S7ahKDOwAAAAAAAAAAahKDOwAAAACmm8S7ahKDOx+3Ubmmm8S7zczMsB+3Ubmmm8S7jJtEOh+3Ubmlm0S6jJtEOh+3UbkyCKy76v1UOx+3Ubmlm0S6jJtEOnYSA7mlm0S6jJtEOnYSA7kyCKy76v1UO3YSA7mlm0S66v1UO3YSA7kyCKy76v1UOx+3UbkyCKy7")
+}, {
+"aabb": AABB(0.0007499985, -0.00012500011, -0.0052500004, 0.0024999992, 1e-05, 0.0045000003),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "2nd_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("jJtEOnYSA7kyCKy7jJtEOnYSA7mlm0S66v1UO3YSA7mlm0S66v1UO3YSA7kyCKy7")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rf5ms"]
+resource_name = "Cube_228"
+_surfaces = [{
+"aabb": AABB(-1.4901161e-09, -0.00020000011, -0.006, 0.0039999993, 0.00020000011, 0.006),
+"attribute_data": PackedByteArray("FmzDPoDYoTwK1yM8SOG6PhZswz6A2KE8SOH6Pkjhuj4WbMM+gNihPEjh+j64HqU+FmzDPoDYoTwK1yM8uB6lPhZswz6A2KE8XI9iP6RwfT8WbMM+gNihPKRwbT+kcH0/FmzDPoDYoTykcG0/XI8CPxZswz6A2KE8XI9iP1yPAj8WbMM+gNihPEjh+j6QwjU+FmzDPoDYoTxI4fo+cD0KPhZswz6A2KE8CtcjPHA9Cj4WbMM+gNihPArXIzyQwjU+FmzDPoDYoTxcj3I/pHB9PxZswz6A2KE8pHB9P6RwfT8WbMM+gNihPKRwfT9cjwI/FmzDPoDYoTxcj3I/XI8CPxZswz6A2KE8uB6FPpDCdT4WbMM+gNihPKRwPT+QwnU+FmzDPoDYoTykcD0/cD1KPhZswz6A2KE8uB6FPnA9Sj4WbMM+gNihPArXIzxcjwI/FmzDPoDYoTwK1yM8pHB9PxZswz6A2KE8SOH6PqRwfT8WbMM+gNihPEjh+j5cjwI/FmzDPoDYoTxcj0I/pHB9PxZswz6A2KE8pHBdP6RwfT8WbMM+gNihPKRwXT9cjwI/FmzDPoDYoTxcj0I/XI8CPxZswz6A2KE8CtcjPEjh+j4WbMM+gNihPEjh+j5I4fo+FmzDPoDYoTxI4fo+uB7FPhZswz6A2KE8CtcjPLgexT4WbMM+gNihPFyPAj+4HoU+FmzDPoDYoTxcjwI/SOH6PhZswz6A2KE8pHAdP0jh+j4WbMM+gNihPKRwHT+4HoU+FmzDPoDYoTyPwnU+SOGaPhZswz6A2KE8j8J1PnA9Sj4WbMM+gNihPArXIzxwPUo+FmzDPoDYoTwK1yM8SOGaPhZswz6A2KE8pHA9P5DCNT4WbMM+gNihPKRwPT9wPQo+FmzDPoDYoTxcjwI/cD0KPhZswz6A2KE8XI8CP5DCNT4WbMM+gNihPFyPQj9I4fo+FmzDPoDYoTykcE0/SOH6PhZswz6A2KE8pHBNPwDXIzwWbMM+gNihPFyPQj8A1yM8FmzDPoDYoTxI4fo+SOGaPhZswz6A2KE8SOH6PrgehT4WbMM+gNihPLgehT64HoU+FmzDPoDYoTy4HoU+SOGaPg=="),
+"format": 34359742519,
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwAMAAxADIAMgAzADAA"),
+"material": SubResource("StandardMaterial3D_guvyt"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 52,
+"vertex_data": PackedByteArray("ahKDOx+3UbkAAAAAzczMsB+3UbkAAAAAzczMsAAAAAAAAAAAahKDOwAAAAAAAAAAzczMsAAAAACmm8S7zczMsB+3Ubmmm8S7ahKDOx+3Ubmmm8S7ahKDOwAAAACmm8S7ahKDOx+3UbkAAAAAahKDOwAAAAAAAAAAahKDOwAAAACmm8S7ahKDOx+3Ubmmm8S7jJtEOnYSA7kyCKy7jJtEOh+3UbkyCKy7jJtEOh+3Ubmlm0S6jJtEOnYSA7mlm0S6zczMsB+3UbkAAAAAzczMsB+3Ubmmm8S7zczMsAAAAACmm8S7zczMsAAAAAAAAAAAahKDOwAAAACmm8S7ahKDOwAAAAAAAAAAzczMsAAAAAAAAAAAzczMsAAAAACmm8S7ahKDOx+3Ubmmm8S76v1UOx+3UbkyCKy76v1UOx+3Ubmlm0S6ahKDOx+3UbkAAAAAzczMsB+3Ubmmm8S7zczMsB+3UbkAAAAAjJtEOh+3Ubmlm0S6jJtEOh+3UbkyCKy7ahKDOx+3Ubmmm8S7zczMsB+3Ubmmm8S7jJtEOh+3UbkyCKy76v1UOx+3UbkyCKy7ahKDOx+3UbkAAAAA6v1UOx+3Ubmlm0S6jJtEOh+3Ubmlm0S6zczMsB+3UbkAAAAA6v1UO3YSA7kyCKy76v1UOx+3UbkyCKy7jJtEOh+3UbkyCKy7jJtEOnYSA7kyCKy76v1UO3YSA7mlm0S66v1UOx+3Ubmlm0S66v1UOx+3UbkyCKy76v1UO3YSA7kyCKy7jJtEOnYSA7mlm0S6jJtEOh+3Ubmlm0S66v1UOx+3Ubmlm0S66v1UO3YSA7mlm0S6/3//f////z//f/9/////P/9//3////8//3//f////z//////////v/////////+//////////7//////////v////3////+/////f////7////9/////v////3////+/////f////7////9/////v////3////+/////f////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////v/9///////+//3///////7//f///////v/9///////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//f/9/////P/9//3////8//3//f////z//f/9/////PwAA/3////+/AAD/f////78AAP9/////vwAA/3////+//////////7//////////v/////////+//////////78=")
+}, {
+"aabb": AABB(0.0007499985, -0.00012500011, -0.0052500004, 0.0024999992, 1e-05, 0.0045000003),
+"attribute_data": PackedByteArray("QvDkPgBrXjxcjwI/XI8CP0Lw5D4Aa148XI8CP6RwfT9C8OQ+AGtePKRwPT+kcH0/QvDkPgBrXjykcD0/XI8CPw=="),
+"format": 34359742519,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": SubResource("StandardMaterial3D_psm5t"),
+"name": "2nd_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("jJtEOnYSA7kyCKy7jJtEOnYSA7mlm0S66v1UO3YSA7mlm0S66v1UO3YSA7kyCKy7/38AAP///7//fwAA////v/9/AAD///+//38AAP///78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_147fm")
+
+[node name="KC-F400_Drawer_Front_SizeL_V2" type="Node3D" unique_id=1534374435]
+
+[node name="KC-F400_Drawer_Front_SizeL_V2" type="MeshInstance3D" parent="." unique_id=1498129799]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+material_override = ExtResource("1_xhvg3")
+mesh = SubResource("ArrayMesh_rf5ms")

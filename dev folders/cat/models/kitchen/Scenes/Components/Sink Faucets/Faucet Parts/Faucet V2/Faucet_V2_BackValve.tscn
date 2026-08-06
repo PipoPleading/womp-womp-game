@@ -1,0 +1,49 @@
+[gd_scene format=4 uid="uid://dbv7yagxy5xbf"]
+
+[ext_resource type="Material" uid="uid://c6y4a04pybpvf" path="res://dev folders/cat/models/kitchen/Texture/kitchen_mat.tres" id="1_2n5qp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rfvxr"]
+resource_name = "Main_Slot"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4p6w8"]
+_surfaces = [{
+"aabb": AABB(-2.9083589e-05, 8.2422047e-10, -3.6411366e-05, 5.8167177e-05, 5.1893665e-05, 0.00014940518),
+"format": 34359742465,
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAwACAAEABAABAAAAAQAEAAMABQADAAQAAwAFAAYABAAHAAUABgAIAAMAAgADAAgACAAGAAkACgAJAAcABwAEAAoACQAKAAgAAAAKAAQACAALAAIAAgALAAAADAAIAAoACwAIAAwACgANAAwADQAKAAAADAAOAAsADgAMAA0ACwAOAA8ADQAPAA4ADwAAAAsAAAAPAA0A"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("iPjzt0mpWTgkuBg4iPjzt0mpWThouBi4iPjzN0mpWThouBi4iPjzNxgUAzhouBi4iPjztxgUAzhouBi4iPjzN1yPYjBouBi4iPjzN1yPYjAkuBg4iPjzt1yPYjBouBi4iPjzNxgUAzgkuBg4iPjzt1yPYjAkuBg4iPjztxgUAzgkuBg4iPjzN0mpWTgkuBg4iPjzN1QyIzgX9+w4iPjzt1QyIzgX9+w4iPjzN0mpWTgX9+w4iPjzt0mpWTgX9+w4")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dmb27"]
+resource_name = "Cube_043"
+_surfaces = [{
+"aabb": AABB(-2.9083589e-05, 8.2422047e-10, -3.6411366e-05, 5.8167177e-05, 5.1893665e-05, 0.00014940518),
+"attribute_data": PackedByteArray("1AtnPpbVlT4K1yM8BzotP9QLZz6W1ZU+CtcjPKRwfT/UC2c+ltWVPvKLpT6kcH0/1AtnPpbVlT7yi6U+BzotP9QLZz6W1ZU+seRXP6RwfT/UC2c+ltWVPqRwfT+kcH0/1AtnPpbVlT6kcH0/BzotP9QLZz6W1ZU+seRXPwc6LT/UC2c+ltWVPk8bKD/yi6U+1AtnPpbVlT5PGyg/HOg0PtQLZz6W1ZU+Y8mvPhzoND7UC2c+ltWVPmPJrz7yi6U+1AtnPpbVlT5jya8+ThsoP9QLZz6W1ZU+SOH6Pk4bKD/UC2c+ltWVPkjh+j5iya8+1AtnPpbVlT5jya8+YsmvPtQLZz6W1ZU+CtcjPBzoND7UC2c+ltWVPgrXIzzyi6U+1AtnPpbVlT7yi6U+8oulPtQLZz6W1ZU+8oulPhzoND7UC2c+ltWVPlyPAj9OGyg/1AtnPpbVlT5PGyg/ThsoP9QLZz6W1ZU+TxsoP2LJrz7UC2c+ltWVPlyPAj9iya8+1AtnPpbVlT6kcH0/8oulPtQLZz6W1ZU+pHB9PxzoND7UC2c+ltWVPgc6LT8c6DQ+1AtnPpbVlT4HOi0/8oulPtQLZz6W1ZU+BzotP6RwfT/UC2c+ltWVPvnFUj+kcH0/1AtnPpbVlT75xVI/BzotP9QLZz6W1ZU+BzotPwc6LT/UC2c+ltWVPvKLpT48bSA+1AtnPpbVlT7yi6U+ANcjPNQLZz6W1ZU+CtcjPADXIzzUC2c+ltWVPgrXIzw8bSA+1AtnPpbVlT4HOi0/ThsoP9QLZz6W1ZU++cVSP04bKD/UC2c+ltWVPvnFUj9iya8+1AtnPpbVlT4HOi0/YsmvPtQLZz6W1ZU+Y8mvPjxtID7UC2c+ltWVPk8bKD88bSA+1AtnPpbVlT5PGyg/ANcjPNQLZz6W1ZU+Y8mvPgDXIzzUC2c+ltWVPgrXIzxiya8+1AtnPpbVlT4K1yM8ThsoP9QLZz6W1ZU+8oulPk4bKD/UC2c+ltWVPvKLpT5iya8+1AtnPpbVlT5jya8+BzotP9QLZz6W1ZU+Y8mvPqRwfT/UC2c+ltWVPk8bKD+kcH0/1AtnPpbVlT5PGyg/BzotPw=="),
+"format": 34359742519,
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwAMAAxADIAMgAzADAA"),
+"material": SubResource("StandardMaterial3D_rfvxr"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 52,
+"vertex_data": PackedByteArray("iPjzt0mpWTgkuBg4iPjzt0mpWThouBi4iPjzN0mpWThouBi4iPjzN0mpWTgkuBg4iPjzN0mpWThouBi4iPjzNxgUAzhouBi4iPjzNxgUAzgkuBg4iPjzN0mpWTgkuBg4iPjzt0mpWThouBi4iPjztxgUAzhouBi4iPjzNxgUAzhouBi4iPjzN0mpWThouBi4iPjzt0mpWTgkuBg4iPjztxgUAzgkuBg4iPjztxgUAzhouBi4iPjzt0mpWThouBi4iPjzN1QyIzgX9+w4iPjzN0mpWTgX9+w4iPjzN0mpWTgkuBg4iPjzNxgUAzgkuBg4iPjzNxgUAzgkuBg4iPjzN1yPYjAkuBg4iPjzt1yPYjAkuBg4iPjztxgUAzgkuBg4iPjztxgUAzgkuBg4iPjzt1yPYjAkuBg4iPjzt1yPYjBouBi4iPjztxgUAzhouBi4iPjztxgUAzhouBi4iPjzt1yPYjBouBi4iPjzN1yPYjBouBi4iPjzNxgUAzhouBi4iPjzNxgUAzhouBi4iPjzN1yPYjBouBi4iPjzN1yPYjAkuBg4iPjzNxgUAzgkuBg4iPjzN0mpWTgX9+w4iPjzN1QyIzgX9+w4iPjzt1QyIzgX9+w4iPjzt0mpWTgX9+w4iPjzt1QyIzgX9+w4iPjztxgUAzgkuBg4iPjzt0mpWTgkuBg4iPjzt0mpWTgX9+w4iPjzt0mpWTgX9+w4iPjzt0mpWTgkuBg4iPjzN0mpWTgkuBg4iPjzN0mpWTgX9+w4iPjzN1QyIzgX9+w4iPjzNxgUAzgkuBg4iPjztxgUAzgkuBg4iPjzt1QyIzgX9+w4/3///////7//f///////v/9///////+//3///////7////9/////v////3////+/////f////7////9/////v/////////+//////////7//////////v/////////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////7////9/////v////3////+/////f////7////9/////v/9//3////8//3//f////z//f/9/////P/9//3////8/AAD/f////78AAP9/////vwAA/3////+/AAD/f////7//////////v/////////+//////////7//////////v////3////+/////f////7////9/////v////3////+//3//f////z//f/9/////P/9//3////8//3//f////z8AAP9/////vwAA/3////+/AAD/f////78AAP9/////v/9///////+//3///////7//f///////v/9///////+//3+iC////z//f6IL////P/9/ogv///8//3+iC////z8=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_4p6w8")
+
+[node name="Faucet_V2_BackValve" type="Node3D" unique_id=320578082]
+
+[node name="Faucet_V2_BackValve" type="MeshInstance3D" parent="." unique_id=1500927500]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+material_override = ExtResource("1_2n5qp")
+mesh = SubResource("ArrayMesh_dmb27")

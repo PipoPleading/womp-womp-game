@@ -1,0 +1,49 @@
+[gd_scene format=4 uid="uid://d03mt3cj21rsc"]
+
+[ext_resource type="Material" uid="uid://c6y4a04pybpvf" path="res://dev folders/cat/models/kitchen/Texture/kitchen_mat.tres" id="1_7mvjh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ycq1e"]
+resource_name = "Main_Slot"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_0xcix"]
+_surfaces = [{
+"aabb": AABB(-8.9406965e-10, -9.999886e-05, 2.2351741e-10, 0.0023875, 9.99999e-05, 1.0000281e-05),
+"format": 34359742465,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAQAAAAQABQADAAIABgACAAEAAgAGAAUABAAHAAEAAQAHAAYABwAEAAUABQAGAAcA"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("j8J1sClcjzCPwnUvj8J1sClcjzDXxyc3j8J1sHu20bjXxyc3j8J1sHu20biPwnUvlnccOylcjzCPwnUvlnccO3u20biPwnUvlnccO3u20bjXxyc3lnccOylcjzDXxyc3")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wxoyc"]
+resource_name = "Cube_563"
+_surfaces = [{
+"aabb": AABB(-8.9406965e-10, -9.999886e-05, 2.2351741e-10, 0.0023875, 9.99999e-05, 1.0000281e-05),
+"attribute_data": PackedByteArray("BGaJPujFcD6kcB0/3f5gPwRmiT7oxXA+pHAdP86rST8EZok+6MVwPrgexT7Oq0k/BGaJPujFcD64HsU+3f5gPwRmiT7oxXA+uB6FPhgJ+D0EZok+6MVwPrgehT6kcH0/BGaJPujFcD5I4bo+pHB9PwRmiT7oxXA+SOG6PhgJ+D0EZok+6MVwPqRwfT9YE889BGaJPujFcD6kcH0/ANcjPARmiT7oxXA+CtcjPADXIzwEZok+6MVwPgrXIzxYE889BGaJPujFcD4K1yM8GAn4PQRmiT7oxXA+CtcjPKRwfT8EZok+6MVwPo/CdT6kcH0/BGaJPujFcD6PwnU+GAn4PQRmiT7oxXA+pHAdP6RwfT8EZok+6MVwPqRwHT+VHWY/BGaJPujFcD64HsU+lR1mPwRmiT7oxXA+uB7FPqRwfT8="),
+"format": 34359742519,
+"index_count": 30,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAA"),
+"material": SubResource("StandardMaterial3D_ycq1e"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 20,
+"vertex_data": PackedByteArray("j8J1sClcjzCPwnUvj8J1sClcjzDXxyc3j8J1sHu20bjXxyc3j8J1sHu20biPwnUvj8J1sHu20bjXxyc3lnccO3u20bjXxyc3lnccO3u20biPwnUvj8J1sHu20biPwnUvj8J1sClcjzDXxyc3j8J1sClcjzCPwnUvlnccOylcjzCPwnUvlnccOylcjzDXxyc3j8J1sClcjzDXxyc3lnccOylcjzDXxyc3lnccO3u20bjXxyc3j8J1sHu20bjXxyc3lnccOylcjzDXxyc3lnccOylcjzCPwnUvlnccO3u20biPwnUvlnccO3u20bjXxyc3AAD/f////78AAP9/////vwAA/3////+/AAD/f////7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9///////+//3///////7//f///////v/9///////+//3//f////z//f/9/////P/9//3////8//3//f////z////9/////v////3////+/////f////7////9/////vw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_0xcix")
+
+[node name="KAC_Stove_HeatingTop_ModuleV2" type="Node3D" unique_id=933649376]
+
+[node name="KAC_Stove_HeatingTop_ModuleV2" type="MeshInstance3D" parent="." unique_id=866537975]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+material_override = ExtResource("1_7mvjh")
+mesh = SubResource("ArrayMesh_wxoyc")
