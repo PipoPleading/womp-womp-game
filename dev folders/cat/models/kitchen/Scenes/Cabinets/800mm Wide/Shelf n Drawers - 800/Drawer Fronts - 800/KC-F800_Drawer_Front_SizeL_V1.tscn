@@ -41,9 +41,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_gug7q")
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_h4hme"]
+data = PackedVector3Array(0.007999999, -0.0002, 0, 0, -0.0002, 0, 0, 0, 0, 0, 0, 0, 0.007999999, 0, 0, 0.007999999, -0.0002, 0, 0, 0, -0.006, 0, -0.0002, -0.006, 0.007999999, -0.0002, -0.006, 0.007999999, -0.0002, -0.006, 0.007999999, 0, -0.006, 0, 0, -0.006, 0.007999999, -0.0002, 0, 0.007999999, 0, 0, 0.007999999, 0, -0.006, 0.007999999, 0, -0.006, 0.007999999, -0.0002, -0.006, 0.007999999, -0.0002, 0, 0, -0.0002, -0.006, 0, -0.0002, 0, 0.007999999, -0.0002, 0, 0.007999999, -0.0002, 0, 0.007999999, -0.0002, -0.006, 0, -0.0002, -0.006, 0, -0.0002, 0, 0, -0.0002, -0.006, 0, 0, -0.006, 0, 0, -0.006, 0, 0, 0, 0, -0.0002, 0, 0.007999999, 0, -0.006, 0.007999999, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.006, 0.007999999, 0, -0.006)
+
 [node name="KC-F800_Drawer_Front_SizeL_V1" type="Node3D" unique_id=181998002]
 
 [node name="KC-F800_Drawer_Front_SizeL_V1" type="MeshInstance3D" parent="." unique_id=540342720]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
 material_override = ExtResource("1_h4hme")
 mesh = SubResource("ArrayMesh_ut7js")
+
+[node name="KC-F800_Drawer_Front_SizeL_V1_col" type="StaticBody3D" parent="KC-F800_Drawer_Front_SizeL_V1" unique_id=382767179]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KC-F800_Drawer_Front_SizeL_V1/KC-F800_Drawer_Front_SizeL_V1_col" unique_id=1827889754]
+shape = SubResource("ConcavePolygonShape3D_h4hme")

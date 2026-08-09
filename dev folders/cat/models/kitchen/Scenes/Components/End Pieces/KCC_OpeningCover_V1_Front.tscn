@@ -41,9 +41,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_vv5so")
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3twt6"]
+data = PackedVector3Array(0.0001, 0, 0, 0, 0, 0, 0, 0, -0.0009999999, 0, 0, -0.0009999999, 0.0001, 0, -0.0009999999, 0.0001, 0, 0, 0.0001, -0.0002, 0, 0.0001, -0.0002, -0.0009999999, 0, -0.0002, -0.0009999999, 0, -0.0002, -0.0009999999, 0, -0.0002, 0, 0.0001, -0.0002, 0, 0.0001, -0.0002, -0.0009999999, 0.0001, 0, -0.0009999999, 0, 0, -0.0009999999, 0, 0, -0.0009999999, 0, -0.0002, -0.0009999999, 0.0001, -0.0002, -0.0009999999, 0.0001, -0.0002, 0, 0.0001, 0, 0, 0.0001, 0, -0.0009999999, 0.0001, 0, -0.0009999999, 0.0001, -0.0002, -0.0009999999, 0.0001, -0.0002, 0, 0, -0.0002, -0.0009999999, 0, 0, -0.0009999999, 0, 0, 0, 0, 0, 0, 0, -0.0002, 0, 0, -0.0002, -0.0009999999, 0, -0.0002, 0, 0, 0, 0, 0.0001, 0, 0, 0.0001, 0, 0, 0.0001, -0.0002, 0, 0, -0.0002, 0)
+
 [node name="KCC_OpeningCover_V1_Front" type="Node3D" unique_id=51979939]
 
 [node name="KCC_OpeningCover_V1_Front" type="MeshInstance3D" parent="." unique_id=731414874]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
 material_override = ExtResource("1_3twt6")
 mesh = SubResource("ArrayMesh_1oiat")
+
+[node name="KCC_OpeningCover_V1_Front_col" type="StaticBody3D" parent="KCC_OpeningCover_V1_Front" unique_id=987231215]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KCC_OpeningCover_V1_Front/KCC_OpeningCover_V1_Front_col" unique_id=1082052833]
+shape = SubResource("ConcavePolygonShape3D_3twt6")

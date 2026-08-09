@@ -41,9 +41,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_p0m8k")
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_ltptt"]
+data = PackedVector3Array(0.0009999999, 0, 0.00029999999, 0.0009999999, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.00029999999, 0.0009999999, 0, 0.00029999999, 0, 0.0009999999, 0.00029999999, 0, 0, 0.00029999999, 0, 0, 0, 0, 0, 0, 0, 0.0009999999, 0, 0, 0.0009999999, 0.00029999999, 0, 0, 0, 0.0009999999, 0, 0, 0.0009999999, 0.0009999999, 0, 0.0009999999, 0.0009999999, 0, 0, 0.0009999999, 0, 0, 0, 0, 0.0009999999, 0.0009999999, 0, 0.0009999999, 0.0009999999, 0.00029999999, 0, 0.0009999999, 0.00029999999, 0, 0.0009999999, 0.00029999999, 0, 0.0009999999, 0, 0.0009999999, 0.0009999999, 0, 0.0009999999, 0.0009999999, 0.00029999999, 0.0009999999, 0, 0.00029999999, 0, 0, 0.00029999999, 0, 0, 0.00029999999, 0, 0.0009999999, 0.00029999999, 0.0009999999, 0.0009999999, 0.00029999999, 0.0009999999, 0.0009999999, 0.00029999999, 0.0009999999, 0.0009999999, 0, 0.0009999999, 0, 0, 0.0009999999, 0, 0, 0.0009999999, 0, 0.00029999999, 0.0009999999, 0.0009999999, 0.00029999999)
+
 [node name="KCC_Top_V1_EndPiece_Back" type="Node3D" unique_id=179853749]
 
 [node name="KCC_Top_V1_EndPiece_Back" type="MeshInstance3D" parent="." unique_id=983098839]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
 material_override = ExtResource("1_ltptt")
 mesh = SubResource("ArrayMesh_jmq8a")
+
+[node name="KCC_Top_V1_EndPiece_Back_col" type="StaticBody3D" parent="KCC_Top_V1_EndPiece_Back" unique_id=730008869]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KCC_Top_V1_EndPiece_Back/KCC_Top_V1_EndPiece_Back_col" unique_id=1697141192]
+shape = SubResource("ConcavePolygonShape3D_ltptt")

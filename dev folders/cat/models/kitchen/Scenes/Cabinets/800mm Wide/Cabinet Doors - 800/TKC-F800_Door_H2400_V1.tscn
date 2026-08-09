@@ -41,9 +41,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_u8t2t")
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_56663"]
+data = PackedVector3Array(0, 0, 0, 0, 0, -0.0232, 0.007999999, 0, -0.0232, 0.007999999, 0, -0.0232, 0.007999999, 0, 0, 0, 0, 0, 0, -0.0002, 0, 0.007999999, -0.0002, 0, 0.007999999, -0.0002, -0.0232, 0.007999999, -0.0002, -0.0232, 0, -0.0002, -0.0232, 0, -0.0002, 0, 0.007999999, -0.0002, 0, 0.007999999, 0, 0, 0.007999999, 0, -0.0232, 0.007999999, 0, -0.0232, 0.007999999, -0.0002, -0.0232, 0.007999999, -0.0002, 0, 0, -0.0002, 0, 0, 0, 0, 0.007999999, 0, 0, 0.007999999, 0, 0, 0.007999999, -0.0002, 0, 0, -0.0002, 0, 0, -0.0002, -0.0232, 0, 0, -0.0232, 0, 0, 0, 0, 0, 0, 0, -0.0002, 0, 0, -0.0002, -0.0232, 0.007999999, -0.0002, -0.0232, 0.007999999, 0, -0.0232, 0, 0, -0.0232, 0, 0, -0.0232, 0, -0.0002, -0.0232, 0.007999999, -0.0002, -0.0232)
+
 [node name="TKC-F800_Door_H2400_V1" type="Node3D" unique_id=315946853]
 
 [node name="TKC-F800_Door_H2400_V1" type="MeshInstance3D" parent="." unique_id=1960371428]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
 material_override = ExtResource("1_56663")
 mesh = SubResource("ArrayMesh_vx8le")
+
+[node name="TKC-F800_Door_H2400_V1_col" type="StaticBody3D" parent="TKC-F800_Door_H2400_V1" unique_id=1220687970]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TKC-F800_Door_H2400_V1/TKC-F800_Door_H2400_V1_col" unique_id=1061587591]
+shape = SubResource("ConcavePolygonShape3D_56663")

@@ -41,9 +41,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_a80fc")
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_xxagm"]
+data = PackedVector3Array(0, 0, 0, 0, 0, -0.0072, 0.0039999997, 0, -0.0072, 0.0039999997, 0, -0.0072, 0.0039999997, 0, 0, 0, 0, 0, 0, -0.0002, 0, 0.0039999997, -0.0002, 0, 0.0039999997, -0.0002, -0.0072, 0.0039999997, -0.0002, -0.0072, 0, -0.0002, -0.0072, 0, -0.0002, 0, 0.0039999997, -0.0002, 0, 0.0039999997, 0, 0, 0.0039999997, 0, -0.0072, 0.0039999997, 0, -0.0072, 0.0039999997, -0.0002, -0.0072, 0.0039999997, -0.0002, 0, 0, -0.0002, 0, 0, 0, 0, 0.0039999997, 0, 0, 0.0039999997, 0, 0, 0.0039999997, -0.0002, 0, 0, -0.0002, 0, 0, -0.0002, -0.0072, 0, 0, -0.0072, 0, 0, 0, 0, 0, 0, 0, -0.0002, 0, 0, -0.0002, -0.0072, 0.0039999997, -0.0002, -0.0072, 0.0039999997, 0, -0.0072, 0, 0, -0.0072, 0, 0, -0.0072, 0, -0.0002, -0.0072, 0.0039999997, -0.0002, -0.0072)
+
 [node name="KC-F400_Door_V1" type="Node3D" unique_id=110353149]
 
 [node name="KC-F400_Door_V1" type="MeshInstance3D" parent="." unique_id=1825200005]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
 material_override = ExtResource("1_xxagm")
 mesh = SubResource("ArrayMesh_gxvo0")
+
+[node name="KC-F400_Door_V1_col" type="StaticBody3D" parent="KC-F400_Door_V1" unique_id=1990700166]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KC-F400_Door_V1/KC-F400_Door_V1_col" unique_id=355812330]
+shape = SubResource("ConcavePolygonShape3D_xxagm")

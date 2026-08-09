@@ -41,9 +41,17 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_c2upn")
 
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_pvgci"]
+data = PackedVector3Array(0.0061999997, 0, 0.00029999999, 0.0061999997, 0, 0, 0.0061999997, -0.0061999997, 0, 0.0061999997, -0.0061999997, 0, 0.0061999997, -0.0061999997, 0.00029999999, 0.0061999997, 0, 0.00029999999, 0, 0, 0, 0, 0, 0.00029999999, 0, -0.0061999997, 0.00029999999, 0, -0.0061999997, 0.00029999999, 0, -0.0061999997, 0, 0, 0, 0, 0, 0, 0.00029999999, 0, 0, 0, 0.0061999997, 0, 0, 0.0061999997, 0, 0, 0.0061999997, 0, 0.00029999999, 0, 0, 0.00029999999, 0, -0.0061999997, 0, 0, -0.0061999997, 0.00029999999, 0.0061999997, -0.0061999997, 0.00029999999, 0.0061999997, -0.0061999997, 0.00029999999, 0.0061999997, -0.0061999997, 0, 0, -0.0061999997, 0, 0, 0, 0, 0, -0.0061999997, 0, 0.0061999997, -0.0061999997, 0, 0.0061999997, -0.0061999997, 0, 0.0061999997, 0, 0, 0, 0, 0, 0, 0, 0.00029999999, 0.0061999997, 0, 0.00029999999, 0.0061999997, -0.0061999997, 0.00029999999, 0.0061999997, -0.0061999997, 0.00029999999, 0, -0.0061999997, 0.00029999999, 0, 0, 0.00029999999)
+
 [node name="KCC-CornerInverted_Top_V1" type="Node3D" unique_id=695678384]
 
 [node name="KCC-CornerInverted_Top_V1" type="MeshInstance3D" parent="." unique_id=662108057]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
 material_override = ExtResource("1_pvgci")
 mesh = SubResource("ArrayMesh_gylsk")
+
+[node name="KCC-CornerInverted_Top_V1_col" type="StaticBody3D" parent="KCC-CornerInverted_Top_V1" unique_id=830291477]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KCC-CornerInverted_Top_V1/KCC-CornerInverted_Top_V1_col" unique_id=478341022]
+shape = SubResource("ConcavePolygonShape3D_pvgci")
