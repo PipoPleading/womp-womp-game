@@ -1,0 +1,57 @@
+[gd_scene format=4 uid="uid://ct0lrd4mbk50e"]
+
+[ext_resource type="Material" uid="uid://c6y4a04pybpvf" path="res://dev folders/cat/models/kitchen/Texture/kitchen_mat.tres" id="1_elpdw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_widlb"]
+resource_name = "Main_Slot"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rf318"]
+_surfaces = [{
+"aabb": AABB(-1.4901161e-09, -0.0003000001, -0.006, 0.0039999993, 0.0003000001, 0.006),
+"format": 34359742465,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAgAEAAAABQAEAAIAAgADAAUAAAAEAAUABgAFAAMABQAGAAAAAQAHAAMAAwAHAAYABwABAAgACAABAAAABgAHAAkACAAJAAcACQAKAAYAAAALAAgACQAIAAsACwAAAAYACwAKAAkABgAKAAsA"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 12,
+"vertex_data": PackedByteArray("ahKDOx+3UbkAAAAAzczMsB+3UbkAAAAAzczMsAAAAAAAAAAAzczMsAAAAACmm8S7ahKDOwAAAAAAAAAAahKDOwAAAACmm8S7ahKDOx+3Ubmmm8S7zczMsB+3Ubmmm8S7SbbROFVJnbkWt9G4SbbROFVJnbnKVMG7G5d/O1VJnbnKVMG7G5d/O1VJnbkWt9G4")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_06qpm"]
+resource_name = "Cube_238"
+_surfaces = [{
+"aabb": AABB(-1.4901161e-09, -0.0003000001, -0.006, 0.0039999993, 0.0003000001, 0.006),
+"attribute_data": PackedByteArray("FmzDPoDYoTxcjyI/XI8CPxZswz6A2KE8XI8iP6RwfT8WbMM+gNihPKRwPT+kcH0/FmzDPoDYoTykcD0/XI8CPxZswz6A2KE8pHB9P0jh+j4WbMM+gNihPKRwfT+4HsU+FmzDPoDYoTxcjwI/uB7FPhZswz6A2KE8XI8CP0jh+j4WbMM+gNihPFyPAj+kcH0/FmzDPoDYoTykcB0/pHB9PxZswz6A2KE8pHAdP1yPAj8WbMM+gNihPFyPAj9cjwI/FmzDPoDYoTwK1yM8XI8CPxZswz6A2KE8CtcjPKRwfT8VbMM+gNihPEjh+j6kcH0/FWzDPoDYoTxI4fo+XI8CPxZswz6A2KE8XI8CP0jhuj4WbMM+gNihPKRwfT9I4bo+FmzDPoDYoTykcH0/uB6FPhZswz6A2KE8XI8CP7gehT4WbMM+gNihPArXIzwA1yM8FmzDPoDYoTwK1yM8SOH6PhZswz6A2KE8SOH6Pkjh+j4WbMM+gNihPEjh+j4A1yM8FmzDPoDYoTxcj0I/pHB9PxVswz6A2KE8pHBdP6RwfT8VbMM+gNihPKRwXT9cjwI/FmzDPoDYoTxcj0I/XI8CPxZswz6A2KE8XI8CP5DCdT4WbMM+gNihPKRwfT+QwnU+FmzDPoDYoTykcH0/cD0KPhZswz6A2KE8XI8CP3A9Cj4WbMM+gNihPFyPYj9cjwI/FmzDPoDYoTxcj2I/pHB9PxZswz6A2KE8pHB9P6RwfT8VbMM+gNihPKRwfT9cjwI/FmzDPoDYoTykcH0/IIXrPRVswz6A2KE8pHB9PwDXIzwWbMM+gNihPFyPAj8A1yM8FmzDPoDYoTxcjwI/IIXrPQ=="),
+"format": 34359742519,
+"index_count": 60,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQA"),
+"material": SubResource("StandardMaterial3D_widlb"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 40,
+"vertex_data": PackedByteArray("ahKDOx+3UbkAAAAAzczMsB+3UbkAAAAAzczMsAAAAAAAAAAAahKDOwAAAAAAAAAAzczMsAAAAACmm8S7zczMsB+3Ubmmm8S7ahKDOx+3Ubmmm8S7ahKDOwAAAACmm8S7ahKDOx+3UbkAAAAAahKDOwAAAAAAAAAAahKDOwAAAACmm8S7ahKDOx+3Ubmmm8S7SbbROFVJnbnKVMG7SbbROFVJnbkWt9G4G5d/O1VJnbkWt9G4G5d/O1VJnbnKVMG7zczMsB+3UbkAAAAAzczMsB+3Ubmmm8S7zczMsAAAAACmm8S7zczMsAAAAAAAAAAAahKDOwAAAACmm8S7ahKDOwAAAAAAAAAAzczMsAAAAAAAAAAAzczMsAAAAACmm8S7ahKDOx+3Ubmmm8S7G5d/O1VJnbnKVMG7G5d/O1VJnbkWt9G4ahKDOx+3UbkAAAAAzczMsB+3Ubmmm8S7zczMsB+3UbkAAAAASbbROFVJnbkWt9G4SbbROFVJnbnKVMG7ahKDOx+3Ubmmm8S7zczMsB+3Ubmmm8S7SbbROFVJnbnKVMG7G5d/O1VJnbnKVMG7ahKDOx+3UbkAAAAAG5d/O1VJnbkWt9G4SbbROFVJnbkWt9G4zczMsB+3UbkAAAAA/3//f////z//f/9/////P/9//3////8//3//f////z//////////v/////////+//////////7//////////v////3////+/////f////7////9/////v////3////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///78AAP9/////vwAA/3////+/AAD/f////78AAP9/////v/9///////+//3///////7//f///////v/9///////+//7//P////7//v/8/////v/+//z////+//7//P////7//P/8/////v/8//z////+//z//P////7//P/8/////v/+/AAD///+//78AAP///7//vwAA////v/+/AAD///+//3//P////z//f/8/////P/9//z////8//3//P////z8=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_rf318")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_elpdw"]
+data = PackedVector3Array(0.0039999997, -0.0002, 0, 0, -0.0002, 0, 0, 0, 0, 0, 0, 0, 0.0039999997, 0, 0, 0.0039999997, -0.0002, 0, 0, 0, -0.006, 0, -0.0002, -0.006, 0.0039999997, -0.0002, -0.006, 0.0039999997, -0.0002, -0.006, 0.0039999997, 0, -0.006, 0, 0, -0.006, 0.0039999997, -0.0002, 0, 0.0039999997, 0, 0, 0.0039999997, 0, -0.006, 0.0039999997, 0, -0.006, 0.0039999997, -0.0002, -0.006, 0.0039999997, -0.0002, 0, 0.0001, -0.00029999999, -0.0058999998, 0.0001, -0.00029999999, -0.0001, 0.0039, -0.00029999999, -0.0001, 0.0039, -0.00029999999, -0.0001, 0.0039, -0.00029999999, -0.0058999998, 0.0001, -0.00029999999, -0.0058999998, 0, -0.0002, 0, 0, -0.0002, -0.006, 0, 0, -0.006, 0, 0, -0.006, 0, 0, 0, 0, -0.0002, 0, 0.0039999997, 0, -0.006, 0.0039999997, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.006, 0.0039999997, 0, -0.006, 0.0039999997, -0.0002, -0.006, 0.0039, -0.00029999999, -0.0058999998, 0.0039, -0.00029999999, -0.0001, 0.0039, -0.00029999999, -0.0001, 0.0039999997, -0.0002, 0, 0.0039999997, -0.0002, -0.006, 0, -0.0002, -0.006, 0, -0.0002, 0, 0.0001, -0.00029999999, -0.0001, 0.0001, -0.00029999999, -0.0001, 0.0001, -0.00029999999, -0.0058999998, 0, -0.0002, -0.006, 0.0039999997, -0.0002, -0.006, 0, -0.0002, -0.006, 0.0001, -0.00029999999, -0.0058999998, 0.0001, -0.00029999999, -0.0058999998, 0.0039, -0.00029999999, -0.0058999998, 0.0039999997, -0.0002, -0.006, 0.0039999997, -0.0002, 0, 0.0039, -0.00029999999, -0.0001, 0.0001, -0.00029999999, -0.0001, 0.0001, -0.00029999999, -0.0001, 0, -0.0002, 0, 0.0039999997, -0.0002, 0)
+
+[node name="KC-F400_Drawer_Front_SizeL_V3" type="Node3D" unique_id=1937443365]
+
+[node name="KC-F400_Drawer_Front_SizeL_V3" type="MeshInstance3D" parent="." unique_id=1440680476]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+material_override = ExtResource("1_elpdw")
+mesh = SubResource("ArrayMesh_06qpm")
+
+[node name="KC-F400_Drawer_Front_SizeL_V3_col" type="StaticBody3D" parent="KC-F400_Drawer_Front_SizeL_V3" unique_id=1334384182]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KC-F400_Drawer_Front_SizeL_V3/KC-F400_Drawer_Front_SizeL_V3_col" unique_id=407971998]
+shape = SubResource("ConcavePolygonShape3D_elpdw")

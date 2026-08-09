@@ -1,0 +1,57 @@
+[gd_scene format=4 uid="uid://362y26s7jno1"]
+
+[ext_resource type="Material" uid="uid://c6y4a04pybpvf" path="res://dev folders/cat/models/kitchen/Texture/kitchen_mat.tres" id="1_3twt6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wpyfh"]
+resource_name = "Main_Slot"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vv5so"]
+_surfaces = [{
+"aabb": AABB(0, -0.00020000081, -0.0010000003, 9.999007e-05, 0.0001999998, 0.001),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwABAAAAAgAEAAAAAQADAAUABQACAAEABgAEAAIAAgAFAAYABwAAAAQAAAAHAAMABAAGAAcABQADAAcABwAGAAUA"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("w7HROHE9irDNzEyvAAAAAHE9irDNzEyvAAAAAHE9irBxEoO6AAAAAE+3UbnNzEyvw7HROHE9irBxEoO6AAAAAE+3UblxEoO6w7HROE+3UblxEoO6w7HROE+3UbnNzEyv")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1oiat"]
+resource_name = "Cube_311"
+_surfaces = [{
+"aabb": AABB(0, -0.00020000081, -0.0010000003, 9.999007e-05, 0.0001999998, 0.001),
+"attribute_data": PackedByteArray("QvDkPgBrXjwK1yM8lIYcPkLw5D4Aa148CtcjPBJMND9C8OQ+AGtePPKLpT4STDQ/QvDkPgBrXjzyi6U+lIYcPkLw5D4Aa148TxsoP6RwfT9C8OQ+AGtePE8bKD/Kajk/QvDkPgBrXjwK1yM8ymo5P0Lw5D4Aa148CtcjPKRwfT9C8OQ+AGtePGPJrz7IuQ8/QvDkPgBrXjxI4fo+yLkPP0Lw5D4Aa148SOH6PgDXIzxC8OQ+AGtePGPJrz4A1yM8QvDkPgBrXjz5xVI/yLkPP0Lw5D4Aa148+cVSP3CM4D5C8OQ+AGtePFyPAj9wjOA+QvDkPgBrXjxcjwI/yLkPP0Lw5D4Aa148BzotP6RwfT9C8OQ+AGtePPnFUj+kcH0/QvDkPgBrXjz5xVI/ymo5P0Lw5D4Aa148BzotP8pqOT9C8OQ+AGtePKRwfT8STDQ/QvDkPgBrXjykcH0/gNgUP0Lw5D4Aa148Y8mvPoDYFD9C8OQ+AGtePGPJrz4STDQ/"),
+"format": 34359742519,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": SubResource("StandardMaterial3D_wpyfh"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("w7HROHE9irDNzEyvAAAAAHE9irDNzEyvAAAAAHE9irBxEoO6w7HROHE9irBxEoO6w7HROE+3UbnNzEyvw7HROE+3UblxEoO6AAAAAE+3UblxEoO6AAAAAE+3UbnNzEyvw7HROE+3UblxEoO6w7HROHE9irBxEoO6AAAAAHE9irBxEoO6AAAAAE+3UblxEoO6w7HROE+3UbnNzEyvw7HROHE9irDNzEyvw7HROHE9irBxEoO6w7HROE+3UblxEoO6AAAAAE+3UblxEoO6AAAAAHE9irBxEoO6AAAAAHE9irDNzEyvAAAAAE+3UbnNzEyvAAAAAE+3UbnNzEyvAAAAAHE9irDNzEyvw7HROHE9irDNzEyvw7HROE+3UbnNzEyv/3///////7//f///////v/9///////+//3///////7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/////////+//////////7//////////v/////////+/////f////7////9/////v////3////+/////f////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////v/9//3////8//3//f////z//f/9/////P/9//3////8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_vv5so")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3twt6"]
+data = PackedVector3Array(0.0001, 0, 0, 0, 0, 0, 0, 0, -0.0009999999, 0, 0, -0.0009999999, 0.0001, 0, -0.0009999999, 0.0001, 0, 0, 0.0001, -0.0002, 0, 0.0001, -0.0002, -0.0009999999, 0, -0.0002, -0.0009999999, 0, -0.0002, -0.0009999999, 0, -0.0002, 0, 0.0001, -0.0002, 0, 0.0001, -0.0002, -0.0009999999, 0.0001, 0, -0.0009999999, 0, 0, -0.0009999999, 0, 0, -0.0009999999, 0, -0.0002, -0.0009999999, 0.0001, -0.0002, -0.0009999999, 0.0001, -0.0002, 0, 0.0001, 0, 0, 0.0001, 0, -0.0009999999, 0.0001, 0, -0.0009999999, 0.0001, -0.0002, -0.0009999999, 0.0001, -0.0002, 0, 0, -0.0002, -0.0009999999, 0, 0, -0.0009999999, 0, 0, 0, 0, 0, 0, 0, -0.0002, 0, 0, -0.0002, -0.0009999999, 0, -0.0002, 0, 0, 0, 0, 0.0001, 0, 0, 0.0001, 0, 0, 0.0001, -0.0002, 0, 0, -0.0002, 0)
+
+[node name="KCC_OpeningCover_V1_Front" type="Node3D" unique_id=51979939]
+
+[node name="KCC_OpeningCover_V1_Front" type="MeshInstance3D" parent="." unique_id=731414874]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+material_override = ExtResource("1_3twt6")
+mesh = SubResource("ArrayMesh_1oiat")
+
+[node name="KCC_OpeningCover_V1_Front_col" type="StaticBody3D" parent="KCC_OpeningCover_V1_Front" unique_id=987231215]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KCC_OpeningCover_V1_Front/KCC_OpeningCover_V1_Front_col" unique_id=1082052833]
+shape = SubResource("ConcavePolygonShape3D_3twt6")
