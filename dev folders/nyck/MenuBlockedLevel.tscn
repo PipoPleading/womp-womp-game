@@ -1,0 +1,329 @@
+[gd_scene format=3 uid="uid://bx8e3k0nlsdj4"]
+
+[ext_resource type="Material" uid="uid://rv3dkrka7yay" path="res://dev folders/chris/Materials/black.tres" id="1_iakr7"]
+[ext_resource type="Material" uid="uid://hogk5r5nkac5" path="res://dev folders/chris/Materials/Pantry.tres" id="2_7tsyv"]
+[ext_resource type="Material" uid="uid://cogvnr35amgxn" path="res://dev folders/chris/Materials/Bar.tres" id="3_hfpr4"]
+[ext_resource type="Material" uid="uid://cfalp0d3k3qhu" path="res://dev folders/chris/Materials/Metal.tres" id="4_k212i"]
+[ext_resource type="FontFile" uid="uid://b8jtg3f6tobsn" path="res://dev folders/nyck/fonts/Crackman.otf" id="5_hfpr4"]
+[ext_resource type="FontFile" uid="uid://cx1ykio8gceyn" path="res://dev folders/nyck/fonts/Orange Kid.otf" id="6_k212i"]
+[ext_resource type="Texture2D" uid="uid://dbi5k47hvsvsq" path="res://dev folders/nyck/images/PPmimS_no_alpha.png" id="7_ajbwy"]
+
+[sub_resource type="Animation" id="Animation_iakr7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/MenuCam:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(14.083718, 21.325432, 16.965992)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/MenuCam:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.15707958, 0.7984884, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7tsyv"]
+resource_name = "menu_spinner"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/MenuCam:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.99, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(14.083718, 21.325432, 16.965992), Vector3(22.91453, 21.673256, 15.271728), Vector3(4.3512306, 21.019726, 14.908529)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/MenuCam:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.99, 5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.15707958, 0.7984884, 0), Vector3(-0.2050762, 0.7417662, 0), Vector3(-0.047996532, 1.03411, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hfpr4"]
+_data = {
+&"RESET": SubResource("Animation_iakr7"),
+&"menu_spinner": SubResource("Animation_7tsyv")
+}
+
+[node name="BlockedLevel" type="Node3D" unique_id=1673839228]
+
+[node name="Walls" type="Node3D" parent="." unique_id=1474532357]
+
+[node name="Floor" type="CSGBox3D" parent="Walls" unique_id=780374755]
+use_collision = true
+size = Vector3(50, 0.1, 50)
+
+[node name="LeftWall" type="CSGBox3D" parent="Walls" unique_id=488784106]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25, 25, 0)
+size = Vector3(0.1, 50, 50)
+
+[node name="RightWall" type="CSGBox3D" parent="Walls" unique_id=2132142709]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 25, 0)
+size = Vector3(0.1, 50, 50)
+
+[node name="BackWall" type="CSGBox3D" parent="Walls" unique_id=542751431]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 25)
+size = Vector3(50, 50, 0.1)
+
+[node name="FrontOutsideWall" type="CSGBox3D" parent="Walls" unique_id=1329516948]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, -25)
+size = Vector3(50, 50, 0.1)
+material = ExtResource("1_iakr7")
+
+[node name="Ceiling" type="CSGBox3D" parent="Walls" unique_id=18779363]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
+size = Vector3(50, 0.1, 50)
+
+[node name="FrontInsideWall" type="CSGPolygon3D" parent="Walls" unique_id=1459583102]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, -20)
+polygon = PackedVector2Array(-25, -25, -25, 25, 25, 25, 25, -25, 5, -25, 5, 10, -5, 10, -5, -25)
+depth = 5.0
+
+[node name="Lighting" type="Node3D" parent="." unique_id=1624489151]
+
+[node name="LightBulb" type="CSGSphere3D" parent="Lighting" unique_id=734463163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 49.830914, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lighting/LightBulb" unique_id=1442018645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3075867, 0)
+light_energy = 7.724
+omni_range = 100.0
+
+[node name="Pantry" type="Node3D" parent="." unique_id=690204041]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -22.5)
+
+[node name="Door" type="CSGBox3D" parent="Pantry" unique_id=429342588]
+transform = Transform3D(0.70710677, 0, 0.70710677, 0, 1, 0, -0.70710677, 0, 0.70710677, -2.2907453, 17.249287, 5.555292)
+size = Vector3(1, 35, 9)
+material = ExtResource("2_7tsyv")
+
+[node name="Doorknob" type="CSGSphere3D" parent="Pantry/Door" unique_id=1682310138]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0119924545, 0, 3.0689611)
+radius = 1.113
+
+[node name="Shelves" type="Node3D" parent="Pantry" unique_id=1178792468]
+
+[node name="Shelf" type="CSGBox3D" parent="Pantry/Shelves" unique_id=483987517]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0)
+size = Vector3(10, 1, 5)
+material = ExtResource("2_7tsyv")
+
+[node name="Shelf2" type="CSGBox3D" parent="Pantry/Shelves" unique_id=1325112792]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
+size = Vector3(10, 1, 5)
+material = ExtResource("2_7tsyv")
+
+[node name="Shelf3" type="CSGBox3D" parent="Pantry/Shelves" unique_id=168866419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30, 0)
+size = Vector3(10, 1, 5)
+material = ExtResource("2_7tsyv")
+
+[node name="Bar" type="Node3D" parent="." unique_id=626480172]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.929483, 0, 0)
+
+[node name="Bottom" type="CSGBox3D" parent="Bar" unique_id=1403645310]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.628004, 0.5, 2.5)
+size = Vector3(5, 1, 40)
+material = ExtResource("3_hfpr4")
+
+[node name="Back" type="CSGBox3D" parent="Bar" unique_id=776584308]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.313, 7.5, 2.512)
+size = Vector3(1, 15, 42)
+material = ExtResource("3_hfpr4")
+
+[node name="LeftWall" type="CSGBox3D" parent="Bar" unique_id=738834986]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6984081, 7.5, 23)
+size = Vector3(5, 15, 1)
+material = ExtResource("3_hfpr4")
+
+[node name="RightWall" type="CSGBox3D" parent="Bar" unique_id=1840696721]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6984081, 7.5, -17.973022)
+size = Vector3(5, 15, 1)
+material = ExtResource("3_hfpr4")
+
+[node name="Top" type="CSGBox3D" parent="Bar" unique_id=172732516]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5001678, 15.449934, 2.5)
+size = Vector3(7, 1, 42)
+material = ExtResource("3_hfpr4")
+
+[node name="InnerWall" type="CSGBox3D" parent="Bar" unique_id=2044171176]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.407961, 7.5, 3)
+size = Vector3(5, 15, 1)
+material = ExtResource("3_hfpr4")
+
+[node name="Oven" type="Node3D" parent="." unique_id=1249429844]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.208328, 0, -14.668616)
+
+[node name="Base" type="CSGPolygon3D" parent="Oven" unique_id=1296135924]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.371587, 0.014840126, 5.3166933)
+material_override = ExtResource("4_k212i")
+operation = 2
+polygon = PackedVector2Array(0, 0, 0, 10, 10, 10, 10, 0)
+depth = 10.0
+
+[node name="SubtractionBox" type="CSGBox3D" parent="Oven/Base" unique_id=172580308]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.923562, 5.370225, -5.069024)
+operation = 2
+size = Vector3(6, 6, 6)
+
+[node name="Panel" type="CSGBox3D" parent="Oven" unique_id=1149887744]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.1246662, 11.742449, 0.20219421)
+size = Vector3(1, 3.5, 10)
+material = ExtResource("4_k212i")
+
+[node name="Sink" type="Node3D" parent="." unique_id=837548044]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.269743, 0, 18.42133)
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="Sink" unique_id=1954466512]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4757214, 2.0951924, 5.5346947)
+height = 4.2229004
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Sink" unique_id=527822871]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4297543, 7.143751, 1.3727894)
+size = Vector3(10, 6, 10)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Sink/CSGBox3D" unique_id=321415032]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.87213135, 1.0880833, 0)
+operation = 2
+size = Vector3(6, 4, 8)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Sink" unique_id=178356116]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1318874, 2.0951924, -2.9035244)
+height = 4.2229004
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="Sink" unique_id=1035523409]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.1318874, 2.0837178, 4.967289)
+height = 4.173584
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="Sink" unique_id=1191179737]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.4757214, 2.0951924, -2.9035244)
+height = 4.2229004
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=739295803]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=2039859851]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="MenuCam" type="Camera3D" parent="SubViewportContainer/SubViewport" unique_id=40866868]
+transform = Transform3D(0.69779027, -0.1120543, 0.7074832, 0, 0.98768836, 0.1564344, -0.7163021, -0.10915841, 0.68919927, 14.083718, 21.325432, 16.965992)
+
+[node name="Title" type="Label" parent="." unique_id=144442927]
+offset_top = 2.0
+offset_right = 478.0
+offset_bottom = 125.0
+theme_override_colors/font_color = Color(1, 0.84313726, 0.6039216, 1)
+theme_override_fonts/font = ExtResource("5_hfpr4")
+theme_override_font_sizes/font_size = 80
+text = "Cracked"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="PlayButton" type="Button" parent="." unique_id=142095443]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -126.0
+offset_top = -177.0
+offset_right = -11.0
+offset_bottom = -64.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.025989065, 4.3505688e-07, 0.01801674, 1)
+theme_override_colors/font_hover_color = Color(1, 0.84313726, 0.6039216, 1)
+theme_override_fonts/font = ExtResource("6_k212i")
+theme_override_font_sizes/font_size = 30
+text = "Play"
+icon = ExtResource("7_ajbwy")
+text_overrun_behavior = 1
+autowrap_mode = 2
+autowrap_trim_flags = 0
+icon_alignment = 1
+expand_icon = true
+
+[node name="OptionsButton" type="Button" parent="." unique_id=2129431924]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = -59.0
+offset_right = -12.0
+offset_bottom = 54.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.025989065, 4.3505688e-07, 0.01801674, 1)
+theme_override_colors/font_hover_color = Color(1, 0.84313726, 0.6039216, 1)
+theme_override_fonts/font = ExtResource("6_k212i")
+theme_override_font_sizes/font_size = 27
+text = "Options"
+icon = ExtResource("7_ajbwy")
+text_overrun_behavior = 1
+autowrap_mode = 2
+autowrap_trim_flags = 0
+icon_alignment = 1
+expand_icon = true
+
+[node name="QuitButton" type="Button" parent="." unique_id=1081577392]
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -127.0
+offset_top = 59.0
+offset_right = -12.0
+offset_bottom = 172.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.025989065, 4.3505688e-07, 0.01801674, 1)
+theme_override_colors/font_hover_color = Color(1, 0.84313726, 0.6039216, 1)
+theme_override_fonts/font = ExtResource("6_k212i")
+theme_override_font_sizes/font_size = 30
+text = "Quit"
+icon = ExtResource("7_ajbwy")
+text_overrun_behavior = 1
+autowrap_mode = 2
+autowrap_trim_flags = 0
+icon_alignment = 1
+expand_icon = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1758298858]
+libraries/ = SubResource("AnimationLibrary_hfpr4")
+autoplay = &"menu_spinner"
