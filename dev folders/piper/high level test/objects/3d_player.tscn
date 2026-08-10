@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b5lwb0praxgur" path="res://dev folders/piper/high level test/scripts/3d_player.gd" id="1_psi5w"]
 [ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="2_8nuhg"]
+[ext_resource type="Resource" uid="uid://biwj3ssltadah" path="res://dev folders/chris/Resources/WeaponData/frying_pan.tres" id="2_vtkla"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_vtkla"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_iyl20"]
@@ -20,8 +21,15 @@ properties/1/replication_mode = 1
 script = ExtResource("3_vtkla")
 duration = 0.0
 
-[sub_resource type="BoxMesh" id="BoxMesh_ygfeb"]
-size = Vector3(0.24169922, 1, 5.32666)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vtkla"]
+shading_mode = 0
+vertex_color_use_as_albedo = true
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_8nuhg"]
+material = SubResource("StandardMaterial3D_vtkla")
+radius = 0.1
+height = 0.3
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygfeb"]
 bg_color = Color(1, 1, 1, 1)
@@ -30,8 +38,12 @@ corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gq0y6"]
+bg_color = Color(0.28778404, 0.2877841, 0.28778395, 0.45882353)
+
 [node name="3d_player" type="CharacterBody3D" unique_id=520216166]
 script = ExtResource("1_psi5w")
+weapon = ExtResource("2_vtkla")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1787731025]
 replication_config = SubResource("SceneReplicationConfig_iyl20")
@@ -57,13 +69,24 @@ tween_resource = SubResource("Resource_fl3pk")
 follow_offset = Vector3(0, 2, 4)
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="." unique_id=1444161171]
-transform = Transform3D(1, 0, 0, 0, 0.18473667, 0, 0, 0, 0.25723898, 0.07235098, 2.0981536, -0.67810893)
-visible = false
-mesh = SubResource("BoxMesh_ygfeb")
+[node name="Eye1" type="MeshInstance3D" parent="." unique_id=1444161171]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19187886, 1.4574933, -0.46970105)
+mesh = SubResource("SphereMesh_8nuhg")
 
-[node name="Crosshair" type="Control" parent="." unique_id=1979970351]
+[node name="Eye2" type="MeshInstance3D" parent="." unique_id=1981322638]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.192, 1.457, -0.47)
+mesh = SubResource("SphereMesh_8nuhg")
+
+[node name="Player UI Root" type="Control" parent="." unique_id=1463997256]
 layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Crosshair" type="Control" parent="Player UI Root" unique_id=1979970351]
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -71,7 +94,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Panel" type="Panel" parent="Crosshair" unique_id=1716249943]
+[node name="Panel" type="Panel" parent="Player UI Root/Crosshair" unique_id=1716249943]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -85,3 +108,24 @@ offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ygfeb")
+
+[node name="Menu Root" type="Control" parent="Player UI Root" unique_id=1438840641]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Player UI Root/Menu Root" unique_id=2131837026]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gq0y6")
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1962120414]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0.5, 0)

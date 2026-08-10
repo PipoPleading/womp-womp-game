@@ -1,0 +1,86 @@
+[gd_scene format=4 uid="uid://p5tjrblkq2rb"]
+
+[ext_resource type="Material" uid="uid://c6y4a04pybpvf" path="res://dev folders/cat/models/kitchen/Texture/kitchen_mat.tres" id="1_12c5s"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v1u8a"]
+resource_name = "Main_Slot"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8v5qv"]
+resource_name = "2nd_Slot"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_pyuu3"]
+_surfaces = [{
+"aabb": AABB(-1.4901161e-09, -0.00020000011, -0.0024, 0.0039999993, 0.00020000011, 0.0024),
+"format": 34359742465,
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAwACAAEAAgAEAAAABQAEAAIAAgADAAUAAAAEAAUABgAFAAMABQAGAAAAAQAHAAMAAwAHAAYABwABAAgACAABAAAABgAHAAkACAAJAAcACgAAAAYAAAAKAAgACwAIAAoACAALAAwADAAJAAgACgANAAsACQAMAA4ABgAPAAoACQAPAAYADQAKAA8ADgAPAAkADwAOAA0A"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 16,
+"vertex_data": PackedByteArray("ahKDOx+3UbkAAAAAzczMsB+3UbkAAAAAzczMsAAAAAAAAAAAzczMsAAAAABSSR27ahKDOwAAAAAAAAAAahKDOwAAAABSSR27ahKDOx+3UblSSR27zczMsB+3UblSSR27jJtEOh+3Ubmlm0S6jJtEOh+3UbnSRNi66v1UOx+3Ubmlm0S6jJtEOnYSA7mlm0S6jJtEOnYSA7nSRNi66v1UO3YSA7mlm0S66v1UO3YSA7nSRNi66v1UOx+3UbnSRNi6")
+}, {
+"aabb": AABB(0.0007499985, -0.00012500011, -0.0016500002, 0.0024999992, 1e-05, 0.0009000003),
+"format": 34359742465,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"name": "2nd_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("jJtEOnYSA7nSRNi6jJtEOnYSA7mlm0S66v1UO3YSA7mlm0S66v1UO3YSA7nSRNi6")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_iguct"]
+resource_name = "Cube_230"
+_surfaces = [{
+"aabb": AABB(-1.4901161e-09, -0.00020000011, -0.0024, 0.0039999993, 0.00020000011, 0.0024),
+"attribute_data": PackedByteArray("FmzDPoDYoTyRqKI+kMJ1PhZswz6A2KE8ab9pP5DCdT4WbMM+gNihPGm/aT9wPUo+FmzDPoDYoTyRqKI+cD1KPhZswz6A2KE8Id5uP6RwfT8WbMM+gNihPKRwfT+kcH0/FmzDPoDYoTykcH0/XI8CPxZswz6A2KE8Id5uP1yPAj8WbMM+gNihPHz6Gj+QwjU+FmzDPoDYoTx8+ho/cD0KPhZswz6A2KE8CtcjPHA9Cj4WbMM+gNihPArXIzyQwjU+FmzDPoDYoTzmLFs/SOH6PhZswz6A2KE8ab9pP0jh+j4WbMM+gNihPGm/aT+4HsU+FmzDPoDYoTzmLFs/uB7FPhZswz6A2KE8CtcjPCCF6z0WbMM+gNihPHz6Gj8ghes9FmzDPoDYoTx8+ho/4HqUPRZswz6A2KE8CtcjPOB6lD0WbMM+gNihPArXIzxcjwI/FmzDPoDYoTwK1yM8pHB9PxZswz6A2KE8fPoaP6RwfT8WbMM+gNihPHz6Gj9cjwI/FmzDPoDYoTw1GSA/SOH6PhZswz6A2KE881xCP0jh+j4WbMM+gNihPPNcQj+4HoU+FmzDPoDYoTw1GSA/uB6FPhZswz6A2KE8CtcjPEjhmj4WbMM+gNihPCBrmD5I4Zo+FmzDPoDYoTwga5g+cD1KPhZswz6A2KE8CtcjPHA9Sj4WbMM+gNihPDUZID9cjwI/FmzDPoDYoTw1GSA/pHB9PxZswz6A2KE881xCP6RwfT8WbMM+gNihPPNcQj9cjwI/FmzDPoDYoTx8+ho/SOH6PhZswz6A2KE8fPoaP7gexT4WbMM+gNihPArXIzy4HsU+FmzDPoDYoTwK1yM8SOH6PhZswz6A2KE8fPoaP0jhuj4WbMM+gNihPHz6Gj+4HqU+FmzDPoDYoTwK1yM8uB6lPhZswz6A2KE8CtcjPEjhuj4WbMM+gNihPKt7Rz9I4fo+FmzDPoDYoTwuDlY/SOH6PhZswz6A2KE8Lg5WP7gexT4WbMM+gNihPKt7Rz+4HsU+FmzDPoDYoTx8+ho/QApXPRZswz6A2KE8fPoaPwDXIzwWbMM+gNihPArXIzwA1yM8FmzDPoDYoTwK1yM8QApXPQ=="),
+"format": 34359742519,
+"index_count": 78,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQAGAAZABoAGgAbABgAHAAdAB4AHgAfABwAIAAhACIAIgAjACAAJAAlACYAJgAnACQAKAApACoAKgArACgALAAtAC4ALgAvACwAMAAxADIAMgAzADAA"),
+"material": SubResource("StandardMaterial3D_v1u8a"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 52,
+"vertex_data": PackedByteArray("ahKDOx+3UbkAAAAAzczMsB+3UbkAAAAAzczMsAAAAAAAAAAAahKDOwAAAAAAAAAAzczMsAAAAABSSR27zczMsB+3UblSSR27ahKDOx+3UblSSR27ahKDOwAAAABSSR27ahKDOx+3UbkAAAAAahKDOwAAAAAAAAAAahKDOwAAAABSSR27ahKDOx+3UblSSR276v1UO3YSA7mlm0S66v1UOx+3Ubmlm0S66v1UOx+3UbnSRNi66v1UO3YSA7nSRNi6zczMsB+3UbkAAAAAzczMsB+3UblSSR27zczMsAAAAABSSR27zczMsAAAAAAAAAAAahKDOwAAAABSSR27ahKDOwAAAAAAAAAAzczMsAAAAAAAAAAAzczMsAAAAABSSR27ahKDOx+3UblSSR276v1UOx+3UbnSRNi66v1UOx+3Ubmlm0S6ahKDOx+3UbkAAAAAzczMsB+3UblSSR27zczMsB+3UbkAAAAAjJtEOh+3Ubmlm0S6jJtEOh+3UbnSRNi6ahKDOx+3UblSSR27zczMsB+3UblSSR27jJtEOh+3UbnSRNi66v1UOx+3UbnSRNi6ahKDOx+3UbkAAAAA6v1UOx+3Ubmlm0S6jJtEOh+3Ubmlm0S6zczMsB+3UbkAAAAAjJtEOnYSA7mlm0S6jJtEOh+3Ubmlm0S66v1UOx+3Ubmlm0S66v1UO3YSA7mlm0S6jJtEOnYSA7nSRNi6jJtEOh+3UbnSRNi6jJtEOh+3Ubmlm0S6jJtEOnYSA7mlm0S66v1UO3YSA7nSRNi66v1UOx+3UbnSRNi6jJtEOh+3UbnSRNi6jJtEOnYSA7nSRNi6/3//f////z//f/9/////P/9//3////8//3//f////z//////////v/////////+//////////7//////////v////3////+/////f////7////9/////v////3////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////vwAA/3////+/AAD/f////78AAP9/////v/9///////+//3///////7//f///////v/9///////+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v/9/AAD///+//38AAP///7//////////v/////////+//////////7//////////v////3////+/////f////7////9/////v////3////+//3//f////z//f/9/////P/9//3////8//3//f////z8=")
+}, {
+"aabb": AABB(0.0007499985, -0.00012500011, -0.0016500002, 0.0024999992, 1e-05, 0.0009000003),
+"attribute_data": PackedByteArray("QvDkPgBrXjyre0c/pHB9P0Lw5D4Aa148ab9pP6RwfT9C8OQ+AGtePGm/aT9cjwI/QvDkPgBrXjyre0c/XI8CPw=="),
+"format": 34359742519,
+"index_count": 6,
+"index_data": PackedByteArray("AAABAAIAAgADAAAA"),
+"material": SubResource("StandardMaterial3D_8v5qv"),
+"name": "2nd_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 4,
+"vertex_data": PackedByteArray("jJtEOnYSA7nSRNi6jJtEOnYSA7mlm0S66v1UO3YSA7mlm0S66v1UO3YSA7nSRNi6/38AAP///7//fwAA////v/9/AAD///+//38AAP///78=")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_pyuu3")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_12c5s"]
+data = PackedVector3Array(0.0039999997, -0.0002, 0, 0, -0.0002, 0, 0, 0, 0, 0, 0, 0, 0.0039999997, 0, 0, 0.0039999997, -0.0002, 0, 0, 0, -0.0023999999, 0, -0.0002, -0.0023999999, 0.0039999997, -0.0002, -0.0023999999, 0.0039999997, -0.0002, -0.0023999999, 0.0039999997, 0, -0.0023999999, 0, 0, -0.0023999999, 0.0039999997, -0.0002, 0, 0.0039999997, 0, 0, 0.0039999997, 0, -0.0023999999, 0.0039999997, 0, -0.0023999999, 0.0039999997, -0.0002, -0.0023999999, 0.0039999997, -0.0002, 0, 0.0032, -0.0001, -0.0007, 0.0032, -0.0002, -0.0007, 0.0032, -0.0002, -0.0016999999, 0.0032, -0.0002, -0.0016999999, 0.0032, -0.0001, -0.0016999999, 0.0032, -0.0001, -0.0007, 0, -0.0002, 0, 0, -0.0002, -0.0023999999, 0, 0, -0.0023999999, 0, 0, -0.0023999999, 0, 0, 0, 0, -0.0002, 0, 0.0039999997, 0, -0.0023999999, 0.0039999997, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -0.0023999999, 0.0039999997, 0, -0.0023999999, 0.0039999997, -0.0002, -0.0023999999, 0.0032, -0.0002, -0.0016999999, 0.0032, -0.0002, -0.0007, 0.0032, -0.0002, -0.0007, 0.0039999997, -0.0002, 0, 0.0039999997, -0.0002, -0.0023999999, 0, -0.0002, -0.0023999999, 0, -0.0002, 0, 0.0007, -0.0002, -0.0007, 0.0007, -0.0002, -0.0007, 0.0007, -0.0002, -0.0016999999, 0, -0.0002, -0.0023999999, 0.0039999997, -0.0002, -0.0023999999, 0, -0.0002, -0.0023999999, 0.0007, -0.0002, -0.0016999999, 0.0007, -0.0002, -0.0016999999, 0.0032, -0.0002, -0.0016999999, 0.0039999997, -0.0002, -0.0023999999, 0.0039999997, -0.0002, 0, 0.0032, -0.0002, -0.0007, 0.0007, -0.0002, -0.0007, 0.0007, -0.0002, -0.0007, 0, -0.0002, 0, 0.0039999997, -0.0002, 0, 0.0007, -0.0001, -0.0007, 0.0007, -0.0002, -0.0007, 0.0032, -0.0002, -0.0007, 0.0032, -0.0002, -0.0007, 0.0032, -0.0001, -0.0007, 0.0007, -0.0001, -0.0007, 0.0007, -0.0001, -0.0016999999, 0.0007, -0.0002, -0.0016999999, 0.0007, -0.0002, -0.0007, 0.0007, -0.0002, -0.0007, 0.0007, -0.0001, -0.0007, 0.0007, -0.0001, -0.0016999999, 0.0032, -0.0001, -0.0016999999, 0.0032, -0.0002, -0.0016999999, 0.0007, -0.0002, -0.0016999999, 0.0007, -0.0002, -0.0016999999, 0.0007, -0.0001, -0.0016999999, 0.0032, -0.0001, -0.0016999999, 0.0007, -0.0001, -0.0016999999, 0.0007, -0.0001, -0.0007, 0.0032, -0.0001, -0.0007, 0.0032, -0.0001, -0.0007, 0.0032, -0.0001, -0.0016999999, 0.0007, -0.0001, -0.0016999999)
+
+[node name="KC-F400_Drawer_Front_SizeS_V2" type="Node3D" unique_id=1857830103]
+
+[node name="KC-F400_Drawer_Front_SizeS_V2" type="MeshInstance3D" parent="." unique_id=2141924368]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+material_override = ExtResource("1_12c5s")
+mesh = SubResource("ArrayMesh_iguct")
+
+[node name="KC-F400_Drawer_Front_SizeS_V2_col" type="StaticBody3D" parent="KC-F400_Drawer_Front_SizeS_V2" unique_id=1821736367]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="KC-F400_Drawer_Front_SizeS_V2/KC-F400_Drawer_Front_SizeS_V2_col" unique_id=1740023780]
+shape = SubResource("ConcavePolygonShape3D_12c5s")

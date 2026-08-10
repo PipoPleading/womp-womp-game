@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://c6y4a04pybpvf"]
+
+[ext_resource type="Texture2D" uid="uid://dtmvbcx33xch" path="res://dev folders/cat/models/kitchen/Texture/AlstraInfinite1024_Main.png" id="1_6my51"]
+
+[resource]
+albedo_texture = ExtResource("1_6my51")
