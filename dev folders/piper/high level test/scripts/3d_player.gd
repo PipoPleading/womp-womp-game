@@ -7,7 +7,14 @@ extends CharacterBody3D
 # no sound when crouched, louder sound when sprinting, medium sound when walking
 # equipped items and a default off hand no matter what will be relevant
 # players should have a death and alive state to differentiate from spectating and playing or menuing
+@onready var phantom_camera_3d: PhantomCamera3D = %PhantomCamera3D
+@onready var neck_target: Node3D = $NeckRoot/Neck_Target
 
+@onready var eye_1: MeshInstance3D = $Eye1
+@onready var eye_2: MeshInstance3D = $Eye2
+
+var _weapon_instance : Node3D 
+@export var weapon : WeaponData
 
 enum PLAYER_STATE {idle = 0, idle_crouch = 1, walk = 2, walk_crouch = 3, jump = 4, fall = 5, land = 6, flinch = 7, hurt = 8, dead = 9, spectating = 10}
 var current_state = PLAYER_STATE.idle
@@ -15,10 +22,7 @@ var current_state = PLAYER_STATE.idle
 ## misc variables to update visuals
 var is_falling : bool = false
 var is_crouching : bool = false
-
-@onready var phantom_camera_3d: PhantomCamera3D = %PhantomCamera3D
-
-@onready var neck_target: Node3D = $NeckRoot/Neck_Target
+var is_paused : bool = false
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -31,6 +35,18 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	if is_multiplayer_authority():
 		focus_toggle(true)
+		eye_1.hide()
+		eye_2.hide()
+	
+	equip_weapon()
+
+## weapon stuff
+
+func equip_weapon() -> void:
+	_weapon_instance = load(weapon.weapon_location).instantiate()
+	_weapon_instance.position = weapon.initial_position
+	add_child(_weapon_instance)
+
 
 func _input(event: InputEvent) -> void:
 	if !is_multiplayer_authority():
@@ -46,7 +62,11 @@ func _input(event: InputEvent) -> void:
 			focus_toggle(false)
 		else:
 			focus_toggle(true)
-	pass
+	
+	if event.is_action_pressed("attack"):
+		if _weapon_instance:
+			_weapon_instance.get_node("Weapon").attack()
+	
 
 # used for determining mouse state
 func focus_toggle(is_focused : bool):

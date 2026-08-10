@@ -1,0 +1,57 @@
+[gd_scene format=4 uid="uid://bm10alj8twxy4"]
+
+[ext_resource type="Material" uid="uid://c6y4a04pybpvf" path="res://dev folders/cat/models/kitchen/Texture/kitchen_mat.tres" id="1_3kqbd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wton1"]
+resource_name = "Main_Slot"
+vertex_color_use_as_albedo = true
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_f6dem"]
+_surfaces = [{
+"aabb": AABB(0, -0.0001999998, -0.007999999, 0.004, 0.0001999998, 0.008),
+"format": 34359742465,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAwABAAAAAgAEAAAAAQADAAUABQACAAEABgAEAAIAAgAFAAYABwAAAAQAAAAHAAMABAAGAAcABQADAAcABwAGAAUA"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAAAAAAAK1yMwAAAAAAAAAABuEgO8bxKDOwAAAABuEgO8AAAAAAq3UbluEgO8bxKDOwAAAAAK1yMwbxKDOwq3UbluEgO8bxKDOwq3UbkK1yMwAAAAAAq3UbkK1yMw")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_i2h3j"]
+resource_name = "Cube_297"
+_surfaces = [{
+"aabb": AABB(0, -0.0001999998, -0.007999999, 0.004, 0.0001999998, 0.008),
+"attribute_data": PackedByteArray("FmzDPoDYoTwK1yM8ANcjPBZswz6A2KE8CtcjPE4bKD8WbMM+gNihPPKLpT5OGyg/FmzDPoDYoTzyi6U+ANcjPBZswz6A2KE8TxsoP6RwfT8WbMM+gNihPE8bKD8HOi0/FmzDPoDYoTwK1yM8BzotPxZswz6A2KE8CtcjPKRwfT8WbMM+gNihPLHkVz+kcH0/FmzDPoDYoTykcH0/pHB9PxZswz6A2KE8pHB9P2LJrz4WbMM+gNihPLHkVz9iya8+FmzDPoDYoTxPGyg/SOH6PhZswz6A2KE8TxsoP2LJrz4WbMM+gNihPGPJrz5iya8+FmzDPoDYoTxjya8+SOH6PhZswz6A2KE8BzotP6RwfT8WbMM+gNihPPnFUj+kcH0/FmzDPoDYoTz5xVI/YsmvPhZswz6A2KE8BzotP2LJrz4WbMM+gNihPE8bKD9OGyg/FmzDPoDYoTxPGyg/XI8CPxZswz6A2KE8Y8mvPlyPAj8WbMM+gNihPGPJrz5OGyg/"),
+"format": 34359742519,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": SubResource("StandardMaterial3D_wton1"),
+"name": "Main_Slot",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAAAAAAAAAAK1yMwAAAAAAAAAABuEgO8bxKDOwAAAABuEgO8bxKDOwAAAAAK1yMwAAAAAAq3UbkK1yMwbxKDOwq3UbkK1yMwbxKDOwq3UbluEgO8AAAAAAq3UbluEgO8bxKDOwq3UbkK1yMwbxKDOwAAAAAK1yMwbxKDOwAAAABuEgO8bxKDOwq3UbluEgO8AAAAAAq3UbkK1yMwAAAAAAAAAAAK1yMwbxKDOwAAAAAK1yMwbxKDOwq3UbkK1yMwAAAAAAq3UbluEgO8AAAAAAAAAABuEgO8AAAAAAAAAAAK1yMwAAAAAAq3UbkK1yMwbxKDOwq3UbluEgO8bxKDOwAAAABuEgO8AAAAAAAAAABuEgO8AAAAAAq3UbluEgO8/3///////7//f///////v/9///////+//3///////7//fwAA////v/9/AAD///+//38AAP///7//fwAA////v////3////+/////f////7////9/////v////3////+//3//f////z//f/9/////P/9//3////8//3//f////z8AAP9/////vwAA/3////+/AAD/f////78AAP9/////v/////////+//////////7//////////v/////////+/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_f6dem")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_3kqbd"]
+data = PackedVector3Array(0, 0, 0, 0, 0, -0.007999999, 0.0039999997, 0, -0.007999999, 0.0039999997, 0, -0.007999999, 0.0039999997, 0, 0, 0, 0, 0, 0, -0.0002, 0, 0.0039999997, -0.0002, 0, 0.0039999997, -0.0002, -0.007999999, 0.0039999997, -0.0002, -0.007999999, 0, -0.0002, -0.007999999, 0, -0.0002, 0, 0.0039999997, -0.0002, 0, 0.0039999997, 0, 0, 0.0039999997, 0, -0.007999999, 0.0039999997, 0, -0.007999999, 0.0039999997, -0.0002, -0.007999999, 0.0039999997, -0.0002, 0, 0, -0.0002, 0, 0, 0, 0, 0.0039999997, 0, 0, 0.0039999997, 0, 0, 0.0039999997, -0.0002, 0, 0, -0.0002, 0, 0, -0.0002, -0.007999999, 0, 0, -0.007999999, 0, 0, 0, 0, 0, 0, 0, -0.0002, 0, 0, -0.0002, -0.007999999, 0.0039999997, -0.0002, -0.007999999, 0.0039999997, 0, -0.007999999, 0, 0, -0.007999999, 0, 0, -0.007999999, 0, -0.0002, -0.007999999, 0.0039999997, -0.0002, -0.007999999)
+
+[node name="WKC-F800_Door_V1_TwoDoor_L" type="Node3D" unique_id=62659003]
+
+[node name="WKC-F800_Door_V1_TwoDoor_L" type="MeshInstance3D" parent="." unique_id=352971705]
+transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 99.99999, 0, -99.99999, -1.1920929e-05, 0, 0, 0)
+material_override = ExtResource("1_3kqbd")
+mesh = SubResource("ArrayMesh_i2h3j")
+
+[node name="WKC-F800_Door_V1_TwoDoor_L_col" type="StaticBody3D" parent="WKC-F800_Door_V1_TwoDoor_L" unique_id=274818479]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="WKC-F800_Door_V1_TwoDoor_L/WKC-F800_Door_V1_TwoDoor_L_col" unique_id=1062714576]
+shape = SubResource("ConcavePolygonShape3D_3kqbd")
