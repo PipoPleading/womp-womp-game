@@ -31,14 +31,29 @@
 [ext_resource type="PackedScene" uid="uid://dn7q100dex5kk" path="res://dev folders/cat/models/kitchen/Scenes/Cabinets/600mm Wide/Cabinet Doors - 600/TKC-F600_Door_H2000_V2.tscn" id="29_nustw"]
 [ext_resource type="PackedScene" uid="uid://vfxnjadwfvok" path="res://dev folders/cat/models/kitchen/Scenes/Cabinets/800mm Wide/Cabinet Doors - 800/TKC-F800_Door_H2000_V2.tscn" id="30_etkv3"]
 [ext_resource type="PackedScene" uid="uid://cx2hpjfxhqtg7" path="res://dev folders/cat/models/kitchen/Scenes/Cabinets/800mm Wide/Tall Cabinets - 800/TKC-F800_H2000_V2.tscn" id="31_okdkm"]
+[ext_resource type="PackedScene" uid="uid://cji3m77xcrn38" path="res://dev folders/cat/models/kitchen/Scenes/Components/KCC-F800_TopWithHole_V3.tscn" id="32_dm51y"]
+[ext_resource type="PackedScene" uid="uid://bu3jj75ucwa6q" path="res://dev folders/cat/models/kitchen/Scenes/Appliances/Sink/KA-F800_Sink_V1.tscn" id="33_neva4"]
+[ext_resource type="PackedScene" uid="uid://b6oq0pwh7nei5" path="res://dev folders/cat/models/kitchen/Scenes/Components/Sink Faucets/Faucet_V1.tscn" id="34_gjfdd"]
+[ext_resource type="PackedScene" uid="uid://btx13dnbe5ste" path="res://dev folders/cat/models/kitchen/Scenes/Components/Sink Components/SinkStrainer_V1.tscn" id="35_suxoh"]
+[ext_resource type="PackedScene" uid="uid://dp3gsy6xnhsuo" path="res://dev folders/cat/models/kitchen/Scenes/Components/Sink Components/SinkWaterPipesV1.tscn" id="36_8dkxt"]
+[ext_resource type="PackedScene" uid="uid://b8vpghvde8bd5" path="res://dev folders/cat/models/kitchen/Scenes/Components/Sink Components/SinkDrainPipesV1.tscn" id="37_7tow1"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ltk6h"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ltk6h"]
-size = Vector3(1, 0.49221802, 1)
+size = Vector3(1, 0.3056984, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ltk6h"]
 size = Vector3(7.838257, 3.0107422, 1.017353)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_elq4t"]
+size = Vector3(7.909424, 3.5752869, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_elq4t"]
+size = Vector3(0.9257202, 3.002472, 0.81573486)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3q5oc"]
+size = Vector3(1.6151733, 3.5752869, 0.91259766)
 
 [node name="KitchenLevel" type="Node3D" unique_id=57881643]
 
@@ -49,26 +64,61 @@ transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0.0013855249, 0.0019626021
 mesh = SubResource("PlaneMesh_ltk6h")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Room/Floor" unique_id=805429453]
-transform = Transform3D(1, 0, 0, 0, 0.25, 0, 0, 0, 1, 0, -0.060000002, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.060000002, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Floor/StaticBody3D" unique_id=1261984745]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09325983, 0)
 shape = SubResource("BoxShape3D_ltk6h")
 
 [node name="Wall" type="MeshInstance3D" parent="Room" unique_id=1703641793]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03741455, 1.4946289, 3.5122128)
 mesh = SubResource("BoxMesh_ltk6h")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Wall" unique_id=112990142]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Wall/StaticBody3D" unique_id=573009631]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024536133, -0.27183533, 0)
+shape = SubResource("BoxShape3D_elq4t")
+
 [node name="Wall2" type="MeshInstance3D" parent="Room" unique_id=139157928]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03741455, 1.4946289, -3.8992069)
 mesh = SubResource("BoxMesh_ltk6h")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Wall2" unique_id=269193300]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Wall2/StaticBody3D" unique_id=1004144792]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024536133, -0.27183533, 0)
+shape = SubResource("BoxShape3D_elq4t")
 
 [node name="Wall3" type="MeshInstance3D" parent="Room" unique_id=885798189]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.7165253, 1.4946289, -0.49920678)
 mesh = SubResource("BoxMesh_ltk6h")
 
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Wall3" unique_id=1870954426]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Wall3/StaticBody3D" unique_id=1798579694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024536133, -0.27183533, 0)
+shape = SubResource("BoxShape3D_elq4t")
+
 [node name="Wall4" type="MeshInstance3D" parent="Room" unique_id=1234604329]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3.510517, 1.4946289, -0.49920678)
 mesh = SubResource("BoxMesh_ltk6h")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/Wall4" unique_id=794636837]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Wall4/StaticBody3D" unique_id=1856176092]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.024536133, -0.27183533, 0)
+shape = SubResource("BoxShape3D_elq4t")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Room" unique_id=821750713]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8615646, 1.4958951, 2.7048497)
+mesh = SubResource("BoxMesh_elq4t")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Room/MeshInstance3D" unique_id=407445973]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Room/MeshInstance3D/StaticBody3D" unique_id=987091915]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.34848022, -0.27183533, 0.043701172)
+shape = SubResource("BoxShape3D_3q5oc")
 
 [node name="Island" type="Node3D" parent="." unique_id=1500384183]
 
@@ -108,33 +158,44 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0.8,
 [node name="Doors" type="Node3D" parent="Island" unique_id=708992860]
 
 [node name="DoubleDoor_800" type="Node3D" parent="Island/Doors" unique_id=1360042598]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6)
 
-[node name="KC-F800_Door_V2_TwoDoor_L" parent="Island/Doors/DoubleDoor_800" unique_id=1669357960 instance=ExtResource("5_dag75")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0.6)
+[node name="Door_L" type="Node3D" parent="Island/Doors/DoubleDoor_800" unique_id=1284577093]
 
-[node name="KC-F800_Door_V2_TwoDoor_R" parent="Island/Doors/DoubleDoor_800" unique_id=313328981 instance=ExtResource("6_4aiox")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.8, 0.6)
+[node name="KC-F800_Door_V2_TwoDoor_L" parent="Island/Doors/DoubleDoor_800/Door_L" unique_id=1669357960 instance=ExtResource("5_dag75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 
-[node name="KCC-Handle_Knob_V4" parent="Island/Doors/DoubleDoor_800" unique_id=1663540287 instance=ExtResource("7_r20d3")]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0.365, 0.76, 0.606)
+[node name="KCC-Handle_Knob_V4" parent="Island/Doors/DoubleDoor_800/Door_L" unique_id=1663540287 instance=ExtResource("7_r20d3")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0.365, 0.76, 0.006)
 
-[node name="KCC-Handle_Knob_V5" parent="Island/Doors/DoubleDoor_800" unique_id=216096536 instance=ExtResource("7_r20d3")]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0.435, 0.76, 0.606)
+[node name="Door_R" type="Node3D" parent="Island/Doors/DoubleDoor_800" unique_id=893898754]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0)
 
-[node name="DoubleDoor_801" type="Node3D" parent="Island/Doors" unique_id=1779479252]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, 0)
+[node name="KC-F800_Door_V2_TwoDoor_R" parent="Island/Doors/DoubleDoor_800/Door_R" unique_id=313328981 instance=ExtResource("6_4aiox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
 
-[node name="KC-F800_Door_V2_TwoDoor_L" parent="Island/Doors/DoubleDoor_801" unique_id=1679496555 instance=ExtResource("5_dag75")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0.6)
+[node name="KCC-Handle_Knob_V5" parent="Island/Doors/DoubleDoor_800/Door_R" unique_id=216096536 instance=ExtResource("7_r20d3")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -0.365, 0.76, 0.006)
 
-[node name="KC-F800_Door_V2_TwoDoor_R" parent="Island/Doors/DoubleDoor_801" unique_id=1306330071 instance=ExtResource("6_4aiox")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0.8, 0.6)
+[node name="DoubleDoor_801" type="Node3D" parent="Island/Doors" unique_id=1263649889]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, 0.6)
 
-[node name="KCC-Handle_Knob_V4" parent="Island/Doors/DoubleDoor_801" unique_id=1941309487 instance=ExtResource("7_r20d3")]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0.365, 0.76, 0.606)
+[node name="Door_L" type="Node3D" parent="Island/Doors/DoubleDoor_801" unique_id=89543548]
 
-[node name="KCC-Handle_Knob_V5" parent="Island/Doors/DoubleDoor_801" unique_id=1841610861 instance=ExtResource("7_r20d3")]
-transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0.435, 0.76, 0.606)
+[node name="KC-F800_Door_V2_TwoDoor_L" parent="Island/Doors/DoubleDoor_801/Door_L" unique_id=1636625311 instance=ExtResource("5_dag75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="KCC-Handle_Knob_V4" parent="Island/Doors/DoubleDoor_801/Door_L" unique_id=608984519 instance=ExtResource("7_r20d3")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0.365, 0.76, 0.006)
+
+[node name="Door_R" type="Node3D" parent="Island/Doors/DoubleDoor_801" unique_id=2125945952]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0)
+
+[node name="KC-F800_Door_V2_TwoDoor_R" parent="Island/Doors/DoubleDoor_801/Door_R" unique_id=139585103 instance=ExtResource("6_4aiox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="KCC-Handle_Knob_V5" parent="Island/Doors/DoubleDoor_801/Door_R" unique_id=1224004380 instance=ExtResource("7_r20d3")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -0.365, 0.76, 0.006)
 
 [node name="Fridge" type="Node3D" parent="." unique_id=316515726]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 0, 1.4)
@@ -177,13 +238,10 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.6,
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.2, 0, 3)
 
 [node name="KC-F600_V2" parent="GroundCabinets/Cabinets" unique_id=1619800352 instance=ExtResource("14_7tow1")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.2, 0, 1.4)
-
-[node name="KC-F600_V6" parent="GroundCabinets/Cabinets" unique_id=811973230 instance=ExtResource("14_7tow1")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.2, 0, 0.79999995)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.2, 0, 0.59999996)
 
 [node name="KC-CornerInvertedV2" parent="GroundCabinets/Cabinets" unique_id=1680873967 instance=ExtResource("15_hcavr")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.2, 0, 0.20000002)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.2, 0, 1.4901161e-08)
 
 [node name="KC-F400_V3" parent="GroundCabinets/Cabinets" unique_id=652971001 instance=ExtResource("13_8dkxt")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.6, 0, 3)
@@ -197,22 +255,16 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.8
 [node name="Doors" type="Node3D" parent="GroundCabinets" unique_id=1249166344]
 
 [node name="CabinetDoor_600" type="Node3D" parent="GroundCabinets/Doors" unique_id=134739627]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6, 0, 0.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6, 0, 0)
 
 [node name="KC-F600_Door_V2" parent="GroundCabinets/Doors/CabinetDoor_600" unique_id=165242929 instance=ExtResource("16_ixdai")]
 transform = Transform3D(4.371139e-08, 0, -1.0000001, 0, 1, 0, -1, 0, -4.3711392e-08, 0, 0.8, 0)
 
 [node name="KCC-Handle_Knob_V5" parent="GroundCabinets/Doors/CabinetDoor_600" unique_id=1294482763 instance=ExtResource("7_r20d3")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -0.005, 0.76, -0.565)
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -0.0050001144, 0.76, -0.565)
 
 [node name="CabinetDoor_600_2" type="Node3D" parent="GroundCabinets/Doors" unique_id=1116125094]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.6, 0, 1.4000001)
-
-[node name="KC-F600_Door_V2" parent="GroundCabinets/Doors/CabinetDoor_600_2" unique_id=458767953 instance=ExtResource("16_ixdai")]
-transform = Transform3D(4.371139e-08, 0, -1.0000001, 0, 1, 0, -1, 0, -4.3711392e-08, 0, 0.8, 0)
-
-[node name="KCC-Handle_Knob_V5" parent="GroundCabinets/Doors/CabinetDoor_600_2" unique_id=771639537 instance=ExtResource("7_r20d3")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -0.005, 0.76, -0.565)
 
 [node name="CabinetDoor_600_3" type="Node3D" parent="GroundCabinets/Doors" unique_id=2051920269]
 transform = Transform3D(-4.3711385e-08, 0, 1, 0, 1, 0, 0.99999994, 0, 4.371139e-08, 0.9999999, 0, 2.4)
@@ -224,13 +276,13 @@ transform = Transform3D(4.371139e-08, 0, -1.0000001, 0, 1, 0, -1, 0, -4.3711392e
 transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -0.005, 0.76, -0.565)
 
 [node name="CabinetDoor_600_1" type="Node3D" parent="GroundCabinets/Doors" unique_id=1780614564]
-transform = Transform3D(-4.3711385e-08, 0, 1, 0, 1, 0, 0.99999994, 0, 4.371139e-08, 3.1999998, 0, -0.40000004)
+transform = Transform3D(-4.3711385e-08, 0, 1, 0, 1, 0, 0.99999994, 0, 4.371139e-08, 3.1999998, 0, -0.6)
 
 [node name="KC-F600_Door_V2" parent="GroundCabinets/Doors/CabinetDoor_600_1" unique_id=1028638443 instance=ExtResource("16_ixdai")]
 transform = Transform3D(4.371139e-08, 0, -1.0000001, 0, 1, 0, -1, 0, -4.3711392e-08, 0, 0.8, 0)
 
 [node name="KCC-Handle_Knob_V5" parent="GroundCabinets/Doors/CabinetDoor_600_1" unique_id=1646015663 instance=ExtResource("7_r20d3")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -0.005, 0.76, -0.565)
+transform = Transform3D(1.3113414e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -0.004999995, 0.76, -0.56500006)
 
 [node name="CabinetDoor_Corner" type="Node3D" parent="GroundCabinets/Doors" unique_id=1127900176]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0.1, 2.2)
@@ -263,12 +315,13 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.355, 0.66, -0.01)
 
 [node name="CabinetDoor_800" type="Node3D" parent="GroundCabinets/Doors" unique_id=1888664453]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 0, 2.4)
 
 [node name="KCC-Handle_Knob_V4" parent="GroundCabinets/Doors/CabinetDoor_800" unique_id=346627088 instance=ExtResource("7_r20d3")]
-transform = Transform3D(1, 0, 8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.045, 0.76000005, 2.39)
+transform = Transform3D(1, 0, 8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.76, 0.76, -0.01)
 
 [node name="KC-F800_Door_V2" parent="GroundCabinets/Doors/CabinetDoor_800" unique_id=1820857423 instance=ExtResource("3_3q5oc")]
-transform = Transform3D(1, 0, 8.7422784e-08, 0, 1, 0, 8.742278e-08, 0, -1.0000001, -1.8, 0.8, 2.4)
+transform = Transform3D(1, 0, 8.7422784e-08, 0, 1, 0, 8.742278e-08, 0, -1.0000001, 0, 0.8, 0)
 
 [node name="Drawers" type="Node3D" parent="GroundCabinets" unique_id=1512245906]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2, 0, 2.4)
@@ -363,7 +416,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.3, -0.12, -0.02)
 
 [node name="DrawerStack_3M_602" type="Node3D" parent="GroundCabinets/Drawers" unique_id=465946698]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.4000001, 0, -1)
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0.4000001, 0, -1.8)
 
 [node name="Drawer_600_M" type="Node3D" parent="GroundCabinets/Drawers/DrawerStack_3M_602" unique_id=1846711356]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.32, 0)
@@ -378,10 +431,10 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56, 0)
 
 [node name="KC-F600_Drawer_Front_SizeS_V1" parent="GroundCabinets/Drawers/DrawerStack_3M_602/Drawer_600_M2" unique_id=1730148180 instance=ExtResource("19_h1m5f")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, 0, 0, 0)
 
 [node name="KCC_Handle_V2" parent="GroundCabinets/Drawers/DrawerStack_3M_602/Drawer_600_M2" unique_id=915103296 instance=ExtResource("20_6c28b")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.3, -0.12, -0.02)
+transform = Transform3D(-1, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -1, -0.29999995, -0.120000005, -0.01999998)
 
 [node name="Drawer_600_M3" type="Node3D" parent="GroundCabinets/Drawers/DrawerStack_3M_602" unique_id=1724971123]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
@@ -407,19 +460,16 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.20
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.2000003, 0.8, 3)
 
 [node name="KCC-CornerInverted_Top_V3" parent="GroundCabinets/Countertops" unique_id=382060627 instance=ExtResource("23_7gvmg")]
-transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.2, 0.8, 0.20000002)
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.2, 0.8, 1.4901161e-08)
 
 [node name="KCC-F800_Top_V3" parent="GroundCabinets/Countertops" unique_id=1108691121 instance=ExtResource("3_i0ngk")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1, 0.8, 3)
 
 [node name="KCC-F600_Top_V3" parent="GroundCabinets/Countertops" unique_id=891070873 instance=ExtResource("24_24lev")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.1999998, 0.8, 0.2)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.1999998, 0.8, 0)
 
 [node name="KCC-F600_Top_V5" parent="GroundCabinets/Countertops" unique_id=1310210993 instance=ExtResource("24_24lev")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.1999998, 0.8, 1.4000001)
-
-[node name="KCC-F600_Top_V6" parent="GroundCabinets/Countertops" unique_id=521867608 instance=ExtResource("24_24lev")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.1999998, 0.8, 0.8)
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 3.1999998, 0.8, 0.6000001)
 
 [node name="KCC-F600_Top_V7" parent="GroundCabinets/Countertops" unique_id=1686635188 instance=ExtResource("24_24lev")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 1.5999999, 0.8, 3.0000002)
@@ -434,7 +484,7 @@ transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -1.8
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2.1999998, 0.8, 3.0000002)
 
 [node name="Dishwasher" type="Node3D" parent="GroundCabinets" unique_id=1740746344]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1999998, 0, 0.2)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.1999998, 0, 0)
 
 [node name="KC-F600_V2" parent="GroundCabinets/Dishwasher" unique_id=424710957 instance=ExtResource("14_7tow1")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
@@ -502,3 +552,50 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0
 
 [node name="TKC-F800_H2000_V3" parent="TallCabinets/Cabinets" unique_id=1990995983 instance=ExtResource("31_okdkm")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 0, 0, -0.20000002)
+
+[node name="Sink" type="Node3D" parent="." unique_id=2039418542]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0, 1.2)
+
+[node name="KC-F800_V2" parent="Sink" unique_id=565209937 instance=ExtResource("4_u6a48")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0, 0)
+
+[node name="KCC-F800_TopWithHole_V3" parent="Sink" unique_id=2133817191 instance=ExtResource("32_dm51y")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 0.8, 0)
+
+[node name="KA-F800_Sink_V1" parent="Sink" unique_id=551306527 instance=ExtResource("33_neva4")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.03, 0.855, 0.03)
+
+[node name="Faucet_V1" parent="Sink" unique_id=728362409 instance=ExtResource("34_gjfdd")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.07, 0.85, 0.4)
+
+[node name="Piping" type="Node3D" parent="Sink" unique_id=778722910]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0.4)
+
+[node name="SinkStrainer_V1" parent="Sink/Piping" unique_id=748986807 instance=ExtResource("35_suxoh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.091, 0.63, 0)
+
+[node name="SinkWaterPipesV1" parent="Sink/Piping" unique_id=2057164674 instance=ExtResource("36_8dkxt")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.03, 0.811, 0)
+
+[node name="SinkDrainPipesV1" parent="Sink/Piping" unique_id=365917738 instance=ExtResource("37_7tow1")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.091, 0.634, 0)
+
+[node name="DoubleDoor_800" type="Node3D" parent="Sink" unique_id=1357007481]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -0.5999999, 0, 0)
+
+[node name="Door_L" type="Node3D" parent="Sink/DoubleDoor_800" unique_id=501461949]
+
+[node name="KC-F800_Door_V2_TwoDoor_L" parent="Sink/DoubleDoor_800/Door_L" unique_id=1853872652 instance=ExtResource("5_dag75")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="KCC-Handle_Knob_V4" parent="Sink/DoubleDoor_800/Door_L" unique_id=1555357450 instance=ExtResource("7_r20d3")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, 0.365, 0.76, 0.006)
+
+[node name="Door_R" type="Node3D" parent="Sink/DoubleDoor_800" unique_id=2045323784]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0)
+
+[node name="KC-F800_Door_V2_TwoDoor_R" parent="Sink/DoubleDoor_800/Door_R" unique_id=210377083 instance=ExtResource("6_4aiox")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+
+[node name="KCC-Handle_Knob_V5" parent="Sink/DoubleDoor_800/Door_R" unique_id=502969232 instance=ExtResource("7_r20d3")]
+transform = Transform3D(1, 0, 1.7484555e-07, 0, 1, 0, -1.7484555e-07, 0, 1, -0.365, 0.76, 0.006)
