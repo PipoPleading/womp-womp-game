@@ -377,7 +377,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -0.3, -0.12, -0.02)
 
 [node name="Drawer_600_M3" type="Node3D" parent="GroundCabinets/Drawers/DrawerStack_3M_601" unique_id=1565125142]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8, -0.4170828)
 
 [node name="KC-F600_Drawer_Front_SizeS_V1" parent="GroundCabinets/Drawers/DrawerStack_3M_601/Drawer_600_M3" unique_id=1539289275 instance=ExtResource("19_h1m5f")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)

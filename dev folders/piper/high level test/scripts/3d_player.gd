@@ -9,15 +9,16 @@ extends CharacterBody3D
 # players should have a death and alive state to differentiate from spectating and playing or menuing
 @onready var phantom_camera_3d: PhantomCamera3D = %PhantomCamera3D
 @onready var neck_target: Node3D = $NeckRoot/Neck_Target
+@onready var multiplayer_synchronizer: MultiplayerSynchronizer = $MultiplayerSynchronizer
 
-@onready var eye_1: MeshInstance3D = $Eye1
-@onready var eye_2: MeshInstance3D = $Eye2
+#@onready var eye_1: MeshInstance3D = $Eye1
+#@onready var eye_2: MeshInstance3D = $Eye2
 
-var _weapon_instance : Node3D 
+@export var _weapon_instance : Node3D 
 @export var weapon : WeaponData
 
-enum PLAYER_STATE {idle = 0, idle_crouch = 1, walk = 2, walk_crouch = 3, jump = 4, fall = 5, land = 6, flinch = 7, hurt = 8, dead = 9, spectating = 10}
-var current_state = PLAYER_STATE.idle
+enum anim_state {idle = 0, crouch_jump = 1, crouch_land = 2, crouch_walk = 3, fall = 5, flinch = 6, hurt = 7, idle_crouch = 9, jump = 10, land = 11, walk = 12}
+var active_state : anim_state
 
 ## misc variables to update visuals
 var is_falling : bool = false
@@ -29,23 +30,28 @@ const JUMP_VELOCITY = 4.5
 
 const look_sensitivity : float = 0.003
 
+## visuals
+@onready var egg_2: EggVisual = $Egg2
+var visibility_scalar : float = 1.0
+
 func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
 
 func _ready() -> void:
 	if is_multiplayer_authority():
 		focus_toggle(true)
-		eye_1.hide()
-		eye_2.hide()
+		#eye_1.hide()
+		#eye_2.hide()
 	
-	equip_weapon()
+	egg_2.play_anim(EggVisual.anim_state.idle)
+	#equip_weapon()
 
 ## weapon stuff
 
-func equip_weapon() -> void:
-	_weapon_instance = load(weapon.weapon_location).instantiate()
-	_weapon_instance.position = weapon.initial_position
-	add_child(_weapon_instance)
+#func equip_weapon() -> void:
+	#_weapon_instance = load(weapon.weapon_location).instantiate()
+	#_weapon_instance.position = weapon.initial_position
+	#add_child(_weapon_instance)
 
 
 func _input(event: InputEvent) -> void:
@@ -93,15 +99,22 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
-		## crouch check here
-		update_state(PLAYER_STATE.walk)
+		#if crouchn
+		
+		egg_2.shader_scale(visibility_scalar)
+		visibility_scalar = move_toward(visibility_scalar, 0, delta)
+		update_state(anim_state.walk)
 		jump_handling()
 		
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
+		
+		visibility_scalar = move_toward(visibility_scalar, 1, delta)
+		
+		egg_2.shader_scale(visibility_scalar)
 		## crouch check here
-		update_state(PLAYER_STATE.idle)
+		update_state(anim_state.idle)
 		jump_handling()
 	move_and_slide()
 
@@ -118,7 +131,7 @@ func fall_handling(delta : float):
 		velocity += get_gravity() * delta
 		## check if velocity.y is negative, if true set fall and is_falling
 		if velocity.y < 0 and !is_falling:
-			update_state(PLAYER_STATE.fall)
+			update_state(anim_state.fall)
 			is_falling = true
 
 func jump_handling():
@@ -126,8 +139,9 @@ func jump_handling():
 		is_falling = false
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = JUMP_VELOCITY
-			update_state(PLAYER_STATE.jump)
+			update_state(anim_state.jump)
 
-func update_state(target_state : PLAYER_STATE):
+func update_state(target_state : anim_state):
 	## send signals here to update animation player on rig
-	current_state = target_state
+	#current_state = target_state
+	egg_2.play_anim(target_state)

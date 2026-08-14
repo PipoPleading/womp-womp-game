@@ -1,13 +1,14 @@
 [gd_scene format=3 uid="uid://c0f73gk2crbfm"]
 
 [ext_resource type="PackedScene" uid="uid://bwebbi5hhain1" path="res://dev folders/cat/models/character/Egg.glb" id="1_ncj6t"]
+[ext_resource type="Script" uid="uid://b4gb6at12m2pj" path="res://dev folders/piper/egg_controls.gd" id="2_b2nbs"]
 [ext_resource type="Shader" uid="uid://bgoeergysfaib" path="res://refractive.gdshader" id="2_qlk8b"]
 [ext_resource type="Texture2D" uid="uid://3rdmd22jrjot" path="res://dev folders/cat/models/character/Egg_EggTextureMap.png" id="3_r2gbt"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_elq4t"]
 render_priority = 0
 shader = ExtResource("2_qlk8b")
-shader_parameter/refraction_str = 1.0
+shader_parameter/refraction_str = 0.0
 shader_parameter/refractive_index = 1.2000000095
 shader_parameter/distortion_strength = 0.02
 shader_parameter/visibility = 0.15
@@ -16,157 +17,40 @@ shader_parameter/player_tex = ExtResource("3_r2gbt")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7l7aj"]
 render_priority = 0
 shader = ExtResource("2_qlk8b")
-shader_parameter/refraction_str = 1.0
+shader_parameter/refraction_str = 0.0
 shader_parameter/refractive_index = 1.2000000095
 shader_parameter/distortion_strength = 0.02
 shader_parameter/visibility = 0.15
 shader_parameter/player_tex = ExtResource("3_r2gbt")
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_xyor1"]
-animation = &"Crouch_Jump"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p8gx4"]
-animation = &"Crouch_Land"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tm2mg"]
-animation = &"Crouch_Walk"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_8ey0i"]
-animation = &"Fall"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ly8d0"]
-animation = &"Flinch"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_p5wlr"]
-animation = &"Hurt"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_28qa4"]
-animation = &"Idle"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_geyv3"]
-animation = &"Idle_Crouch"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_v4wvt"]
-animation = &"Jump"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_mvh2h"]
-animation = &"Land"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1uk2l"]
-animation = &"Walk"
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_bovmh"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tdrbm"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dwjge"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mumnf"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ugajf"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_h5141"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mqi2y"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lsklk"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_684sw"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5nejm"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_mkg1t"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_xfnyc"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4dw5v"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4jwwx"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_6ghp6"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yo4vx"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_oenbi"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_lrdtl"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5e44h"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_fw52l"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tract"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_abbot"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_tctw3"]
-advance_mode = 2
-
-[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_ltk6h"]
-states/Crouch_Jump/node = SubResource("AnimationNodeAnimation_xyor1")
-states/Crouch_Jump/position = Vector2(548, -77.84363)
-states/Crouch_Land/node = SubResource("AnimationNodeAnimation_p8gx4")
-states/Crouch_Land/position = Vector2(655.6666, 4.0370226)
-states/Crouch_Walk/node = SubResource("AnimationNodeAnimation_tm2mg")
-states/Crouch_Walk/position = Vector2(378.1852, -76.66667)
-states/Fall/node = SubResource("AnimationNodeAnimation_8ey0i")
-states/Fall/position = Vector2(513.6667, 74.333336)
-states/Flinch/node = SubResource("AnimationNodeAnimation_ly8d0")
-states/Flinch/position = Vector2(297.15228, 230.11934)
-states/Hurt/node = SubResource("AnimationNodeAnimation_p5wlr")
-states/Hurt/position = Vector2(184.99998, 216.1166)
-states/Idle/node = SubResource("AnimationNodeAnimation_28qa4")
-states/Idle/position = Vector2(383.33334, 101.55556)
-states/Idle_Crouch/node = SubResource("AnimationNodeAnimation_geyv3")
-states/Idle_Crouch/position = Vector2(298, 13.3333435)
-states/Jump/node = SubResource("AnimationNodeAnimation_v4wvt")
-states/Jump/position = Vector2(553.6667, 219.171)
-states/Land/node = SubResource("AnimationNodeAnimation_mvh2h")
-states/Land/position = Vector2(657.22217, 146.77777)
-states/Walk/node = SubResource("AnimationNodeAnimation_1uk2l")
-states/Walk/position = Vector2(434.99997, 217.58984)
-transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_bovmh"), "Idle", "Idle_Crouch", SubResource("AnimationNodeStateMachineTransition_tdrbm"), "Idle_Crouch", "Crouch_Walk", SubResource("AnimationNodeStateMachineTransition_dwjge"), "Idle_Crouch", "Crouch_Jump", SubResource("AnimationNodeStateMachineTransition_mumnf"), "Crouch_Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_ugajf"), "Fall", "Crouch_Land", SubResource("AnimationNodeStateMachineTransition_h5141"), "Idle", "Jump", SubResource("AnimationNodeStateMachineTransition_mqi2y"), "Crouch_Walk", "Crouch_Jump", SubResource("AnimationNodeStateMachineTransition_lsklk"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_684sw"), "Walk", "Jump", SubResource("AnimationNodeStateMachineTransition_5nejm"), "Jump", "Fall", SubResource("AnimationNodeStateMachineTransition_mkg1t"), "Fall", "Land", SubResource("AnimationNodeStateMachineTransition_xfnyc"), "Idle", "Hurt", SubResource("AnimationNodeStateMachineTransition_4dw5v"), "Idle", "Flinch", SubResource("AnimationNodeStateMachineTransition_4jwwx"), "Crouch_Land", "Idle_Crouch", SubResource("AnimationNodeStateMachineTransition_6ghp6"), "Crouch_Walk", "Idle_Crouch", SubResource("AnimationNodeStateMachineTransition_yo4vx"), "Idle_Crouch", "Idle", SubResource("AnimationNodeStateMachineTransition_oenbi"), "Hurt", "Idle", SubResource("AnimationNodeStateMachineTransition_lrdtl"), "Flinch", "Idle", SubResource("AnimationNodeStateMachineTransition_5e44h"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_fw52l"), "Land", "Idle", SubResource("AnimationNodeStateMachineTransition_tract"), "Land", "Walk", SubResource("AnimationNodeStateMachineTransition_abbot"), "Crouch_Land", "Crouch_Walk", SubResource("AnimationNodeStateMachineTransition_tctw3")]
-graph_offset = Vector2(-100, 64)
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_b2nbs"]
+properties/0/path = NodePath("AnimationPlayer:current_animation")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:shader_param")
+properties/1/spawn = true
+properties/1/replication_mode = 0
 
 [node name="Egg2" unique_id=1320390667 instance=ExtResource("1_ncj6t")]
+script = ExtResource("2_b2nbs")
 
-[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(781807151) index="0" unique_id=881463823]
-bones/0/position = Vector3(4.8066113e-08, 1.1040657, 9.4250765e-08)
-bones/0/rotation = Quaternion(-0.70627856, 0.029561164, 0.7067418, -0.02850997)
-bones/1/rotation = Quaternion(0.9949263, 0.10058696, 0.0008069, -0.001809907)
-bones/2/rotation = Quaternion(0.54349446, 0.09735358, -0.07597696, 0.83027923)
-bones/3/rotation = Quaternion(-0.01376041, -0.40723085, -0.2163089, 0.88723403)
-bones/4/rotation = Quaternion(-0.4833519, 0.32911098, 0.39360794, 0.70931643)
-bones/5/rotation = Quaternion(-0.058020975, 0.83385426, -0.5455407, -0.060878083)
-bones/6/rotation = Quaternion(-0.053674843, 0.32020557, 0.2950964, 0.8986131)
-bones/7/rotation = Quaternion(-0.4681137, -0.107685, -0.4517396, 0.7518012)
+[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1304840508) index="0" unique_id=1585056495]
+bones/0/position = Vector3(5.7858912e-08, 1.3236578, 9.993339e-08)
+bones/0/rotation = Quaternion(-0.7107697, -0.009951417, 0.70299286, 0.022550467)
+bones/1/rotation = Quaternion(0.99842495, 0.049763575, -0.023260962, -0.011407087)
+bones/2/rotation = Quaternion(0.5543644, -0.090704575, -0.13126126, 0.81683743)
+bones/3/rotation = Quaternion(-0.48947352, 0.2729317, 0.2806154, 0.7792168)
+bones/4/rotation = Quaternion(-0.039518375, 0.1402239, 0.3498851, 0.92539513)
+bones/5/rotation = Quaternion(-0.12902518, 0.8192551, -0.55011415, 0.09771358)
+bones/6/rotation = Quaternion(-0.4707591, 0.0059682103, 0.12029473, 0.874002)
+bones/7/rotation = Quaternion(-0.12995969, 0.06776964, 0.03724318, 0.9884993)
 
-[node name="Egg" parent="Armature/Skeleton3D" index="0" unique_id=410785738]
+[node name="Egg" parent="Armature/Skeleton3D" index="0" unique_id=490705343]
 surface_material_override/0 = SubResource("ShaderMaterial_elq4t")
 surface_material_override/1 = SubResource("ShaderMaterial_7l7aj")
 
-[node name="AnimationTree" type="AnimationTree" parent="." index="2" unique_id=1299409980]
-tree_root = SubResource("AnimationNodeStateMachine_ltk6h")
-anim_player = NodePath("../AnimationPlayer")
+[node name="AnimationPlayer" parent="." index="1" unique_id=1962338949]
+autoplay = &"Idle"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." index="2" unique_id=2092049562]
+replication_config = SubResource("SceneReplicationConfig_b2nbs")

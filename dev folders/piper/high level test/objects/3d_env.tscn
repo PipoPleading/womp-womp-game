@@ -1,13 +1,10 @@
 [gd_scene format=3 uid="uid://dhh8s6n07t6id"]
 
+[ext_resource type="PackedScene" uid="uid://cqvhxjtqlb7tr" path="res://dev folders/cat/scenes/kitchen_level.tscn" id="1_2k451"]
 [ext_resource type="PackedScene" uid="uid://c5yvmt8ba4sed" path="res://dev folders/piper/high level test/objects/high_level_ui.tscn" id="1_41hjh"]
 [ext_resource type="PackedScene" uid="uid://cwiwagkfn8cmc" path="res://dev folders/piper/high level test/objects/3d_player.tscn" id="2_e5ck7"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_2k451"]
 [ext_resource type="Script" uid="uid://bctkkrxcf5nnd" path="res://dev folders/piper/high level test/scripts/high_level_multiplayer_spawner.gd" id="4_41hjh"]
-
-[sub_resource type="SphereShape3D" id="SphereShape3D_ygfeb"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_gq0y6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xtnmv"]
 
@@ -18,41 +15,15 @@ sky_material = SubResource("ProceduralSkyMaterial_xtnmv")
 background_mode = 2
 sky = SubResource("Sky_gq0y6")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ygfeb"]
-size = Vector3(50, 1, 50)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ygfeb"]
-size = Vector3(50, 1, 50)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gq0y6"]
-vertex_color_use_as_albedo = true
-albedo_color = Color(0.36508796, 0.36508796, 0.36508796, 1)
-
 [node name="3D Test" type="Node3D" unique_id=2036907785]
+
+[node name="KitchenLevel" parent="." unique_id=57881643 instance=ExtResource("1_2k451")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -8.656536, -25.744217)
 
 [node name="HighLevelUI" parent="." unique_id=1160919217 instance=ExtResource("1_41hjh")]
 
-[node name="RigidBody3D" type="RigidBody3D" parent="." unique_id=1786676310]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2120266, -6.1295033)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" unique_id=2041463557]
-shape = SubResource("SphereShape3D_ygfeb")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D" unique_id=1172142078]
-mesh = SubResource("SphereMesh_gq0y6")
-
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1682432785]
 environment = SubResource("Environment_ygfeb")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="." unique_id=1340163960]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3010616, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" unique_id=521747146]
-shape = SubResource("BoxShape3D_ygfeb")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D" unique_id=1906190981]
-mesh = SubResource("BoxMesh_ygfeb")
-surface_material_override/0 = SubResource("StandardMaterial3D_gq0y6")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=586532987]
 _spawnable_scenes = PackedStringArray("uid://cwiwagkfn8cmc")
@@ -62,10 +33,14 @@ network_player = ExtResource("2_e5ck7")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=809914714]
 physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 0.99124753, 0.13201635, 0, -0.13201635, 0.99124753, 0, 2, 4)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 11.058068, 26.291805)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1032237605]
 process_priority = 300
 process_physics_priority = 300
 script = ExtResource("4_2k451")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2015417896]
+transform = Transform3D(-0.8571673, -0.32760447, 0.397416, 0, 0.77162457, 0.63607824, -0.515038, 0.54522544, -0.66141135, 0, 0, 0)
+shadow_enabled = true
