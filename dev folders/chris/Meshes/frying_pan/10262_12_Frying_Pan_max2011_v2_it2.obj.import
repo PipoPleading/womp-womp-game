@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://i8xknvi4khg"
+path="res://.godot/imported/10262_12_Frying_Pan_max2011_v2_it2.obj-281cbeb3762a4c6a65554d467f215820.mesh"
+
+[deps]
+
+files=["res://.godot/imported/10262_12_Frying_Pan_max2011_v2_it2.obj-281cbeb3762a4c6a65554d467f215820.mesh"]
+
+source_file="res://dev folders/chris/Meshes/frying_pan/10262_12_Frying_Pan_max2011_v2_it2.obj"
+dest_files=["res://.godot/imported/10262_12_Frying_Pan_max2011_v2_it2.obj-281cbeb3762a4c6a65554d467f215820.mesh", "res://.godot/imported/10262_12_Frying_Pan_max2011_v2_it2.obj-281cbeb3762a4c6a65554d467f215820.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

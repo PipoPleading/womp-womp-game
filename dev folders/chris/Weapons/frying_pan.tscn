@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://chbxblcsj45j0"]
+
+[ext_resource type="Script" uid="uid://bc7l13ptkb1gl" path="res://dev folders/chris/Scripts/weapon.gd" id="1_y6k4y"]
+[ext_resource type="Resource" uid="uid://biwj3ssltadah" path="res://dev folders/chris/Resources/WeaponData/frying_pan.tres" id="2_oikyw"]
+[ext_resource type="ArrayMesh" uid="uid://i8xknvi4khg" path="res://dev folders/chris/Meshes/frying_pan/10262_12_Frying_Pan_max2011_v2_it2.obj" id="3_oikyw"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_oikyw"]
+properties/0/path = NodePath("pivot_point:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("pivot_point:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[node name="FryingPan" type="Node3D" unique_id=100907125]
+
+[node name="Weapon" type="Node" parent="." unique_id=411780477 node_paths=PackedStringArray("pivot_point")]
+script = ExtResource("1_y6k4y")
+weapon_data = ExtResource("2_oikyw")
+pivot_point = NodePath("../pivot_point")
+metadata/_custom_type_script = "uid://bc7l13ptkb1gl"
+
+[node name="pivot_point" type="Node3D" parent="." unique_id=1169467799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7537653, -1.1080863, 0.08477999)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="pivot_point" unique_id=2049477541]
+transform = Transform3D(-0.016441416, -0.011387704, 0, 0.011387704, -0.016441416, 0, 0, 0, 0.02, 0.7537653, 1.1080863, -0.08477999)
+mesh = ExtResource("3_oikyw")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=632467927]
+replication_config = SubResource("SceneReplicationConfig_oikyw")

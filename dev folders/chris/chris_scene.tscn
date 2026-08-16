@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://d11hjn8yym27w"]
 
 [ext_resource type="Script" uid="uid://c5f03i51e8jeu" path="res://dev folders/chris/Scripts/player.gd" id="1_tpd5x"]
+[ext_resource type="Resource" uid="uid://csv8xqkkhby8w" path="res://dev folders/chris/Resources/ToolData/easter_egg.tres" id="2_uvy4e"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_dg0xg"]
 
@@ -23,6 +24,7 @@ spot_angle = 68.63668
 [node name="CharacterBody3D" type="CharacterBody3D" parent="." unique_id=489780613]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.0226674, 0)
 script = ExtResource("1_tpd5x")
+weapon = ExtResource("2_uvy4e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D" unique_id=2039832459]
 shape = SubResource("CapsuleShape3D_dg0xg")

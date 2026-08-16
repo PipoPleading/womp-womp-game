@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://ci71py7hhvtlt"]
+
+[ext_resource type="Script" uid="uid://bj4tp2eogf0qm" path="res://dev folders/chris/Scripts/yolk_bomb_deployable.gd" id="1_i0gkq"]
+[ext_resource type="Script" uid="uid://bc7l13ptkb1gl" path="res://dev folders/chris/Scripts/weapon.gd" id="1_i5wyo"]
+[ext_resource type="Resource" uid="uid://wut4gbhiuonr" path="res://dev folders/chris/Resources/ToolData/yolk_bomb.tres" id="2_i0gkq"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_21ywy"]
+
+[node name="Bomb" type="Node3D" unique_id=100907125 node_paths=PackedStringArray("timer")]
+script = ExtResource("1_i0gkq")
+timer = NodePath("Timer")
+
+[node name="Weapon" type="Node" parent="." unique_id=411780477 node_paths=PackedStringArray("pivot_point")]
+script = ExtResource("1_i5wyo")
+weapon_data = ExtResource("2_i0gkq")
+pivot_point = NodePath("../pivot_point")
+metadata/_custom_type_script = "uid://bc7l13ptkb1gl"
+
+[node name="pivot_point" type="Node3D" parent="." unique_id=1169467799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7537653, -1.1080863, 0.08477999)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="pivot_point" unique_id=2049477541]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.7537653, 1.1080863, -0.08477999)
+mesh = SubResource("CapsuleMesh_21ywy")
+
+[node name="Timer" type="Timer" parent="." unique_id=1495500253]
+wait_time = 2.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

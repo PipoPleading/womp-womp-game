@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://br3aipnhla0yx"]
+
+[ext_resource type="FontFile" uid="uid://b8jtg3f6tobsn" path="res://dev folders/nyck/fonts/Crackman.otf" id="1_n7c2u"]
+[ext_resource type="Texture2D" uid="uid://cahu8hxo8jgfs" path="res://dev folders/nyck/Imports/arrow_left.png" id="2_h5qh7"]
+[ext_resource type="Texture2D" uid="uid://bwgabhrfhsuf6" path="res://dev folders/nyck/Imports/arrow_right.png" id="3_64fw0"]
+
+[node name="MenuUI" type="Control" unique_id=2012802898]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=1608339139]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -316.0
+offset_top = 25.0
+offset_right = 252.0
+offset_bottom = 76.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_n7c2u")
+theme_override_font_sizes/font_size = 42
+text = "Player Name"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1922571583]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 874.0
+offset_top = -33.0
+offset_right = 979.0
+offset_bottom = -2.0
+grow_vertical = 0
+text = "Leave Lobby"
+
+[node name="Button2" type="Button" parent="." unique_id=1243945348]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -105.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Return"
+
+[node name="LeftButton" type="Button" parent="." unique_id=1941648409]
+layout_mode = 0
+offset_left = 152.0
+offset_right = 672.0
+offset_bottom = 520.0
+scale = Vector2(0.26555628, 0.19231407)
+icon = ExtResource("2_h5qh7")
+flat = true
+
+[node name="RightButton" type="Button" parent="." unique_id=1276952525]
+layout_mode = 0
+offset_left = 801.99994
+offset_top = 3.9999998
+offset_right = 1322.0
+offset_bottom = 524.0
+scale = Vector2(0.26555628, 0.19231407)
+action_mode = 0
+icon = ExtResource("3_64fw0")
+flat = true

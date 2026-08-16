@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="FryingPan" format=3 uid="uid://biwj3ssltadah"]
+
+[ext_resource type="Script" uid="uid://t5dcpsnpuvud" path="res://dev folders/chris/Resources/WeaponData/Scripts/frying_pan.gd" id="1_0rrqc"]
+
+[resource]
+script = ExtResource("1_0rrqc")
+name = "Frying Pan"
+damage = 10
+weapon_location = "res://dev folders/chris/Weapons/frying_pan.tscn"
+initial_position = Vector3(1, 1.5, 0)
+metadata/_custom_type_script = "uid://t5dcpsnpuvud"

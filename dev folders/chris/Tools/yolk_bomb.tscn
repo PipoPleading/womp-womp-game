@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bi6fqbsc1rbyg"]
+
+[ext_resource type="Script" uid="uid://bc7l13ptkb1gl" path="res://dev folders/chris/Scripts/weapon.gd" id="1_lbsyl"]
+[ext_resource type="Resource" uid="uid://wut4gbhiuonr" path="res://dev folders/chris/Resources/ToolData/yolk_bomb.tres" id="2_7jw44"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_21ywy"]
+
+[node name="FryingPan" type="Node3D" unique_id=100907125]
+
+[node name="pivot_point" type="Node3D" parent="." unique_id=1169467799]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0027050376, -0.11787391, 0.08477999)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="pivot_point" unique_id=2049477541]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.0027050376, 0.11787391, -0.08477999)
+mesh = SubResource("CapsuleMesh_21ywy")
+
+[node name="Weapon" type="Node" parent="." unique_id=1612961380 node_paths=PackedStringArray("pivot_point")]
+script = ExtResource("1_lbsyl")
+weapon_data = ExtResource("2_7jw44")
+pivot_point = NodePath("../pivot_point")
+metadata/_custom_type_script = "uid://bc7l13ptkb1gl"
