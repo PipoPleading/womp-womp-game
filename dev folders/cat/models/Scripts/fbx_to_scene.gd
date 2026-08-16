@@ -1,10 +1,10 @@
 @tool
 extends EditorScript
 
-const ROOT = "res://dev folders/cat/models/Food_and_Kitchen/fbx"
-const OUTPUT_ROOT = "res://dev folders/cat/models/Food_and_Kitchen/Scenes"
+const ROOT = "res://dev folders/cat/models/Tiny_Treats_Baked/fbx"
+const OUTPUT_ROOT = "res://dev folders/cat/models/Tiny_Treats_Baked/Scenes"
 
-const scale = 0.4
+const scale = 0.2
 
 func _run():
 	print("Converting from .fbx to .tscn")
