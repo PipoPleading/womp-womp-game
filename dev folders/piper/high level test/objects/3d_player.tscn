@@ -15,8 +15,6 @@ properties/1/path = NodePath(".:rotation")
 properties/1/spawn = true
 properties/1/replication_mode = 1
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ygfeb"]
-
 [sub_resource type="Resource" id="Resource_fl3pk"]
 script = ExtResource("3_vtkla")
 duration = 0.0
@@ -31,6 +29,8 @@ corner_radius_bottom_left = 1
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gq0y6"]
 bg_color = Color(0.28778404, 0.2877841, 0.28778395, 0.45882353)
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ygfeb"]
+
 [node name="3d_player" type="CharacterBody3D" unique_id=520216166 node_paths=PackedStringArray("_weapon_instance")]
 script = ExtResource("1_psi5w")
 _weapon_instance = NodePath("FryingPan")
@@ -41,10 +41,6 @@ replication_config = SubResource("SceneReplicationConfig_iyl20")
 
 [node name="Egg2" parent="." unique_id=1320390667 instance=ExtResource("3_fl3pk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015462279, 0.8613038, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=886215019]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
-shape = SubResource("CapsuleShape3D_ygfeb")
 
 [node name="NeckRoot" type="Node3D" parent="." unique_id=1400170862]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4672719, 0)
@@ -112,3 +108,11 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_gq0y6")
 
 [node name="FryingPan" parent="." unique_id=100907125 instance=ExtResource("6_j5nh2")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.2932904, 2.222613, -1.1134033)
+
+[node name="Area3D" type="Area3D" parent="." unique_id=1077083572]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=886215019]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_ygfeb")
+
+[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]

@@ -4,6 +4,17 @@
 [ext_resource type="Resource" uid="uid://jnrg0ypeosts" path="res://dev folders/chris/Resources/WeaponData/knife.tres" id="2_ow3mk"]
 [ext_resource type="ArrayMesh" uid="uid://dc3rfaswqrhd" path="res://dev folders/chris/Meshes/Low_Poly_Knife/Low Poly Knife.obj" id="3_ow3mk"]
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ow3mk"]
+points = PackedVector3Array(6.6977406, 16.70481, -17.726643, -3.7900102, 59.21129, -16.623585, 5.0414243, 80.19231, -18.830673, 0.62773347, 85.16336, -14.967538, 0.62773347, 5.658016, -17.174627, 10.0117235, 56.449593, -18.278658, 1.731494, 5.658016, -16.07157, 6.1451845, 20.018847, -18.830673, -3.2374547, 76.32593, -17.174627, -3.2374547, 57.00193, -14.415036, 5.0414243, 80.744644, -16.07157, 10.0117235, 56.449593, -19.383175, 2.8352544, 70.25019, -18.830673, -2.1336944, 25.534351, -15.519553, -1.0285828, 85.16336, -17.726643, -2.684899, 77.97505, -14.415036, -1.5811384, 57.00193, -14.415036, 7.8015013, 25.534351, -17.726643, 2.8352544, 59.21129, -15.519553, 0.07517767, 9.524395, -17.174627, -3.2374547, 38.798393, -16.07157, 8.354056, 29.40073, -18.830673, 5.5926294, 12.286091, -18.278658, 8.354056, 48.164497, -19.383175, 2.8352544, 81.84143, -18.830673, -1.0285828, 17.809488, -15.519553, 1.1789382, 59.21129, -18.278658, -3.7900102, 71.35487, -16.623585, -1.0285828, 85.16336, -14.967538, 5.5926294, 79.63997, -17.174627, 0.62773347, 85.16336, -17.726643, 2.2840497, 7.315033, -17.726643)
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_q4jwq"]
+properties/0/path = NodePath("pivot_point:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("pivot_point:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
 [node name="FryingPan" type="Node3D" unique_id=100907125]
 
 [node name="Weapon" type="Node" parent="." unique_id=411780477 node_paths=PackedStringArray("pivot_point")]
@@ -18,3 +29,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012619972, -1.1632278, 0.25
 [node name="MeshInstance3D" type="MeshInstance3D" parent="pivot_point" unique_id=2049477541]
 transform = Transform3D(0.015, 2.264937e-09, -2.264937e-09, 2.264937e-09, -0.015, 0, -2.264937e-09, -3.4199598e-16, -0.015, -0.012619972, 1.1632278, -0.2515541)
 mesh = ExtResource("3_ow3mk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="pivot_point" unique_id=1700327152]
+transform = Transform3D(0.015, 2.264937e-09, -2.264937e-09, 2.264937e-09, -0.015, 0, -2.264937e-09, -3.4199598e-16, -0.015, -0.012619972, 1.1632278, -0.2515541)
+shape = SubResource("ConvexPolygonShape3D_ow3mk")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1237043195]
+replication_config = SubResource("SceneReplicationConfig_q4jwq")

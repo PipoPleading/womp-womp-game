@@ -28,6 +28,10 @@ var is_paused : bool = false
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 
+# Health Stuffs
+var max_health : int = 10
+var current_health : int = 10
+
 const look_sensitivity : float = 0.003
 
 ## visuals
@@ -145,3 +149,13 @@ func update_state(target_state : anim_state):
 	## send signals here to update animation player on rig
 	#current_state = target_state
 	egg_2.play_anim(target_state)
+
+
+func _on_area_3d_area_entered(area: Area3D) -> void:
+	var weapon = area.get_node_or_null("Weapon")
+	if weapon:
+		current_health -= weapon.weapon_data.damage
+		print("Players health: " + str(current_health))
+		if current_health <= 0:
+			print("you dead")
+			# TODO: Make the player transition to Spectator
