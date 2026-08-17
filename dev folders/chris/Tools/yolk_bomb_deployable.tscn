@@ -9,6 +9,8 @@ script/source = "extends Node
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_21ywy"]
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_fckn0"]
+
 [node name="Bomb" type="Node3D" unique_id=100907125]
 script = SubResource("GDScript_vam35")
 
@@ -24,3 +26,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7537653, -1.1080863, 0.084
 [node name="MeshInstance3D" type="MeshInstance3D" parent="pivot_point" unique_id=2049477541]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.7537653, 1.1080863, -0.08477999)
 mesh = SubResource("CapsuleMesh_21ywy")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=846437809]
+replication_config = SubResource("SceneReplicationConfig_fckn0")

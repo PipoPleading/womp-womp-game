@@ -5,6 +5,8 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_21ywy"]
 
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_7jw44"]
+
 [node name="FryingPan" type="Node3D" unique_id=100907125]
 
 [node name="pivot_point" type="Node3D" parent="." unique_id=1169467799]
@@ -19,3 +21,6 @@ script = ExtResource("1_lbsyl")
 weapon_data = ExtResource("2_7jw44")
 pivot_point = NodePath("../pivot_point")
 metadata/_custom_type_script = "uid://bc7l13ptkb1gl"
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1072457616]
+replication_config = SubResource("SceneReplicationConfig_7jw44")
