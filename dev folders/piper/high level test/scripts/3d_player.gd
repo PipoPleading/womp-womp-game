@@ -27,6 +27,7 @@ var is_paused : bool = false
 
 const SPEED = 9.0
 const JUMP_VELOCITY = 7
+const GRAV_SCALE = 1.2
 
 # Health Stuffs
 var max_health : int = 10
@@ -65,6 +66,7 @@ func _input(event: InputEvent) -> void:
 	## rotations for heads
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * look_sensitivity)
+		## clamp rotation between -90, 90
 		neck_target.rotate_x(-event.relative.y * look_sensitivity)
 	
 	if event.is_action_pressed("pause"):
@@ -86,6 +88,10 @@ func focus_toggle(is_focused : bool):
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func _physics_process(delta: float) -> void:
+	
+	
+	egg_2.shader_scale(visibility_scalar)
+	
 	if !is_multiplayer_authority():
 		return
 	
@@ -105,7 +111,6 @@ func _physics_process(delta: float) -> void:
 		velocity.z = direction.z * SPEED
 		#if crouchn
 		
-		egg_2.shader_scale(visibility_scalar)
 		visibility_scalar = move_toward(visibility_scalar, 0, delta)
 		update_state(anim_state.walk)
 		jump_handling()
@@ -115,9 +120,6 @@ func _physics_process(delta: float) -> void:
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		
 		visibility_scalar = move_toward(visibility_scalar, 1, delta)
-		
-		egg_2.shader_scale(visibility_scalar)
-		## crouch check here
 		update_state(anim_state.idle)
 		jump_handling()
 	move_and_slide()
