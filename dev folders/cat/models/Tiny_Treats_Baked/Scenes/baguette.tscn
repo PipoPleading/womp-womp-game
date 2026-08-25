@@ -44,7 +44,7 @@ shadow_mesh = SubResource("ArrayMesh_a1e8x")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_j5nh2"]
 radius = 0.0005
-height = 0.004
+height = 0.0055600586
 
 [node name="baguette" type="Node3D" unique_id=1543107109]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
@@ -56,5 +56,5 @@ mesh = SubResource("ArrayMesh_qb1yd")
 [node name="baguette_col" type="StaticBody3D" parent="baguette" unique_id=798140211]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="baguette/baguette_col" unique_id=781010604]
-transform = Transform3D(3.045, 0, 0, 0, 3.045, 0, 0, 0, 3.045, 0, -1.2985271e-10, 0.0010892834)
+transform = Transform3D(3.045, 0, 0, 0, 3.045, 5.5422333e-12, 0, -5.5422333e-12, 3.045, 0, 0.000119688244, 0.0010892835)
 shape = SubResource("CapsuleShape3D_j5nh2")

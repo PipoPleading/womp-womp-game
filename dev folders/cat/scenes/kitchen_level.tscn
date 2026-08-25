@@ -182,6 +182,9 @@ size = Vector3(0.9257202, 3.002472, 0.81573486)
 [sub_resource type="BoxShape3D" id="BoxShape3D_3q5oc"]
 size = Vector3(1.6151733, 3.5752869, 0.91259766)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_7l7aj"]
+size = Vector3(0.1585083, 0.20397949, 0.18980408)
+
 [node name="KitchenLevel" type="Node3D" unique_id=57881643]
 
 [node name="Room" type="Node3D" parent="." unique_id=1808322680]
@@ -4306,7 +4309,7 @@ transform = Transform3D(0.2184734, 0, 0.3350662, 0, 0.39999998, 0, -0.3350662, 0
 transform = Transform3D(-0.027542258, 0, 0.3990507, 0, 0.40000007, 0, -0.3990507, 0, -0.027542258, -2.6857538, 0.5846847, 0.8527955)
 
 [node name="sodablue4" parent="Props/Food/FridgeContents/SodaShelf" unique_id=1378344187 instance=ExtResource("53_6d43m")]
-transform = Transform3D(0.12449244, 0.16425385, 0.3428153, 0.3759764, -1.7484556e-08, -0.13653478, -0.056065895, 0.36472008, -0.15438893, -2.497134, 0.543018, 0.7881076)
+transform = Transform3D(0.13288215, 0.091903575, 0.3659181, 0.37597635, -1.2589409e-08, -0.13653475, -0.031370074, 0.3892991, -0.08638396, -2.482083, 0.543018, 0.7874163)
 
 [node name="sodablue2" parent="Props/Food/FridgeContents/SodaShelf" unique_id=1349647118 instance=ExtResource("53_6d43m")]
 transform = Transform3D(-0.3393982, 0, 0.21168114, 0, 0.40000007, 0, -0.21168114, 0, -0.3393982, -2.6471803, 0.5846847, 0.9715975)
@@ -4605,6 +4608,12 @@ transform = Transform3D(-0.15, 0, -2.2649372e-08, 0, 0.15, 0, 2.2649372e-08, 0, 
 
 [node name="KA_Toaster_V1" parent="Props/Appliances" unique_id=1455386661 instance=ExtResource("71_itx1s")]
 transform = Transform3D(-0.9863046, 0, -0.16493411, 0, 1, 0, 0.16493411, 0, -0.9863046, 2.8475742, 0.8500002, 2.8592975)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Props/Appliances/KA_Toaster_V1" unique_id=1106189158]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Props/Appliances/KA_Toaster_V1/StaticBody3D" unique_id=2141667175]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08127046, 0.08795166, 0.09456754)
+shape = SubResource("BoxShape3D_7l7aj")
 
 [node name="KA_CoffeeMaker_V2" parent="Props/Appliances" unique_id=1594031405 instance=ExtResource("72_arksx")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.539896, 0.85, 2.9655535)
