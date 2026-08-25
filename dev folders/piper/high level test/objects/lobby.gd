@@ -20,7 +20,7 @@ func spawn_player(peer_id: int) -> void:
 	initialize_player(new_player)
 
 func initialize_player(player : CharacterBody3D) -> void:
-	player.position = spawn_points[0].position
+	player.position = spawn_points[randi_range(0,spawn_points.size()-1)].position
 	for other in players:
 		player.add_collision_exception_with(other)
 	players.append(player)
