@@ -68,6 +68,7 @@ func _input(event: InputEvent) -> void:
 		rotate_y(-event.relative.x * look_sensitivity)
 		## clamp rotation between -90, 90
 		neck_target.rotate_x(-event.relative.y * look_sensitivity)
+		neck_target.rotation.x = clampf(neck_target.rotation.x, deg_to_rad(-90), deg_to_rad(90))
 	
 	if event.is_action_pressed("pause"):
 		if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:

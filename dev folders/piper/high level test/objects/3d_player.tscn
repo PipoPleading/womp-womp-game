@@ -56,7 +56,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015462279, 0.8613038, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4672719, 0)
 
 [node name="Neck_Target" type="Node3D" parent="NeckRoot" unique_id=1775817287]
-transform = Transform3D(0.99999994, 0, 0, 0, -4.3711385e-08, -0.99999994, 0, 0.99999994, -4.3711385e-08, 0, 0.7056968, 0)
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0.7056968, 0)
 
 [node name="PhantomCamera3D" type="Node3D" parent="NeckRoot/Neck_Target" unique_id=1893097772]
 unique_name_in_owner = true
