@@ -10,19 +10,23 @@ config_version=5
 
 [application]
 
-config/name="womp-womp-game"
-run/main_scene="uid://d11hjn8yym27w"
+config/name="Cracked"
+run/main_scene="uid://dhh8s6n07t6id"
 config/features=PackedStringArray("4.7", "Forward Plus")
+boot_splash/bg_color=Color(0, 0, 0, 1)
 config/icon="res://icon.svg"
 
 [autoload]
 
-HighLevelNetworkHandler="*uid://bj0yq38bbem5x"
+Networking="*uid://8g7taajs4eb5"
+HighLevelNetworkHandler="uid://bj0yq38bbem5x"
 PhantomCameraManager="*uid://duq6jhf6unyis"
 GameManager="*uid://d22bxkxoktome"
 
 [display]
 
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
@@ -93,3 +97,10 @@ attack={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+
+[steam]
+
+initialization/app_id=480
+initialization/initialize_on_startup=true
+initialization/embed_callbacks=false
+multiplayer_peer/max_channels=4

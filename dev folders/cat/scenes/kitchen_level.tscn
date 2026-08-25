@@ -203,7 +203,7 @@ mesh = SubResource("PlaneMesh_ltk6h")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.060000002, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Room/Structure/Floor/StaticBody3D" unique_id=1261984745]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.09325983, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.009334322, 0)
 shape = SubResource("BoxShape3D_ltk6h")
 
 [node name="Roof" type="MeshInstance3D" parent="Room/Structure" unique_id=864396863]

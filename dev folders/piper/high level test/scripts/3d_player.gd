@@ -25,8 +25,8 @@ var is_falling : bool = false
 var is_crouching : bool = false
 var is_paused : bool = false
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 4.5
+const SPEED = 9.0
+const JUMP_VELOCITY = 7
 
 # Health Stuffs
 var max_health : int = 10
