@@ -21,7 +21,7 @@ glow_enabled = true
 
 [node name="3D Test" type="Node3D" unique_id=2036907785 node_paths=PackedStringArray("spawn_points")]
 script = ExtResource("1_a2c2i")
-spawn_points = [NodePath("SpawnPoints")]
+spawn_points = [NodePath("SpawnPoints/SpawnPoint_1"), NodePath("SpawnPoints/SpawnPoint_2"), NodePath("SpawnPoints/SpawnPoint_3"), NodePath("SpawnPoints/SpawnPoint_4"), NodePath("SpawnPoints/SpawnPoint_5"), NodePath("SpawnPoints/SpawnPoint_6"), NodePath("SpawnPoints/SpawnPoint_7")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2073956568]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -56,12 +56,25 @@ script = ExtResource("4_2k451")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.805993, 0.6334834, 0)
 
 [node name="SpawnPoint_1" type="Node3D" parent="SpawnPoints" unique_id=1508009610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.599735, 2.7728302, 2.0478253)
 
 [node name="SpawnPoint_2" type="Node3D" parent="SpawnPoints" unique_id=504892694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.475025, 0, -30.775808)
 
 [node name="SpawnPoint_3" type="Node3D" parent="SpawnPoints" unique_id=1948259547]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47989893, 0, -21.783892)
 
 [node name="SpawnPoint_4" type="Node3D" parent="SpawnPoints" unique_id=622849499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.711826, 0, -1.4127069)
+
+[node name="SpawnPoint_5" type="Node3D" parent="SpawnPoints" unique_id=1058482174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.398186, 2.1864164, -16.09923)
+
+[node name="SpawnPoint_6" type="Node3D" parent="SpawnPoints" unique_id=1824812853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.996421, -0.23827285, -56.78248)
+
+[node name="SpawnPoint_7" type="Node3D" parent="SpawnPoints" unique_id=1217331533]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.278512, -8.460729, -32.746655)
 
 [node name="Host" type="Button" parent="." unique_id=1360738312]
 offset_right = 8.0
