@@ -7,6 +7,10 @@
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_vtkla"]
 [ext_resource type="PackedScene" uid="uid://chbxblcsj45j0" path="res://dev folders/chris/Weapons/frying_pan.tscn" id="6_j5nh2"]
 
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gq0y6"]
+radius = 1.0053711
+height = 3.1704102
+
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_iyl20"]
 properties/0/path = NodePath(".:position")
 properties/0/spawn = true
@@ -32,9 +36,15 @@ bg_color = Color(0.28778404, 0.2877841, 0.28778395, 0.45882353)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ygfeb"]
 
 [node name="3d_player" type="CharacterBody3D" unique_id=520216166 node_paths=PackedStringArray("_weapon_instance")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
 script = ExtResource("1_psi5w")
 _weapon_instance = NodePath("FryingPan")
 weapon = ExtResource("2_vtkla")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1339528740]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5852051, 0)
+shape = SubResource("CapsuleShape3D_gq0y6")
+debug_color = Color(0.9314605, 2.955228e-05, 0.65470296, 0.41960785)
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1787731025]
 replication_config = SubResource("SceneReplicationConfig_iyl20")
@@ -46,7 +56,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015462279, 0.8613038, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4672719, 0)
 
 [node name="Neck_Target" type="Node3D" parent="NeckRoot" unique_id=1775817287]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.7056967, 0)
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0.7056968, 0)
 
 [node name="PhantomCamera3D" type="Node3D" parent="NeckRoot/Neck_Target" unique_id=1893097772]
 unique_name_in_owner = true
@@ -55,6 +65,9 @@ priority = 5
 tween_resource = SubResource("Resource_fl3pk")
 follow_offset = Vector3(0, 2, 4)
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="Node3D" type="Node3D" parent="NeckRoot/Neck_Target" unique_id=2116425670]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, 0, -1.3401673)
 
 [node name="Player UI Root" type="Control" parent="." unique_id=1463997256]
 layout_mode = 3
