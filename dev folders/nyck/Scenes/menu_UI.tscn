@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://br3aipnhla0yx"]
 
-[ext_resource type="FontFile" uid="uid://b8jtg3f6tobsn" path="res://dev folders/nyck/fonts/Crackman.otf" id="1_n7c2u"]
-[ext_resource type="Texture2D" uid="uid://cahu8hxo8jgfs" path="res://dev folders/nyck/Imports/arrow_left.png" id="2_h5qh7"]
-[ext_resource type="Texture2D" uid="uid://bwgabhrfhsuf6" path="res://dev folders/nyck/Imports/arrow_right.png" id="3_64fw0"]
+[ext_resource type="FontFile" uid="uid://b8jtg3f6tobsn" path="res://dev folders/nyck/fonts/Crackman.otf" id="1_jasdy"]
+[ext_resource type="Texture2D" uid="uid://cahu8hxo8jgfs" path="res://dev folders/nyck/Imports/arrow_left.png" id="2_1iteb"]
+[ext_resource type="Texture2D" uid="uid://bwgabhrfhsuf6" path="res://dev folders/nyck/Imports/arrow_right.png" id="3_x325x"]
 
 [node name="MenuUI" type="Control" unique_id=2012802898]
 layout_mode = 3
@@ -22,7 +22,7 @@ offset_top = 25.0
 offset_right = 252.0
 offset_bottom = 76.0
 grow_horizontal = 2
-theme_override_fonts/font = ExtResource("1_n7c2u")
+theme_override_fonts/font = ExtResource("1_jasdy")
 theme_override_font_sizes/font_size = 42
 text = "Player Name"
 horizontal_alignment = 1
@@ -58,7 +58,7 @@ offset_left = 152.0
 offset_right = 672.0
 offset_bottom = 520.0
 scale = Vector2(0.26555628, 0.19231407)
-icon = ExtResource("2_h5qh7")
+icon = ExtResource("2_1iteb")
 flat = true
 
 [node name="RightButton" type="Button" parent="." unique_id=1276952525]
@@ -69,5 +69,5 @@ offset_right = 1322.0
 offset_bottom = 524.0
 scale = Vector2(0.26555628, 0.19231407)
 action_mode = 0
-icon = ExtResource("3_64fw0")
+icon = ExtResource("3_x325x")
 flat = true
