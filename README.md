@@ -13,6 +13,7 @@ Cracked is an innovative take on the arena battler genre with a unique stealth-b
 - **Predator Cloak Camouflage**: Standing still makes your egg nearly invisible with a predator-cloak-style shader. Players are only visible by slight refraction distortions around the edges of their model.
 - **Dynamic Visibility**: Movement compromises your camouflage. The more you move, the more visible you become, forcing players to balance offense with stealth.
 - **Arena Battles**: Find and eliminate other players in fast-paced multiplayer combat.
+- **Tools**: Utilize tools and traps to trick other players into revealing themselves.
 - **Last Egg Standing**: Eliminate all opponents to claim victory.
 
 ### Post-Match
@@ -92,10 +93,6 @@ The project uses feature branches that will be merged into `main`:
 | **Ctrl** | Crouch |
 | **Mouse Click** | Attack |
 | **ESC** | Pause |
-
-## Contributions
-
-Contributions are welcome! All branches besides main are fair game and will be merged in by end of day.
 
 ## Repository Info
 
