@@ -47,6 +47,7 @@
 [ext_resource type="PackedScene" uid="uid://dua65ele0rl8i" path="res://dev folders/cat/models/kitchen/Scenes/Appliances/KA-F600_BI_Dishwasher_V1.tscn" id="25_m6tx8"]
 [ext_resource type="PackedScene" uid="uid://0wcumokeg1" path="res://dev folders/cat/models/kitchen/Scenes/Appliances/KA-F600_BI_Oven_V1.tscn" id="26_c1g2c"]
 [ext_resource type="PackedScene" uid="uid://bvk1r0e05gtqr" path="res://dev folders/cat/models/kitchen/Scenes/Cabinets/600mm Wide/Wall Cabinets - 600/WKC-F600.tscn" id="27_iqhc0"]
+[ext_resource type="PackedScene" uid="uid://bygn0gjh3fcdl" path="res://dev folders/cat/models/Low Poly Furniture/Scenes/Lights/Lamp A.tscn" id="27_itslj"]
 [ext_resource type="PackedScene" uid="uid://b777dkevhjn8f" path="res://dev folders/cat/models/kitchen/Scenes/Appliances/KA-F600_BI_Stove_V1.tscn" id="28_10hb2"]
 [ext_resource type="PackedScene" uid="uid://dn7q100dex5kk" path="res://dev folders/cat/models/kitchen/Scenes/Cabinets/600mm Wide/Cabinet Doors - 600/TKC-F600_Door_H2000_V2.tscn" id="29_nustw"]
 [ext_resource type="PackedScene" uid="uid://vfxnjadwfvok" path="res://dev folders/cat/models/kitchen/Scenes/Cabinets/800mm Wide/Cabinet Doors - 800/TKC-F800_Door_H2000_V2.tscn" id="30_etkv3"]
@@ -185,12 +186,6 @@ size = Vector3(1.6151733, 3.5752869, 0.91259766)
 [node name="KitchenLevel" type="Node3D" unique_id=57881643]
 
 [node name="Room" type="Node3D" parent="." unique_id=1808322680]
-
-[node name="Ceiling Fan" parent="Room" unique_id=708447376 instance=ExtResource("1_n4m3j")]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.093019426, 2.2487862, -0.0732265)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="Room" unique_id=1135350031]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.098431915, 2.0919592, -0.07727913)
 
 [node name="Structure" type="Node3D" parent="Room" unique_id=1425887530]
 
@@ -457,6 +452,31 @@ transform = Transform3D(0.2, 0, 0, 0, 0.144, 0, 0, 0, 0.2, -1.070416, 0.3651423,
 
 [node name="Bin" parent="Room/Traversal/Bridges/Island-Fridge" unique_id=178693092 instance=ExtResource("52_ct0r0")]
 transform = Transform3D(0.2, 0, 0, 0, -0.2, 1.7484556e-08, 0, -1.7484556e-08, -0.2, -1.4984554, 0.1979621, 0.46559227)
+
+[node name="Lights" type="Node3D" parent="Room" unique_id=1602704906]
+
+[node name="Ceiling Fan" parent="Room/Lights" unique_id=708447376 instance=ExtResource("1_n4m3j")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -0.093019426, 2.2487862, -0.0732265)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Room/Lights/Ceiling Fan" unique_id=1135350031]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -0.027062446, -0.78413486, -0.020263135)
+light_energy = 2.0
+
+[node name="Lamp A" parent="Room/Lights" unique_id=907347505 instance=ExtResource("27_itslj")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 2.6820211, 1.0312188, -3.8473172)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Room/Lights/Lamp A" unique_id=1579830886]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 2.1453562, 0)
+light_color = Color(1, 1, 0.91764706, 1)
+light_energy = 0.41
+
+[node name="Lamp A2" parent="Room/Lights" unique_id=100525063 instance=ExtResource("27_itslj")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2.3967857, 1.0312188, -3.8473172)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Room/Lights/Lamp A2" unique_id=378777045]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 2.1453562, 0)
+light_color = Color(1, 1, 0.91764706, 1)
+light_energy = 0.41
 
 [node name="Island" type="Node3D" parent="." unique_id=1500384183]
 
