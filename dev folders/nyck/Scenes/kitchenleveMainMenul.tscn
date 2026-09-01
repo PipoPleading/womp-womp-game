@@ -148,6 +148,7 @@
 [ext_resource type="FontFile" uid="uid://b8jtg3f6tobsn" path="res://dev folders/nyck/fonts/Crackman.otf" id="146_5287b"]
 [ext_resource type="FontFile" uid="uid://cx1ykio8gceyn" path="res://dev folders/nyck/fonts/Orange Kid.otf" id="147_55uq6"]
 [ext_resource type="Texture2D" uid="uid://dbi5k47hvsvsq" path="res://dev folders/nyck/images/PPmimS_no_alpha.png" id="148_g3sev"]
+[ext_resource type="Script" uid="uid://0x8tcg0ur7xt" path="res://dev folders/nyck/Scripts/main_menu.gd" id="200_mainmenu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okdkm"]
 albedo_texture = ExtResource("2_0lujh")
@@ -189,6 +190,7 @@ size = Vector3(1.6151733, 3.5752869, 0.91259766)
 size = Vector3(0.1585083, 0.20397949, 0.18980408)
 
 [node name="KitchenLevel" type="Node3D" unique_id=57881643]
+script = ExtResource("200_mainmenu")
 
 [node name="Room" type="Node3D" parent="." unique_id=1808322680]
 
@@ -4840,3 +4842,41 @@ autowrap_mode = 2
 autowrap_trim_flags = 0
 icon_alignment = 1
 expand_icon = true
+
+[node name="OptionsPanel" type="Panel" parent="." unique_id=569816246]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -70.0
+offset_right = 160.0
+offset_bottom = 70.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VolumeLabel" type="Label" parent="OptionsPanel" unique_id=1429465516]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 200.0
+offset_bottom = 40.0
+text = "Volume"
+
+[node name="VolumeSlider" type="HSlider" parent="OptionsPanel" unique_id=1864431430]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 44.0
+offset_right = 304.0
+offset_bottom = 60.0
+value = 100.0
+
+[node name="CloseButton" type="Button" parent="OptionsPanel" unique_id=2081169644]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 100.0
+offset_right = 96.0
+offset_bottom = 132.0
+text = "Close"
