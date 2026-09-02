@@ -161,4 +161,4 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 		print("Players health: " + str(current_health))
 		if current_health <= 0:
 			print("you dead")
-			# TODO: Make the player transition to Spectator
+			#TODO: Make the player transition to Spectator
