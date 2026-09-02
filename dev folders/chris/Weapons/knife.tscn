@@ -30,7 +30,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.012619972, -1.1632278, 0.25
 transform = Transform3D(0.015, 2.264937e-09, -2.264937e-09, 2.264937e-09, -0.015, 0, -2.264937e-09, -3.4199598e-16, -0.015, -0.012619972, 1.1632278, -0.2515541)
 mesh = ExtResource("3_ow3mk")
 
-[node name="Area3D" type="Area3D" parent="pivot_point" unique_id=884454571]
+[node name="Area3D" type="Area3D" parent="pivot_point" unique_id=884454571 groups=["Weapon"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="pivot_point/Area3D" unique_id=1700327152]
 transform = Transform3D(0.015, 2.264937e-09, -2.264937e-09, 2.264937e-09, -0.015, 0, -2.264937e-09, -3.4199598e-16, -0.015, -0.012619972, 1.1632278, -0.2515541)

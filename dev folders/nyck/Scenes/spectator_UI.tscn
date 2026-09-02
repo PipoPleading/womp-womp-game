@@ -3,16 +3,16 @@
 [ext_resource type="FontFile" uid="uid://b8jtg3f6tobsn" path="res://dev folders/nyck/fonts/Crackman.otf" id="1_jasdy"]
 [ext_resource type="Texture2D" uid="uid://cahu8hxo8jgfs" path="res://dev folders/nyck/Imports/arrow_left.png" id="2_1iteb"]
 [ext_resource type="Texture2D" uid="uid://bwgabhrfhsuf6" path="res://dev folders/nyck/Imports/arrow_right.png" id="3_x325x"]
-[ext_resource type="Script" path="res://dev folders/nyck/Scripts/spectator_ui.gd" id="4_spec"]
+[ext_resource type="Script" uid="uid://cs0wilbtbxftk" path="res://dev folders/nyck/Scripts/spectator_ui.gd" id="4_spec"]
 
 [node name="SpectatorUI" type="Control" unique_id=2012802898]
-script = ExtResource("4_spec")
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("4_spec")
 
 [node name="Label" type="Label" parent="." unique_id=1608339139]
 layout_mode = 1

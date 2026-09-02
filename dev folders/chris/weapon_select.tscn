@@ -9,12 +9,14 @@ load_path = "res://.godot/imported/knife.png-4a54d7b34cb966c96313cffe9abf058b.ct
 font_size = 48
 
 [node name="WeaponSelect" type="Control" unique_id=610598487]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1261727506]
 layout_mode = 1
@@ -28,6 +30,7 @@ offset_bottom = 295.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.25, 0.25)
+mouse_filter = 2
 texture = ExtResource("1_66kju")
 
 [node name="TextureRect2" type="TextureRect" parent="." unique_id=1977315040]
@@ -43,6 +46,7 @@ offset_bottom = 295.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.25, 0.25)
+mouse_filter = 2
 texture = SubResource("CompressedTexture2D_66kju")
 
 [node name="TextureRect3" type="TextureRect" parent="." unique_id=637529953]
@@ -58,6 +62,7 @@ offset_bottom = 295.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.25, 0.25)
+mouse_filter = 2
 texture = SubResource("CompressedTexture2D_66kju")
 
 [node name="Label" type="Label" parent="." unique_id=767599898]

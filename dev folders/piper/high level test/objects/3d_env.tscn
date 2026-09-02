@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://dhh8s6n07t6id"]
 
 [ext_resource type="PackedScene" uid="uid://cqvhxjtqlb7tr" path="res://dev folders/cat/scenes/kitchen_level.tscn" id="1_2k451"]
-[ext_resource type="PackedScene" uid="uid://c5yvmt8ba4sed" path="res://dev folders/piper/high level test/objects/high_level_ui.tscn" id="1_41hjh"]
 [ext_resource type="Script" uid="uid://dvuts7ptfw5dp" path="res://dev folders/piper/high level test/objects/lobby.gd" id="1_a2c2i"]
 [ext_resource type="PackedScene" uid="uid://cwiwagkfn8cmc" path="res://dev folders/piper/high level test/objects/3d_player.tscn" id="2_e5ck7"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_2k451"]
 [ext_resource type="Script" uid="uid://bctkkrxcf5nnd" path="res://dev folders/piper/high level test/scripts/high_level_multiplayer_spawner.gd" id="4_41hjh"]
+[ext_resource type="Script" uid="uid://7dexmmbr5ofa" path="res://dev folders/piper/high level test/scripts/main_camera.gd" id="5_a2c2i"]
+[ext_resource type="PackedScene" uid="uid://br3aipnhla0yx" path="res://dev folders/nyck/Scenes/spectator_UI.tscn" id="7_c53eb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a2c2i"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -19,9 +20,15 @@ background_mode = 2
 sky = SubResource("Sky_itslj")
 glow_enabled = true
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gq0y6"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ygfeb"]
+material = SubResource("StandardMaterial3D_gq0y6")
+
 [node name="3D Test" type="Node3D" unique_id=2036907785 node_paths=PackedStringArray("spawn_points")]
 script = ExtResource("1_a2c2i")
-spawn_points = [NodePath("SpawnPoints/SpawnPoint_1"), NodePath("SpawnPoints/SpawnPoint_2"), NodePath("SpawnPoints/SpawnPoint_3"), NodePath("SpawnPoints/SpawnPoint_4"), NodePath("SpawnPoints/SpawnPoint_5"), NodePath("SpawnPoints/SpawnPoint_6"), NodePath("SpawnPoints/SpawnPoint_7")]
+spawn_points = [NodePath("KitchenLevel/SpawnPoints/SpawnPoint_1"), NodePath("KitchenLevel/SpawnPoints/SpawnPoint_2"), NodePath("KitchenLevel/SpawnPoints/SpawnPoint_3"), NodePath("KitchenLevel/SpawnPoints/SpawnPoint_4"), NodePath("KitchenLevel/SpawnPoints/SpawnPoint_5"), NodePath("KitchenLevel/SpawnPoints/SpawnPoint_6"), NodePath("KitchenLevel/SpawnPoints/SpawnPoint_7")]
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2073956568]
 transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
@@ -33,8 +40,29 @@ environment = SubResource("Environment_c53eb")
 [node name="KitchenLevel" parent="." unique_id=57881643 instance=ExtResource("1_2k451")]
 transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -8.656536, -25.744217)
 
-[node name="HighLevelUI" parent="." unique_id=1160919217 instance=ExtResource("1_41hjh")]
-visible = false
+[node name="SpawnPoints" type="Node3D" parent="KitchenLevel" unique_id=561844404]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0.5805993, 0.929002, 2.5744216)
+
+[node name="SpawnPoint_1" type="Node3D" parent="KitchenLevel/SpawnPoints" unique_id=1508009610]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.599735, 2.7728302, 2.0478253)
+
+[node name="SpawnPoint_2" type="Node3D" parent="KitchenLevel/SpawnPoints" unique_id=504892694]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.475025, 0, -30.775808)
+
+[node name="SpawnPoint_3" type="Node3D" parent="KitchenLevel/SpawnPoints" unique_id=1948259547]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47989893, 0, -21.783892)
+
+[node name="SpawnPoint_4" type="Node3D" parent="KitchenLevel/SpawnPoints" unique_id=622849499]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.711826, 0, -1.4127069)
+
+[node name="SpawnPoint_5" type="Node3D" parent="KitchenLevel/SpawnPoints" unique_id=1058482174]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.398186, 2.1864164, -16.09923)
+
+[node name="SpawnPoint_6" type="Node3D" parent="KitchenLevel/SpawnPoints" unique_id=1824812853]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.996421, -0.23827285, -56.78248)
+
+[node name="SpawnPoint_7" type="Node3D" parent="KitchenLevel/SpawnPoints" unique_id=1217331533]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.278512, -8.460729, -32.746655)
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="." unique_id=586532987]
 _spawnable_scenes = PackedStringArray("uid://cwiwagkfn8cmc")
@@ -42,44 +70,32 @@ spawn_path = NodePath("..")
 script = ExtResource("4_41hjh")
 network_player = ExtResource("2_e5ck7")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=809914714]
+[node name="Main Camera" type="Camera3D" parent="." unique_id=809914714]
 physics_interpolation_mode = 1
-transform = Transform3D(-0.60386574, -0.25486884, 0.75524044, 0, 0.9475017, 0.31975073, -0.79708606, 0.19308649, -0.5721638, 21.8124, 8.549412, -42.355003)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9774052, -24)
 top_level = true
+script = ExtResource("5_a2c2i")
 
-[node name="PhantomCameraHost" type="Node" parent="Camera3D" unique_id=1032237605]
+[node name="PhantomCameraHost" type="Node" parent="Main Camera" unique_id=1032237605]
 process_priority = 300
 process_physics_priority = 300
 script = ExtResource("4_2k451")
 
-[node name="SpawnPoints" type="Node3D" parent="." unique_id=561844404]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.805993, 0.6334834, 0)
-
-[node name="SpawnPoint_1" type="Node3D" parent="SpawnPoints" unique_id=1508009610]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.599735, 2.7728302, 2.0478253)
-
-[node name="SpawnPoint_2" type="Node3D" parent="SpawnPoints" unique_id=504892694]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.475025, 0, -30.775808)
-
-[node name="SpawnPoint_3" type="Node3D" parent="SpawnPoints" unique_id=1948259547]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.47989893, 0, -21.783892)
-
-[node name="SpawnPoint_4" type="Node3D" parent="SpawnPoints" unique_id=622849499]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.711826, 0, -1.4127069)
-
-[node name="SpawnPoint_5" type="Node3D" parent="SpawnPoints" unique_id=1058482174]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.398186, 2.1864164, -16.09923)
-
-[node name="SpawnPoint_6" type="Node3D" parent="SpawnPoints" unique_id=1824812853]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.996421, -0.23827285, -56.78248)
-
-[node name="SpawnPoint_7" type="Node3D" parent="SpawnPoints" unique_id=1217331533]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.278512, -8.460729, -32.746655)
+[node name="SpectatorUI" parent="Main Camera" unique_id=2012802898 instance=ExtResource("7_c53eb")]
 
 [node name="Host" type="Button" parent="." unique_id=1360738312]
 offset_right = 8.0
 offset_bottom = 8.0
 text = "HOST"
+
+[node name="3d_player" parent="." unique_id=520216166 instance=ExtResource("2_e5ck7")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.32551455, -24)
+
+[node name="Node3D" type="Node3D" parent="3d_player" unique_id=527668906]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="3d_player/Node3D" unique_id=388164899]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 4.512392, 0)
+mesh = SubResource("CylinderMesh_ygfeb")
 
 [connection signal="spawned" from="MultiplayerSpawner" to="." method="_on_multiplayer_spawner_spawned"]
 [connection signal="pressed" from="Host" to="." method="on_host_pressed"]

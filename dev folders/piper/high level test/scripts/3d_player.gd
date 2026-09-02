@@ -1,4 +1,4 @@
-extends CharacterBody3D
+class_name PlayerInstance extends CharacterBody3D
 
 ## everything needs to be loosely coupled
 # momentum based movement would be really nice, so having active accelarations instead of flat impulses
@@ -15,6 +15,9 @@ extends CharacterBody3D
 #@onready var eye_2: MeshInstance3D = $Eye2
 
 @export var _weapon_instance : Node3D 
+@onready var frying_pan: Node3D = $FryingPan
+@onready var knife: Node3D = $FryingPan2
+
 @export var weapon : WeaponData
 
 enum anim_state {idle = 0, crouch_jump = 1, crouch_land = 2, crouch_walk = 3, fall = 5, flinch = 6, hurt = 7, idle_crouch = 9, jump = 10, land = 11, walk = 12}
@@ -30,8 +33,9 @@ const JUMP_VELOCITY = 7
 const GRAV_SCALE = 1.2
 
 # Health Stuffs
-var max_health : int = 10
+var max_health : int = 3
 var current_health : int = 10
+var current_weapon : int = 0
 
 const look_sensitivity : float = 0.003
 
@@ -45,19 +49,12 @@ func _enter_tree() -> void:
 func _ready() -> void:
 	if is_multiplayer_authority():
 		focus_toggle(true)
+		phantom_camera_3d.priority = 10
 		#eye_1.hide()
 		#eye_2.hide()
 	
 	egg_2.play_anim(EggVisual.anim_state.idle)
 	#equip_weapon()
-
-## weapon stuff
-
-#func equip_weapon() -> void:
-	#_weapon_instance = load(weapon.weapon_location).instantiate()
-	#_weapon_instance.position = weapon.initial_position
-	#add_child(_weapon_instance)
-
 
 func _input(event: InputEvent) -> void:
 	if !is_multiplayer_authority():
@@ -76,10 +73,44 @@ func _input(event: InputEvent) -> void:
 		else:
 			focus_toggle(true)
 	
-	if event.is_action_pressed("attack"):
+	if event.is_action_pressed("cycle_right"):
+		change_weapon(1)
+	if event.is_action_pressed("cycle_left"):
+		change_weapon(-1)
+	
+	if event.is_action_pressed("attack") and current_weapon > 0:
 		if _weapon_instance:
 			_weapon_instance.get_node("Weapon").attack()
 	
+
+func change_weapon(dir : int):
+	if dir > 0:
+		current_weapon += 1
+	else:
+		current_weapon += 1
+	
+	if current_weapon >= 3:
+		current_weapon = 0
+	if current_weapon < 0:
+		current_weapon = 2
+	
+	match current_weapon:
+		0:
+			_weapon_instance = Node3D.new()
+			frying_pan.hide()
+			knife.hide()
+		1:
+			_weapon_instance = frying_pan
+			frying_pan.show()
+			knife.hide()
+			pass
+		2:
+			_weapon_instance = knife
+			knife.show()
+			frying_pan.hide()
+			pass
+	
+	pass
 
 # used for determining mouse state
 func focus_toggle(is_focused : bool):
@@ -90,13 +121,12 @@ func focus_toggle(is_focused : bool):
 
 func _physics_process(delta: float) -> void:
 	
-	
-	egg_2.shader_scale(visibility_scalar)
-	
 	if !is_multiplayer_authority():
 		return
 	
-	phantom_camera_3d.priority = 10
+	egg_2.shader_scale(visibility_scalar)
+	
+
 	
 	# Add the gravity.
 
@@ -155,10 +185,14 @@ func update_state(target_state : anim_state):
 
 
 func _on_area_3d_area_entered(area: Area3D) -> void:
-	var weapon = area.get_node_or_null("Weapon")
-	if weapon:
-		current_health -= weapon.weapon_data.damage
-		print("Players health: " + str(current_health))
+	print("area : ", area.name)
+	if area.is_in_group("Weapon"):
+		if area.get_parent().get_parent().get_node("Weapon").is_attacking:
+			current_health -= 1
 		if current_health <= 0:
 			print("you dead")
+			
 			#TODO: Make the player transition to Spectator
+
+func death():
+	phantom_camera_3d.priority = 0

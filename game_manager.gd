@@ -17,7 +17,8 @@ signal start_game()
 #if that player was the winner
 signal finish_game(is_winning_player : bool)
 
-
+func player_died():
+	pass
 #assigning timer and starting it (realistically wouldn't start on ready)
 func _ready() -> void:
 	round_timer = Timer.new()

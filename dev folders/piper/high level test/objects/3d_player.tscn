@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_vtkla"]
 [ext_resource type="PackedScene" uid="uid://fx7xcsci0tr2" path="res://dev folders/chris/weapon_select.tscn" id="6_is4wr"]
 [ext_resource type="PackedScene" uid="uid://chbxblcsj45j0" path="res://dev folders/chris/Weapons/frying_pan.tscn" id="6_j5nh2"]
+[ext_resource type="PackedScene" uid="uid://bkrg2r30c56ya" path="res://dev folders/chris/Weapons/knife.tscn" id="8_xa83i"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gq0y6"]
 radius = 1.0053711
@@ -31,10 +32,9 @@ corner_radius_top_right = 1
 corner_radius_bottom_right = 1
 corner_radius_bottom_left = 1
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gq0y6"]
-bg_color = Color(0.28778404, 0.2877841, 0.28778395, 0.45882353)
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ygfeb"]
+radius = 1.0546875
+height = 3.2790527
 
 [node name="3d_player" type="CharacterBody3D" unique_id=520216166 node_paths=PackedStringArray("_weapon_instance")]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
@@ -52,6 +52,7 @@ replication_config = SubResource("SceneReplicationConfig_iyl20")
 
 [node name="Egg2" parent="." unique_id=1320390667 instance=ExtResource("3_fl3pk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015462279, 0.8613038, 0)
+visible = false
 
 [node name="NeckRoot" type="Node3D" parent="." unique_id=1400170862]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4672719, 0)
@@ -77,6 +78,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="Crosshair" type="Control" parent="Player UI Root" unique_id=1979970351]
 layout_mode = 1
@@ -100,27 +102,8 @@ offset_right = -18.0
 offset_bottom = -18.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ygfeb")
-
-[node name="Menu Root" type="Control" parent="Player UI Root" unique_id=1438840641]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Panel" type="Panel" parent="Player UI Root/Menu Root" unique_id=2131837026]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_gq0y6")
-
-[node name="Node" type="Node" parent="Player UI Root" unique_id=449027976]
 
 [node name="WeaponSelect" parent="Player UI Root" unique_id=610598487 instance=ExtResource("6_is4wr")]
 layout_mode = 1
@@ -128,10 +111,13 @@ layout_mode = 1
 [node name="FryingPan" parent="." unique_id=100907125 instance=ExtResource("6_j5nh2")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.2932904, 2.222613, -1.1134033)
 
-[node name="Area3D" type="Area3D" parent="." unique_id=1077083572]
+[node name="FryingPan2" parent="." unique_id=1717692734 instance=ExtResource("8_xa83i")]
+transform = Transform3D(-1.6477305, 0, -0.15494893, 0, 1.6549999, 0, 0.15494893, 0, -1.6477305, 1.0110006, 3.079821, -0.9200957)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=886215019]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+[node name="Player Hurtbox" type="Area3D" parent="." unique_id=1077083572]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player Hurtbox" unique_id=886215019]
+transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, 1.5848382, 0)
 shape = SubResource("CapsuleShape3D_ygfeb")
 
-[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_entered" from="Player Hurtbox" to="." method="_on_area_3d_area_entered"]
