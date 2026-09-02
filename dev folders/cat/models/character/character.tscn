@@ -35,15 +35,15 @@ properties/1/replication_mode = 0
 script = ExtResource("2_b2nbs")
 
 [node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1304840508) index="0" unique_id=1585056495]
-bones/0/position = Vector3(5.7858912e-08, 1.3236578, 9.993339e-08)
-bones/0/rotation = Quaternion(-0.7107697, -0.009951417, 0.70299286, 0.022550467)
-bones/1/rotation = Quaternion(0.99842495, 0.049763575, -0.023260962, -0.011407087)
-bones/2/rotation = Quaternion(0.5543644, -0.090704575, -0.13126126, 0.81683743)
-bones/3/rotation = Quaternion(-0.48947352, 0.2729317, 0.2806154, 0.7792168)
-bones/4/rotation = Quaternion(-0.039518375, 0.1402239, 0.3498851, 0.92539513)
-bones/5/rotation = Quaternion(-0.12902518, 0.8192551, -0.55011415, 0.09771358)
-bones/6/rotation = Quaternion(-0.4707591, 0.0059682103, 0.12029473, 0.874002)
-bones/7/rotation = Quaternion(-0.12995969, 0.06776964, 0.03724318, 0.9884993)
+bones/0/position = Vector3(4.8066113e-08, 1.1040657, 9.4250765e-08)
+bones/0/rotation = Quaternion(-0.70627856, 0.029561164, 0.7067418, -0.02850997)
+bones/1/rotation = Quaternion(0.9949263, 0.10058696, 0.0008069, -0.001809907)
+bones/2/rotation = Quaternion(0.54349446, 0.09735358, -0.07597696, 0.83027923)
+bones/3/rotation = Quaternion(-0.01376041, -0.40723085, -0.2163089, 0.88723403)
+bones/4/rotation = Quaternion(-0.4833519, 0.32911098, 0.39360794, 0.70931643)
+bones/5/rotation = Quaternion(-0.058020975, 0.83385426, -0.5455407, -0.060878083)
+bones/6/rotation = Quaternion(-0.053674843, 0.32020557, 0.2950964, 0.8986131)
+bones/7/rotation = Quaternion(-0.4681137, -0.107685, -0.4517396, 0.7518012)
 
 [node name="Egg" parent="Armature/Skeleton3D" index="0" unique_id=490705343]
 surface_material_override/0 = SubResource("ShaderMaterial_elq4t")

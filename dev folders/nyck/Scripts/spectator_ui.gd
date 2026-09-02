@@ -9,8 +9,8 @@ const LOBBY_SCENE_PATH := "uid://d2c6ovqh5tdyt"
 @onready var name_label: Label = $Label
 @onready var leave_lobby_button: Button = $Button
 @onready var return_button: Button = $Button2
-@onready var left_button: Button = $LeftButton
-@onready var right_button: Button = $RightButton
+@onready var left_button: Button = $Control/LeftButton
+@onready var right_button: Button = $Control/RightButton
 
 var _spectate_index: int = 0
 

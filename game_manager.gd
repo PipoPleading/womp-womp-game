@@ -17,9 +17,15 @@ signal start_game()
 #if that player was the winner
 signal finish_game(is_winning_player : bool)
 
-func player_died():
-	pass
-#assigning timer and starting it (realistically wouldn't start on ready)
+var living_players : Array[PlayerInstance]
+
+func new_living_player(player : PlayerInstance):
+	living_players.append(player)
+
+func player_died(player : PlayerInstance):
+	if living_players.has(player):
+		living_players.remove_at(living_players.find(player))
+
 func _ready() -> void:
 	round_timer = Timer.new()
 	add_child(round_timer)

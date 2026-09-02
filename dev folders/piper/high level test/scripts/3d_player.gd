@@ -33,8 +33,7 @@ const JUMP_VELOCITY = 7
 const GRAV_SCALE = 1.2
 
 # Health Stuffs
-var max_health : int = 3
-var current_health : int = 10
+var current_health : int = 3
 var current_weapon : int = 0
 
 const look_sensitivity : float = 0.003
@@ -47,6 +46,10 @@ func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
 
 func _ready() -> void:
+	_weapon_instance = Node3D.new()
+	frying_pan.hide()
+	knife.hide()
+	GameManager.new_living_player(self)
 	if is_multiplayer_authority():
 		focus_toggle(true)
 		phantom_camera_3d.priority = 10
@@ -59,7 +62,6 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if !is_multiplayer_authority():
 		return
-	
 	## rotations for heads
 	if event is InputEventMouseMotion:
 		rotate_y(-event.relative.x * look_sensitivity)
@@ -87,8 +89,8 @@ func change_weapon(dir : int):
 	if dir > 0:
 		current_weapon += 1
 	else:
-		current_weapon += 1
-	
+		current_weapon -= 1
+	#
 	if current_weapon >= 3:
 		current_weapon = 0
 	if current_weapon < 0:
@@ -189,10 +191,13 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 	if area.is_in_group("Weapon"):
 		if area.get_parent().get_parent().get_node("Weapon").is_attacking:
 			current_health -= 1
+			print("took damage! ", current_health)
 		if current_health <= 0:
 			print("you dead")
-			
+			queue_free()
 			#TODO: Make the player transition to Spectator
 
 func death():
+	GameManager.player_died(self)
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	phantom_camera_3d.priority = 0
