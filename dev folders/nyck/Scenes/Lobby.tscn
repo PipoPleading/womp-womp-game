@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://d2c6ovqh5tdyt"]
+
+[ext_resource type="PackedScene" uid="uid://l8fph7u0swoq" path="res://dev folders/nyck/Scenes/kitchenleveMainMenul.tscn" id="1_bg"]
+[ext_resource type="Script" uid="uid://didner7xttgwd" path="res://dev folders/nyck/Scripts/lobby_ui.gd" id="2_lobby"]
+[ext_resource type="AudioStream" uid="uid://cj1b2fcelo17e" path="res://dev folders/nyck/Sounds/LobbyMusic.mp3" id="3_lobby_music"]
+
+[node name="Lobby" type="Control" unique_id=1376133537]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_lobby")
+
+[node name="KitchenBackground" parent="." unique_id=1901876898 instance=ExtResource("1_bg")]
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." unique_id=1975338462]
+stream = ExtResource("3_lobby_music")
+autoplay = true
+
+[node name="BackButton" type="Button" parent="." unique_id=1789134941]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = 96.0
+offset_bottom = 48.0
+text = "Back"
+
+[node name="JoinCreatePanel" type="Panel" parent="." unique_id=1418468590]
+visible = false
+z_index = 1
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -50.0
+offset_right = 120.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CreateLobbyButton" type="Button" parent="JoinCreatePanel" unique_id=458512231]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 16.0
+offset_right = 220.0
+offset_bottom = 48.0
+action_mode = 0
+text = "Create Lobby"
+
+[node name="JoinLobbyButton" type="Button" parent="JoinCreatePanel" unique_id=1451322016]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 56.0
+offset_right = 220.0
+offset_bottom = 88.0
+action_mode = 0
+text = "Join Lobby"
+
+[node name="CreateLobbyPanel" type="Panel" parent="." unique_id=1754010191]
+visible = false
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -70.0
+offset_right = 142.0
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PlayerCountLabel" type="Label" parent="CreateLobbyPanel" unique_id=1557207768]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 12.0
+offset_right = 220.0
+offset_bottom = 40.0
+text = "Max Players (1-4)"
+
+[node name="PlayerCountSpinBox" type="SpinBox" parent="CreateLobbyPanel" unique_id=1522176186]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 44.0
+offset_right = 140.0
+offset_bottom = 68.0
+min_value = 1.0
+max_value = 8.0
+value = 4.0
+
+[node name="ConfirmCreateButton" type="Button" parent="CreateLobbyPanel" unique_id=1636145867]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 84.0
+offset_right = 220.0
+offset_bottom = 116.0
+action_mode = 0
+text = "Create"
+
+[node name="CancelCreateButton" type="Button" parent="CreateLobbyPanel" unique_id=1794325944]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 128.0
+offset_right = 220.0
+offset_bottom = 160.0
+action_mode = 0
+text = "Cancel"
+
+[node name="JoinLobbyPanel" type="Panel" parent="." unique_id=890386807]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -80.0
+offset_right = 166.0
+offset_bottom = 146.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LobbyCodeLabel" type="Label" parent="JoinLobbyPanel" unique_id=1910980586]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 12.0
+offset_right = 220.0
+offset_bottom = 40.0
+text = "Lobby Code"
+
+[node name="LobbyCodeInput" type="LineEdit" parent="JoinLobbyPanel" unique_id=641104606]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 44.0
+offset_right = 220.0
+offset_bottom = 68.0
+placeholder_text = "Enter code"
+
+[node name="JoinConfirmButton" type="Button" parent="JoinLobbyPanel" unique_id=1354089119]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 84.0
+offset_right = 220.0
+offset_bottom = 116.0
+action_mode = 0
+text = "Join"
+
+[node name="CancelJoinButton" type="Button" parent="JoinLobbyPanel" unique_id=1428722016]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 128.0
+offset_right = 220.0
+offset_bottom = 160.0
+action_mode = 0
+text = "Cancel"
+
+[node name="ErrorLabel" type="Label" parent="JoinLobbyPanel" unique_id=634716740]
+visible = false
+layout_mode = 0
+offset_left = 20.0
+offset_top = 164.0
+offset_right = 220.0
+offset_bottom = 200.0
+autowrap_mode = 2
+
+[node name="LobbyRoomPanel" type="Panel" parent="." unique_id=1869676180]
+visible = false
+z_index = 1
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -160.0
+offset_right = 200.0
+offset_bottom = 160.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LobbyCodeLabel" type="Label" parent="LobbyRoomPanel" unique_id=292076849]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 12.0
+offset_right = 384.0
+offset_bottom = 36.0
+text = "Lobby Code: "
+
+[node name="PlayerListContainer" type="VBoxContainer" parent="LobbyRoomPanel" unique_id=404770234]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 44.0
+offset_right = 384.0
+offset_bottom = 260.0
+
+[node name="StartGameButton" type="Button" parent="LobbyRoomPanel" unique_id=438200222]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 270.0
+offset_right = 196.0
+offset_bottom = 302.0
+action_mode = 0
+text = "Start Game"
