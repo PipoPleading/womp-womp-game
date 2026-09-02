@@ -123,28 +123,28 @@ func focus_toggle(is_focused : bool):
 
 func _physics_process(delta: float) -> void:
 	
-	if !is_multiplayer_authority():
-		return
 	
-	egg_2.shader_scale(visibility_scalar)
-	
-
-	
-	# Add the gravity.
-
-	fall_handling(delta)
-	jump_handling()
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
 	var input_dir : Vector2 = Input.get_vector("m_left", "m_right", "m_up", "m_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
+	if direction:
+		visibility_scalar = move_toward(visibility_scalar, 0, delta)
+	else:
+		visibility_scalar = move_toward(visibility_scalar, 1, delta)
+
+	
+	if !is_multiplayer_authority():
+		return
+	# Add the gravity.
+	fall_handling(delta)
+	jump_handling()
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
 	if direction:
 		velocity.x = direction.x * SPEED
 		velocity.z = direction.z * SPEED
 		#if crouchn
 		
-		visibility_scalar = move_toward(visibility_scalar, 0, delta)
 		update_state(anim_state.walk)
 		jump_handling()
 		
@@ -152,9 +152,12 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		
-		visibility_scalar = move_toward(visibility_scalar, 1, delta)
 		update_state(anim_state.idle)
 		jump_handling()
+		
+	
+	egg_2.shader_scale(visibility_scalar)
+	
 	move_and_slide()
 
 

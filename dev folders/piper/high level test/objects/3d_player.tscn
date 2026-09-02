@@ -52,7 +52,6 @@ replication_config = SubResource("SceneReplicationConfig_iyl20")
 
 [node name="Egg2" parent="." unique_id=1320390667 instance=ExtResource("3_fl3pk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.015462279, 0.8613038, 0)
-visible = false
 
 [node name="NeckRoot" type="Node3D" parent="." unique_id=1400170862]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4672719, 0)
@@ -72,6 +71,7 @@ metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 transform = Transform3D(0.99999976, 0, 0, 0, 0.99999976, 0, 0, 0, 0.99999976, 0, 0, -1.3401673)
 
 [node name="Player UI Root" type="Control" parent="." unique_id=1463997256]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

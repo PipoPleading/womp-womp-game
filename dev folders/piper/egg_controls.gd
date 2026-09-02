@@ -8,6 +8,18 @@ var active_state : int
 @onready var egg: MeshInstance3D = $Armature/Skeleton3D/Egg
 #@export var shader_param : float: set=get_shader
 @export var shader_param : float : set=set_shader_param
+const REFRACTIVE = preload("uid://bgoeergysfaib")
+var personal_refractive
+var mat1
+var mat2
+
+
+func _ready() -> void:
+	mat1 = egg.get_surface_override_material(0).duplicate_deep()
+	egg.set_surface_override_material(0, mat1)
+	mat2 = egg.get_surface_override_material(1).duplicate_deep()
+	egg.set_surface_override_material(1, mat2)
+
 
 func play_anim(current_state : int):
 	if active_state != current_state:
@@ -37,8 +49,8 @@ func play_anim(current_state : int):
 			anims.play("Walk")
 
 func set_shader_param(p : float) -> void:
-	var mat1 = egg.get_surface_override_material(0)
-	var mat2 = egg.get_surface_override_material(1)
+	mat1 = egg.get_surface_override_material(0)
+	mat2 = egg.get_surface_override_material(1)
 	
 	mat1.set_shader_parameter("refraction_str", p)
 	mat2.set_shader_parameter("refraction_str", p)

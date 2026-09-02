@@ -5,7 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://cwiwagkfn8cmc" path="res://dev folders/piper/high level test/objects/3d_player.tscn" id="2_e5ck7"]
 [ext_resource type="Script" uid="uid://bd046eokvcnu2" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_2k451"]
 [ext_resource type="Script" uid="uid://bctkkrxcf5nnd" path="res://dev folders/piper/high level test/scripts/high_level_multiplayer_spawner.gd" id="4_41hjh"]
-[ext_resource type="Script" uid="uid://7dexmmbr5ofa" path="res://dev folders/piper/high level test/scripts/main_camera.gd" id="5_a2c2i"]
+[ext_resource type="Script" uid="uid://ld4vonnqq7ls" path="res://dev folders/piper/high level test/objects/spectator_controller.gd" id="5_bsleg"]
+[ext_resource type="Script" uid="uid://csjccrhj5wnx7" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_3d.gd" id="6_usex5"]
+[ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_2sekx"]
 [ext_resource type="PackedScene" uid="uid://br3aipnhla0yx" path="res://dev folders/nyck/Scenes/spectator_UI.tscn" id="7_c53eb"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_a2c2i"]
@@ -25,6 +27,9 @@ albedo_color = Color(1, 0, 0, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_ygfeb"]
 material = SubResource("StandardMaterial3D_gq0y6")
+
+[sub_resource type="Resource" id="Resource_xthyk"]
+script = ExtResource("7_2sekx")
 
 [node name="3D Test" type="Node3D" unique_id=2036907785 node_paths=PackedStringArray("spawn_points")]
 script = ExtResource("1_a2c2i")
@@ -70,32 +75,44 @@ spawn_path = NodePath("..")
 script = ExtResource("4_41hjh")
 network_player = ExtResource("2_e5ck7")
 
-[node name="Main Camera" type="Camera3D" parent="." unique_id=809914714]
-physics_interpolation_mode = 1
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.9774052, -24)
-top_level = true
-script = ExtResource("5_a2c2i")
-
-[node name="PhantomCameraHost" type="Node" parent="Main Camera" unique_id=1032237605]
-process_priority = 300
-process_physics_priority = 300
-script = ExtResource("4_2k451")
-
-[node name="SpectatorUI" parent="Main Camera" unique_id=2012802898 instance=ExtResource("7_c53eb")]
-
 [node name="Host" type="Button" parent="." unique_id=1360738312]
 offset_right = 8.0
 offset_bottom = 8.0
 text = "HOST"
 
 [node name="3d_player" parent="." unique_id=520216166 instance=ExtResource("2_e5ck7")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.32551455, -24)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 4.7488585, -24)
 
 [node name="Node3D" type="Node3D" parent="3d_player" unique_id=527668906]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="3d_player/Node3D" unique_id=388164899]
 transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 4.512392, 0)
 mesh = SubResource("CylinderMesh_ygfeb")
+
+[node name="Spectator Controller" type="Node3D" parent="." unique_id=1919434995]
+unique_name_in_owner = true
+script = ExtResource("5_bsleg")
+
+[node name="Spectator_Camera" type="Node3D" parent="Spectator Controller" unique_id=346861182]
+script = ExtResource("6_usex5")
+tween_resource = SubResource("Resource_xthyk")
+metadata/_custom_type_script = "uid://csjccrhj5wnx7"
+
+[node name="Main Camera" type="Camera3D" parent="Spectator Controller" unique_id=809914714]
+physics_interpolation_mode = 1
+transform = Transform3D(0.29999998, 0, 0, 0, 0.29999998, 0, 0, 0, 0.29999998, 0, 5.400749, -24)
+top_level = true
+
+[node name="PhantomCameraHost" type="Node" parent="Spectator Controller/Main Camera" unique_id=1032237605]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("4_2k451")
+
+[node name="SpectatorUI" parent="Spectator Controller/Main Camera" unique_id=2012802898 instance=ExtResource("7_c53eb")]
+unique_name_in_owner = true
+visible = false
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
 
 [connection signal="spawned" from="MultiplayerSpawner" to="." method="_on_multiplayer_spawner_spawned"]
 [connection signal="pressed" from="Host" to="." method="on_host_pressed"]
