@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://biwj3ssltadah" path="res://dev folders/chris/Resources/WeaponData/frying_pan.tres" id="2_vtkla"]
 [ext_resource type="PackedScene" uid="uid://c0f73gk2crbfm" path="res://dev folders/cat/models/character/character.tscn" id="3_fl3pk"]
 [ext_resource type="Script" uid="uid://8umksf8e80fw" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="3_vtkla"]
+[ext_resource type="PackedScene" uid="uid://fx7xcsci0tr2" path="res://dev folders/chris/weapon_select.tscn" id="6_is4wr"]
 [ext_resource type="PackedScene" uid="uid://chbxblcsj45j0" path="res://dev folders/chris/Weapons/frying_pan.tscn" id="6_j5nh2"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_gq0y6"]
@@ -118,6 +119,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_gq0y6")
+
+[node name="Node" type="Node" parent="Player UI Root" unique_id=449027976]
+
+[node name="WeaponSelect" parent="Player UI Root" unique_id=610598487 instance=ExtResource("6_is4wr")]
+layout_mode = 1
 
 [node name="FryingPan" parent="." unique_id=100907125 instance=ExtResource("6_j5nh2")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.2932904, 2.222613, -1.1134033)
