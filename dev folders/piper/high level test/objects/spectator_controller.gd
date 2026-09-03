@@ -7,7 +7,9 @@ func _ready() -> void:
 	GameManager.dead.connect(test)
 	pass
 
-func test():
+func test(player : PlayerInstance):
+	print("player died: ", player)
 	if is_multiplayer_authority():
+		print("player now spectating")
 		spectator_camera.priority = 15
 		spectator_ui.show()
