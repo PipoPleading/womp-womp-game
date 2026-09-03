@@ -12,7 +12,6 @@ func on_host_created() -> void:
 	spawn_player(multiplayer.get_unique_id())
 	multiplayer.peer_connected.connect(spawn_player)
 
-
 func spawn_player(peer_id: int) -> void:
 	var new_player := _3D_PLAYER.instantiate()
 	new_player.name = str(peer_id)

@@ -17,6 +17,8 @@ signal start_game()
 #if that player was the winner
 signal finish_game(is_winning_player : bool)
 
+signal dead(player : PlayerInstance)
+
 var living_players : Array[PlayerInstance]
 
 func new_living_player(player : PlayerInstance):
@@ -25,6 +27,9 @@ func new_living_player(player : PlayerInstance):
 func player_died(player : PlayerInstance):
 	if living_players.has(player):
 		living_players.remove_at(living_players.find(player))
+	if is_multiplayer_authority():
+		dead.emit(player)
+	print("current players: ", living_players)
 
 func _ready() -> void:
 	round_timer = Timer.new()

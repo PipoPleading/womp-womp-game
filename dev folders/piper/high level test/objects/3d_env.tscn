@@ -79,11 +79,13 @@ unique_name_in_owner = true
 script = ExtResource("5_bsleg")
 
 [node name="Spectator_Camera" type="Node3D" parent="Spectator Controller" unique_id=346861182]
+transform = Transform3D(0.47333378, -0.2655557, 0.8399019, 0, 0.95347714, 0.30146536, -0.88088316, -0.14269374, 0.451313, 31.251003, 8.371893, -7.217954)
 script = ExtResource("6_usex5")
 tween_resource = SubResource("Resource_xthyk")
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="Main Camera" type="Camera3D" parent="Spectator Controller" unique_id=809914714]
+transform = Transform3D(0.47333378, -0.2655557, 0.8399019, 0, 0.95347714, 0.30146536, -0.88088316, -0.14269374, 0.451313, 31.251003, 8.371893, -7.217954)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Spectator Controller/Main Camera" unique_id=1032237605]
