@@ -123,6 +123,8 @@ func focus_toggle(is_focused : bool):
 
 func _physics_process(delta: float) -> void:
 	
+	if !is_multiplayer_authority():
+		return
 	
 	var input_dir : Vector2 = Input.get_vector("m_left", "m_right", "m_up", "m_down")
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
@@ -134,8 +136,7 @@ func _physics_process(delta: float) -> void:
 	
 	egg_2.shader_scale(visibility_scalar)
 	
-	if !is_multiplayer_authority():
-		return
+
 	phantom_camera_3d.priority = 10
 	# Add the gravity.
 	fall_handling(delta)

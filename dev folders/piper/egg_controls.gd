@@ -10,8 +10,8 @@ var active_state : int
 @export var shader_param : float : set=set_shader_param
 const REFRACTIVE = preload("uid://bgoeergysfaib")
 var personal_refractive
-var mat1
-var mat2
+@export var mat1 : Material
+@export var mat2 : Material
 
 
 func _ready() -> void:
