@@ -204,7 +204,8 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 			#TODO: Make the player transition to Spectator
 
 func death():
-	GameManager.player_died(self)
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-	phantom_camera_3d.priority = 0
-	queue_free()
+	if is_multiplayer_authority():
+		GameManager.player_died(self)
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+		phantom_camera_3d.priority = 0
+		queue_free()
