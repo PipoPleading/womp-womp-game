@@ -6,8 +6,7 @@ extends Node3D
 enum anim_state {idle = 0, crouch_jump = 1, crouch_land = 2, crouch_walk = 3, fall = 5, flinch = 6, hurt = 7, idle_crouch = 9, jump = 10, land = 11, walk = 12}
 var active_state : int
 @onready var egg: MeshInstance3D = $Armature/Skeleton3D/Egg
-#@export var shader_param : float: set=get_shader
-@export var shader_param : float : set=set_shader_param
+
 const REFRACTIVE = preload("uid://bgoeergysfaib")
 var personal_refractive
 @export var mat1 : Material
@@ -48,24 +47,12 @@ func play_anim(current_state : int):
 		anim_state.walk:
 			anims.play("Walk")
 
+func shader_scale(scalar : float):
+	set_shader_param(scalar)
+
 func set_shader_param(p : float) -> void:
 	mat1 = egg.get_surface_override_material(0)
 	mat2 = egg.get_surface_override_material(1)
 	
 	mat1.set_shader_parameter("refraction_str", p)
 	mat2.set_shader_parameter("refraction_str", p)
-#
-#func get_shader_param() -> float:
-	#var mat1 = egg.get_surface_override_material(0)
-	#var mat2 = egg.get_surface_override_material(1)
-	#
-	#mat1.get_shader_parameter("refraction_str", shader_param)
-	#mat2.set_shader_parameter("refraction_str", shader_param)
-
-
-func shader_scale(scalar : float):
-	shader_param = scalar
-	#shader_parameter/refraction_str
-	set_shader_param(scalar)
-	#print(egg.get_instance_shader_parameter("refraction_str"))
-	## scale

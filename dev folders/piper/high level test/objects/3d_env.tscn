@@ -95,7 +95,6 @@ script = ExtResource("4_2k451")
 
 [node name="SpectatorUI" parent="Spectator Controller/Main Camera" unique_id=2012802898 instance=ExtResource("7_c53eb")]
 unique_name_in_owner = true
-visible = false
 mouse_filter = 2
 metadata/_edit_use_anchors_ = true
 
