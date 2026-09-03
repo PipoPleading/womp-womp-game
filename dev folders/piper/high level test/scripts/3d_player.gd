@@ -40,7 +40,7 @@ const look_sensitivity : float = 0.003
 
 ## visuals
 @onready var egg_2: EggVisual = $Egg2
-var visibility_scalar : float = 1.0
+@export var visibility_scalar : float = 1.0
 
 func _enter_tree() -> void:
 	set_multiplayer_authority(name.to_int())
