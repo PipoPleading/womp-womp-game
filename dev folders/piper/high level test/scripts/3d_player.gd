@@ -207,4 +207,4 @@ func death():
 	if is_multiplayer_authority():
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		GameManager.player_died(self)
-	#queue_free()
+	queue_free()

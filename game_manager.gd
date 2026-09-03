@@ -28,7 +28,8 @@ func player_died(player : PlayerInstance):
 	if living_players.has(player):
 		living_players.remove_at(living_players.find(player))
 		print("dead emitting here")
-		dead.emit(player)
+		if is_multiplayer_authority():
+			dead.emit(player)
 	print("current players: ", living_players)
 
 func _ready() -> void:
