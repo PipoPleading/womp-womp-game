@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dhnvswpvtoqgy"]
 
+[ext_resource type="Script" uid="uid://d2tm6l04ib5h5" path="res://dev folders/piper/death_ui.gd" id="1_05ves"]
 [ext_resource type="FontFile" uid="uid://b8jtg3f6tobsn" path="res://dev folders/nyck/fonts/Crackman.otf" id="1_font"]
 
 [node name="DeathUI" type="Control" unique_id=1981684587]
@@ -9,12 +10,15 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_05ves")
 
 [node name="DimBackground" type="ColorRect" parent="." unique_id=1044767535]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 color = Color(0, 0, 0, 0.6)
 
 [node name="DeathLabel" type="Label" parent="." unique_id=1835777016]
@@ -54,3 +58,9 @@ theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
 theme_override_font_sizes/font_size = 20
 text = "You got cracked!"
 horizontal_alignment = 1
+
+[node name="Timer" type="Timer" parent="." unique_id=2115690993]
+wait_time = 3.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

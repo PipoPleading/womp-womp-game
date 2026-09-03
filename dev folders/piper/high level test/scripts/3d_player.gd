@@ -10,6 +10,7 @@ class_name PlayerInstance extends CharacterBody3D
 @onready var phantom_camera_3d: PhantomCamera3D = %PhantomCamera3D
 @onready var neck_target: Node3D = $NeckRoot/Neck_Target
 @onready var multiplayer_synchronizer: MultiplayerSynchronizer = $MultiplayerSynchronizer
+var death_scene = preload("uid://dhnvswpvtoqgy")
 
 #@onready var eye_1: MeshInstance3D = $Eye1
 #@onready var eye_2: MeshInstance3D = $Eye2
@@ -19,7 +20,8 @@ class_name PlayerInstance extends CharacterBody3D
 @onready var knife: Node3D = $FryingPan2
 
 @export var weapon : WeaponData
-
+@export var input_dir : Vector2
+@export var direction : Vector3
 enum anim_state {idle = 0, crouch_jump = 1, crouch_land = 2, crouch_walk = 3, fall = 5, flinch = 6, hurt = 7, idle_crouch = 9, jump = 10, land = 11, walk = 12}
 var active_state : anim_state
 
@@ -123,8 +125,8 @@ func focus_toggle(is_focused : bool):
 
 func _physics_process(delta: float) -> void:
 	
-	var input_dir : Vector2 = Input.get_vector("m_left", "m_right", "m_up", "m_down")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	input_dir = Input.get_vector("m_left", "m_right", "m_up", "m_down")
+	direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	if !is_multiplayer_authority():
 		return
@@ -146,7 +148,7 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if direction:
 		velocity.x = direction.x * SPEED
-		velocity.z = direction.z * SPEED
+		velocity.z = direction.z * SPEED 
 		#if crouchn
 		
 		update_state(anim_state.walk)
@@ -208,5 +210,7 @@ func death():
 	if is_multiplayer_authority():
 		print("I died (with authority)!!")
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		GameManager.player_died(self)
+		var death_spawn = death_scene.instantiate()
+		get_tree().current_scene.add_child(death_spawn)
+	GameManager.player_died(self)
 	queue_free()
