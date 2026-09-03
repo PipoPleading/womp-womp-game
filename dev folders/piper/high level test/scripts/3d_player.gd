@@ -52,7 +52,7 @@ func _ready() -> void:
 	GameManager.new_living_player(self)
 	if is_multiplayer_authority():
 		focus_toggle(true)
-		phantom_camera_3d.priority = 10
+		#phantom_camera_3d.priority = 10
 		#eye_1.hide()
 		#eye_2.hide()
 	
@@ -135,6 +135,7 @@ func _physics_process(delta: float) -> void:
 	
 	if !is_multiplayer_authority():
 		return
+	phantom_camera_3d.priority = 10
 	# Add the gravity.
 	fall_handling(delta)
 	jump_handling()
