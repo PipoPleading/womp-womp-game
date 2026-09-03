@@ -123,11 +123,12 @@ func focus_toggle(is_focused : bool):
 
 func _physics_process(delta: float) -> void:
 	
+	var input_dir : Vector2 = Input.get_vector("m_left", "m_right", "m_up", "m_down")
+	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	
 	if !is_multiplayer_authority():
 		return
 	
-	var input_dir : Vector2 = Input.get_vector("m_left", "m_right", "m_up", "m_down")
-	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	
 	if direction:
 		visibility_scalar = move_toward(visibility_scalar, 0, delta)
@@ -199,10 +200,11 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 			print("took damage! ", current_health)
 		if current_health <= 0:
 			print("you dead")
-			queue_free()
+			death()
 			#TODO: Make the player transition to Spectator
 
 func death():
 	GameManager.player_died(self)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	phantom_camera_3d.priority = 0
+	queue_free()
