@@ -27,7 +27,6 @@ func new_living_player(player : PlayerInstance):
 func player_died(player : PlayerInstance):
 	if living_players.has(player):
 		living_players.remove_at(living_players.find(player))
-	if is_multiplayer_authority():
 		print("dead emitting here")
 		dead.emit(player)
 	print("current players: ", living_players)
