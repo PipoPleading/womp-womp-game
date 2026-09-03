@@ -131,7 +131,8 @@ func _physics_process(delta: float) -> void:
 		visibility_scalar = move_toward(visibility_scalar, 0, delta)
 	else:
 		visibility_scalar = move_toward(visibility_scalar, 1, delta)
-
+	
+	egg_2.shader_scale(visibility_scalar)
 	
 	if !is_multiplayer_authority():
 		return
@@ -157,7 +158,6 @@ func _physics_process(delta: float) -> void:
 		jump_handling()
 		
 	
-	egg_2.shader_scale(visibility_scalar)
 	
 	move_and_slide()
 
