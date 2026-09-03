@@ -204,7 +204,9 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 			#TODO: Make the player transition to Spectator
 
 func death():
+	print("I died!!")
 	if is_multiplayer_authority():
+		print("I died (with authority)!!")
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		GameManager.player_died(self)
 	queue_free()
