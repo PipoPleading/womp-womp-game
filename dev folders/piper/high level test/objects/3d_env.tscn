@@ -22,12 +22,6 @@ background_mode = 2
 sky = SubResource("Sky_itslj")
 glow_enabled = true
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gq0y6"]
-albedo_color = Color(1, 0, 0, 1)
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_ygfeb"]
-material = SubResource("StandardMaterial3D_gq0y6")
-
 [sub_resource type="Resource" id="Resource_xthyk"]
 script = ExtResource("7_2sekx")
 
@@ -80,15 +74,6 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "HOST"
 
-[node name="3d_player" parent="." unique_id=520216166 instance=ExtResource("2_e5ck7")]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 4.7488585, -24)
-
-[node name="Node3D" type="Node3D" parent="3d_player" unique_id=527668906]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="3d_player/Node3D" unique_id=388164899]
-transform = Transform3D(0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 4.512392, 0)
-mesh = SubResource("CylinderMesh_ygfeb")
-
 [node name="Spectator Controller" type="Node3D" parent="." unique_id=1919434995]
 unique_name_in_owner = true
 script = ExtResource("5_bsleg")
@@ -99,8 +84,6 @@ tween_resource = SubResource("Resource_xthyk")
 metadata/_custom_type_script = "uid://csjccrhj5wnx7"
 
 [node name="Main Camera" type="Camera3D" parent="Spectator Controller" unique_id=809914714]
-physics_interpolation_mode = 1
-transform = Transform3D(0.29999998, 0, 0, 0, 0.29999998, 0, 0, 0, 0.29999998, 0, 5.400749, -24)
 top_level = true
 
 [node name="PhantomCameraHost" type="Node" parent="Spectator Controller/Main Camera" unique_id=1032237605]
