@@ -21,6 +21,10 @@ signal dead(player : PlayerInstance)
 
 var living_players : Array[PlayerInstance]
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("force_start"):
+		load_game()
+
 func new_living_player(player : PlayerInstance):
 	living_players.append(player)
 
@@ -33,8 +37,15 @@ func player_died(player : PlayerInstance):
 	print("current players: ", living_players)
 
 func _ready() -> void:
+	start_game.connect(load_game)
+	
 	round_timer = Timer.new()
 	add_child(round_timer)
 	
 	round_timer.wait_time = game_time
 	round_timer.start()
+
+func load_game():
+	get_tree().change_scene_to_file("uid://dhh8s6n07t6id")
+	
+	pass

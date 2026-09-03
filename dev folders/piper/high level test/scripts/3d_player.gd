@@ -207,10 +207,14 @@ func _on_area_3d_area_entered(area: Area3D) -> void:
 
 func death():
 	print("I died!!")
-	if is_multiplayer_authority():
-		print("I died (with authority)!!")
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
-		var death_spawn = death_scene.instantiate()
-		get_tree().current_scene.add_child(death_spawn)
+	local_death()
 	GameManager.player_died(self)
 	queue_free()
+
+func local_death():
+	if !is_multiplayer_authority():
+		return
+	print("I died (with authority)!!")
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	var death_spawn = death_scene.instantiate()
+	get_tree().current_scene.add_child(death_spawn)
